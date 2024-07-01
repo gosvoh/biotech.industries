@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar";
+import Header from "@/components/header";
+import { AntdRegistry } from "@ant-design/nextjs-registry";
+import Footer from "@/components/footer";
 
 const inter = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -21,8 +23,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
-        <Navbar />
-        {children}
+        <AntdRegistry>
+          <Header />
+          {children}
+          <Footer />
+        </AntdRegistry>
       </body>
     </html>
   );

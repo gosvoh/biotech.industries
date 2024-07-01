@@ -1,0 +1,40 @@
+import BiotechTextLogo from "@public/Biotech-Logotype.svg";
+import { ExternalLinkIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Footer() {
+  return (
+    <footer className="fcol gap-16 text-2xl wrapper py-20">
+      <Image src={BiotechTextLogo} alt="Biotech" className="w-[165px]" />
+      <div className="fcol gap-6">
+        <Link href="#" className="footer-link">
+          <ExternalLinkIcon />
+          Технологии и исследования
+        </Link>
+        <Link href="#" className="footer-link">
+          <ExternalLinkIcon />
+          Консультации для бизнеса
+        </Link>
+        <Link href="#" className="footer-link">
+          <ExternalLinkIcon />
+          Курсы для биотех-специалистов
+        </Link>
+        <Link href="#" className="footer-link">
+          <ExternalLinkIcon />
+          Организация мероприятий
+        </Link>
+      </div>
+      <div className="fcol gap-6">
+        <p>
+          Санкт-Петербург
+          <br />
+          Ломоносова ул., 9
+        </p>
+        <Link className="font-bold" href="mailto:biotech@itmo.ru">
+          biotech@itmo.ru
+        </Link>
+      </div>
+    </footer>
+  );
+}
