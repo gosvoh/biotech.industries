@@ -2,7 +2,12 @@ import Button from "@/components/ui/custom/button";
 import Card from "@/components/ui/custom/card";
 import InformCard from "@/components/ui/custom/inform.card";
 import { Skeleton } from "@/components/ui/skeleton";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+
+const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -55,7 +60,7 @@ export default function Home() {
           </div>
           <Button className="text-2xl w-full">Обсудить проект</Button>
         </div>
-        <Skeleton className="w-full aspect-square mt-16" />
+        <YandexMap className="w-full aspect-square max-h-[600px] mt-16" />
       </section>
     </main>
   );
