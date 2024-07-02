@@ -42,7 +42,7 @@ const Map = ({ api }: { api: ReactifyApi | null }) => {
 
 export default function YandexMap(props: React.HTMLAttributes<HTMLDivElement>) {
   const [reactifyApi, setReactifyApi] = useState<ReactifyApi | null>(null);
-  const apiKey = process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY!;
+  const apiKey = "22d9a99f-e3d7-484c-ba9e-1a4bd5688b70";
 
   return (
     <>
