@@ -61,10 +61,13 @@
     @apply wrapper py-20;
   }
   h1 {
-    @apply text-5xl font-bold;
+    @apply text-4xl xs:text-5xl md:text-6xl font-bold;
   }
   h2 {
-    @apply text-4xl font-bold text-center;
+    @apply text-3xl xs:text-4xl md:text-5xl font-bold text-center;
+  }
+  a {
+    @apply text-primary;
   }
 }
 
@@ -76,7 +79,7 @@
 
 @layer components {
   .wrapper {
-    @apply px-10 md:px-36;
+    @apply px-10 md:px-[140px];
   }
 
   .fcol {
@@ -84,6 +87,6 @@
   }
 
   .footer-link {
-    @apply inline-flex items-center gap-8 font-bold text-2xl;
+    @apply inline-flex items-center gap-8 font-bold;
   }
 }

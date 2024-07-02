@@ -5,9 +5,13 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="fcol gap-16 text-2xl wrapper py-20">
-      <Image src={BiotechTextLogo} alt="Biotech" className="w-[165px]" />
-      <div className="fcol gap-6">
+    <footer className="grid grid-cols-1 md:grid-cols-2 gap-16 text-2xl md:text-3xl wrapper py-20">
+      <Image
+        src={BiotechTextLogo}
+        alt="Biotech"
+        className="w-[165px] md:w-[400px]"
+      />
+      <div className="fcol gap-6 md:gap-12 md:row-span-2">
         <Link href="#" className="footer-link">
           <ExternalLinkIcon />
           Технологии и исследования

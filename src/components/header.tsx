@@ -14,9 +14,10 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 
 // const MobileMenu = () => {
@@ -50,16 +51,20 @@ const MobileMenu = () => {
     <Sheet>
       <SheetTrigger asChild>
         <Button size="icon" variant="ghost">
-          <MenuIcon />
+          <MenuIcon className="w-10 h-10" />
         </Button>
       </SheetTrigger>
       <SheetContent side={"top"} className="h-full">
-        <SheetHeader>
-          <SheetTitle>
+        <SheetHeader className="fcol gap-20">
+          <SheetTitle className="flex flex-row justify-between items-center">
             <Image src={BiotechTextLogo} alt="Biotech" className="w-[165px]" />
+            <SheetClose>
+              <X className="w-10 h-10" />
+              <span className="sr-only">Close</span>
+            </SheetClose>
           </SheetTitle>
           <SheetDescription>
-            <div className="flex flex-col gap-2 items-start">
+            <div className="flex flex-col gap-8 items-start text-3xl font-bold">
               <Link href="#">Ссылка 1</Link>
               <Link href="#">Ссылка 2</Link>
               <Link href="#">Ссылка 3</Link>
@@ -73,7 +78,7 @@ const MobileMenu = () => {
 
 export default function Header() {
   return (
-    <header className="w-full flex flex-row justify-between items-center gap-4 wrapper fixed bg-default z-10">
+    <header className="w-full flex flex-row justify-between items-center gap-4 wrapper p-10 fixed bg-default z-10">
       <a href="#" className={cn("w-[165px]")}>
         <Image src={BiotechTextLogo} alt="Biotech" />
       </a>
