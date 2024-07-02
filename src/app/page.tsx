@@ -12,7 +12,7 @@ const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
 export default function Home() {
   return (
     <main className="text-2xl">
-      <section className="fcol gap-16 min-h-screen justify-end pb-36">
+      <section className="fcol gap-16 pt-[290px]">
         <div className="fcol gap-8">
           <h1>Biotech Industries</h1>
           <p>Создаем инновации в биотех-индустрии</p>
