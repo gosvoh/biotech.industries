@@ -12,7 +12,7 @@ const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
 export default function Home() {
   return (
     <main className="text-2xl">
-      <section className="fcol gap-16 pt-[290px]">
+      <section id="top" className="fcol gap-16 pt-[290px]">
         <div className="fcol gap-8">
           <h1>Biotech Industries</h1>
           <p>Создаем инновации в биотех-индустрии</p>
@@ -28,7 +28,7 @@ export default function Home() {
           <InformCard bigText="16" text="докторов наук" />
         </div>
       </section>
-      <section className="fcol gap-16">
+      <section id="capabilities" className="fcol gap-16">
         <h2>Наши возможности</h2>
         <div className="fcol gap-10">
           <Card smallText="01" text="Технологии и исследования" />
@@ -45,7 +45,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="p-0">
+      <section id="contacts" className="p-0">
         <div className="fcol gap-16 wrapper">
           <h2 className="text-left">Контакты</h2>
           <div className="fcol gap-6">

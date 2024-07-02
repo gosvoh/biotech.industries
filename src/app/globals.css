@@ -56,9 +56,11 @@
   body {
     @apply bg-default text-primary;
     @apply text-balance;
+    @apply scroll-smooth;
   }
   main > section {
     @apply wrapper py-20;
+    @apply scroll-mt-10;
   }
   h1 {
     @apply text-4xl xs:text-5xl md:text-6xl font-bold;

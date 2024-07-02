@@ -13,6 +13,16 @@ import {
 import { Button } from "./ui/button";
 import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
+import React from "react";
+
+const links: {
+  href: React.ComponentPropsWithoutRef<typeof Link>["href"];
+  text: string;
+}[] = [
+  { href: "/#top", text: "О нас" },
+  { href: "/#capabilities", text: "Наши возможности" },
+  { href: "/#contacts", text: "Контакты" },
+];
 
 const MobileMenu = () => {
   return (
@@ -33,9 +43,11 @@ const MobileMenu = () => {
           </SheetTitle>
           <SheetDescription>
             <div className="flex flex-col gap-8 items-start text-3xl font-bold">
-              <Link href="#">Ссылка 1</Link>
-              <Link href="#">Ссылка 2</Link>
-              <Link href="#">Ссылка 3</Link>
+              {links.map(({ href, text }, i) => (
+                <SheetClose asChild key={`link-${i}`}>
+                  <Link href={href}>{text}</Link>
+                </SheetClose>
+              ))}
             </div>
           </SheetDescription>
         </SheetHeader>
