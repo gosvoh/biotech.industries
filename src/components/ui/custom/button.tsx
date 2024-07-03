@@ -10,7 +10,7 @@ const Button = React.forwardRef<
       className={cn(
         "rounded-full",
         "px-10 py-5",
-        "text-2xl font-bold",
+        "text-2xl md:text-3xl font-bold",
         "bg-primary-white text-primary-black",
         "transition-all duration-300",
         "hover:bg-brand2 hover:shadow-[2px_10px_20px_-5px_hsl(var(--brand2))]",

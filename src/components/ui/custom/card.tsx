@@ -20,11 +20,12 @@ export default function Card({
         "bg-secondary hover:bg-brand",
         "text-primary-white hover:text-primary-black",
         "transition-all duration-300",
+        "h-full",
         styles?.body
       )}
     >
       <p className={cn("text-3xl", styles?.smallText)}>[{smallText}]</p>
-      <p className={cn("text-3xl md:text-4xl font-bold", styles?.text)}>
+      <p className={cn("text-3xl 2xl:text-4xl font-bold", styles?.text)}>
         {text}
       </p>
     </div>

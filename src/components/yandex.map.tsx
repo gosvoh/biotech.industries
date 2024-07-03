@@ -30,8 +30,8 @@ const Map = ({ api }: { api: ReactifyApi | null }) => {
 
       <YMapMarker coordinates={[30.338403, 59.927259]}>
         <Link href={"https://itmo.ru"} target="_blank">
-          <div className="bg-black hover:bg-slate-700 transition-all text-white rounded-full px-4 py-2 flex flex-row gap-2 text-nowrap items-center">
-            <GraduationCap className="w-10 h-10" />
+          <div className="bg-black hover:bg-slate-700 transition-all text-white rounded-full px-4 py-2 flex flex-row gap-2 text-nowrap items-center text-xl md:text-2xl">
+            <GraduationCap className="w-5 h-5 md:w-10 md:h-10" />
             Университет ИТМО
           </div>
         </Link>

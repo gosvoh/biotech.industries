@@ -16,7 +16,7 @@ export default function InformCard({
   return (
     <div
       className={cn(
-        "fcol items-center justify-center",
+        "fcol items-center justify-center flex-1",
         "bg-secondary border border-brand2 rounded-[20px]",
         "px-10 py-5",
         "hover:shadow-[2px_10px_90px_-20px_hsl(var(--brand2))]",
@@ -33,7 +33,11 @@ export default function InformCard({
         {bigText}
       </p>
       <p
-        className={cn("text-primary-white text-2xl md:text-3xl", styles?.text)}
+        className={cn(
+          "text-primary-white text-2xl md:text-3xl text-center",
+          "min-h-[3.6rem] md:min-h-[4.8rem]",
+          styles?.text
+        )}
       >
         {text}
       </p>

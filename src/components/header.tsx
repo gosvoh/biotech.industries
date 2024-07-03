@@ -68,7 +68,7 @@ const DesktopMenu = () => (
 
 export default function Header() {
   return (
-    <header className="w-full flex flex-row justify-between items-center gap-4 wrapper p-10 sticky top-0 bg-default z-10">
+    <header className="w-full flex flex-row justify-between items-center gap-4 wrapper py-10 sticky top-0 bg-default z-10">
       <Link href="/">
         <Image src={BiotechTextLogo} alt="Biotech" />
       </Link>
