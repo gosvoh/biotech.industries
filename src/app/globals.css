@@ -58,18 +58,52 @@
     @apply text-balance;
     @apply scroll-smooth;
   }
-  main > section {
-    @apply wrapper py-20;
-    @apply scroll-mt-10;
+  main {
+    @apply text-2xl;
+
+    & > section {
+      @apply wrapper py-20;
+      @apply scroll-mt-10;
+    }
   }
   h1 {
     @apply text-4xl xs:text-5xl md:text-6xl font-bold;
   }
   h2 {
-    @apply text-3xl xs:text-4xl md:text-5xl font-bold text-center;
+    @apply text-3xl xs:text-4xl md:text-5xl font-bold;
   }
-  a {
+  h3 {
+    @apply text-2xl xs:text-3xl md:text-4xl font-bold;
+  }
+  h4 {
+    @apply text-xl xs:text-2xl md:text-3xl font-bold;
+  }
+  div[role="list"] {
+    @apply fcol gap-6;
+
+    & p[role="listitem"] {
+      @apply inline-flex gap-5 text-lg xs:text-xl;
+      counter-increment: list-item;
+
+      &::before {
+        content: "[" counter(list-item, decimal-leading-zero) "]";
+      }
+      &.brand::before {
+        @apply text-brand;
+      }
+      &.brand2::before {
+        @apply text-brand2;
+      }
+    }
+  }
+  nav a {
     @apply text-primary;
+    @apply text-3xl md:text-2xl font-bold md:font-normal;
+    @apply md:text-secondary hover:text-primary active:underline;
+  }
+
+  header > a {
+    @apply w-[165px];
   }
 }
 
@@ -81,7 +115,7 @@
 
 @layer components {
   .wrapper {
-    @apply px-10 md:px-[140px];
+    @apply px-10 md:px-[140px] max-w-[1920px] mx-auto;
   }
 
   .fcol {

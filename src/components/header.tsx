@@ -19,50 +19,61 @@ const links: {
   href: React.ComponentPropsWithoutRef<typeof Link>["href"];
   text: string;
 }[] = [
-  { href: "/#top", text: "О нас" },
+  { href: "/", text: "О нас" },
   { href: "/#capabilities", text: "Наши возможности" },
   { href: "/#contacts", text: "Контакты" },
 ];
 
-const MobileMenu = () => {
-  return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button size="icon" variant="ghost">
-          <MenuIcon className="w-10 h-10" />
-        </Button>
-      </SheetTrigger>
-      <SheetContent side={"top"} className="h-full">
-        <SheetHeader className="fcol gap-20">
-          <SheetTitle className="flex flex-row justify-between items-center">
+const MobileMenu = () => (
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button size="icon" variant="ghost" className="md:hidden">
+        <MenuIcon className="w-10 h-10" />
+      </Button>
+    </SheetTrigger>
+    <SheetContent side={"top"} className="h-full">
+      <SheetHeader className="fcol gap-20">
+        <SheetTitle className="flex flex-row justify-between items-center">
+          <Link href="/">
             <Image src={BiotechTextLogo} alt="Biotech" className="w-[165px]" />
-            <SheetClose>
-              <X className="w-10 h-10" />
-              <span className="sr-only">Close</span>
-            </SheetClose>
-          </SheetTitle>
-          <SheetDescription>
-            <div className="flex flex-col gap-8 items-start text-3xl font-bold">
-              {links.map(({ href, text }, i) => (
-                <SheetClose asChild key={`link-${i}`}>
-                  <Link href={href}>{text}</Link>
-                </SheetClose>
-              ))}
-            </div>
-          </SheetDescription>
-        </SheetHeader>
-      </SheetContent>
-    </Sheet>
-  );
-};
+          </Link>
+          <SheetClose>
+            <X className="w-10 h-10" />
+            <span className="sr-only">Close</span>
+          </SheetClose>
+        </SheetTitle>
+        <SheetDescription>
+          <nav className="flex flex-col gap-8 items-start">
+            {links.map(({ href, text }, i) => (
+              <SheetClose asChild key={`link-${i}`}>
+                <Link href={href}>{text}</Link>
+              </SheetClose>
+            ))}
+          </nav>
+        </SheetDescription>
+      </SheetHeader>
+    </SheetContent>
+  </Sheet>
+);
+
+const DesktopMenu = () => (
+  <nav className="inline-flex gap-6">
+    {links.map(({ href, text }, i) => (
+      <Link key={`link-${i}`} href={href}>
+        {text}
+      </Link>
+    ))}
+  </nav>
+);
 
 export default function Header() {
   return (
     <header className="w-full flex flex-row justify-between items-center gap-4 wrapper p-10 sticky top-0 bg-default z-10">
-      <a href="#" className={cn("w-[165px]")}>
+      <Link href="/">
         <Image src={BiotechTextLogo} alt="Biotech" />
-      </a>
+      </Link>
       <MobileMenu />
+      <DesktopMenu />
     </header>
   );
 }
