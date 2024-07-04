@@ -21,6 +21,7 @@ export default function InformCard({
         "px-10 py-5",
         "hover:shadow-[2px_10px_90px_-20px_hsl(var(--brand2))]",
         "transition-all duration-300",
+        "cursor-default",
         styles?.body
       )}
     >

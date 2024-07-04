@@ -15,6 +15,9 @@ const config = {
       padding: "2rem",
     },
     extend: {
+      rotate: {
+        "15": "15deg",
+      },
       screens: {
         xs: "430px",
         "2xl": "1400px",

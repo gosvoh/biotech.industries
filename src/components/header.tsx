@@ -19,7 +19,7 @@ const links: {
   href: React.ComponentPropsWithoutRef<typeof Link>["href"];
   text: string;
 }[] = [
-  { href: "/", text: "О нас" },
+  { href: "/#top", text: "О нас" },
   { href: "/#capabilities", text: "Наши возможности" },
   { href: "/#contacts", text: "Контакты" },
 ];
@@ -70,7 +70,7 @@ export default function Header() {
   return (
     <header className="w-full flex flex-row justify-between items-center gap-4 wrapper py-10 sticky top-0 bg-default z-10">
       <Link href="/">
-        <Image src={BiotechTextLogo} alt="Biotech" />
+        <Image src={BiotechTextLogo} alt="Biotech" className="md:w-32" />
       </Link>
       <MobileMenu />
       <DesktopMenu />
