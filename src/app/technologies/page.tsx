@@ -53,7 +53,7 @@ const TechList = ({
 export default function Technologies() {
   return (
     <main>
-      <section className="fcol gap-16 md:pt-[231px] relative overflow-hidden max-w-none px-0">
+      <section className="fcol gap-16 md:pt-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
         <Breadcrumbs
           items={[
             { title: "Главная", href: "/" },

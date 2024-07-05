@@ -57,7 +57,7 @@ const MobileMenu = () => (
 );
 
 const DesktopMenu = () => (
-  <nav className="hidden md:inline-flex gap-6">
+  <nav className="hidden md:inline-flex gap-6 text-left">
     {links.map(({ href, text }, i) => (
       <Link key={`link-${i}`} href={href}>
         {text}

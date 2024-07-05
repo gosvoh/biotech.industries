@@ -52,7 +52,7 @@ export default function Home() {
     <main>
       <section
         id="top"
-        className="pt-[290px] md:pt-[231px] relative overflow-hidden max-w-none px-0"
+        className="pt-[290px] md:pt-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0"
       >
         <div className="wrapper">
           <div className="fcol gap-16 ml-auto w-fit">
@@ -68,18 +68,18 @@ export default function Home() {
         <Image
           src={Glow1}
           alt=""
-          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
+          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full opacity-60 md:opacity-100"
         />
         <Image
           src={Glow2}
           alt=""
-          className="absolute bottom-0 left-0 -z-10 -translate-x-1/2 translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
+          className="absolute bottom-0 -left-1/4 -z-10 -translate-x-1/2 translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full opacity-60 md:opacity-100"
         />
         <Image
           src={Noise}
           alt=""
           fill
-          className="absolute top-0 left-0 -z-10 opacity-10 object-cover object-center"
+          className="absolute top-0 left-0 -z-10 opacity-10 object-cover object-center hidden md:block"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
