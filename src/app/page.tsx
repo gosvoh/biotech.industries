@@ -130,16 +130,52 @@ export default function Home() {
         <h2 className="text-center">Наши возможности</h2>
         <div className="fcol gap-10 md:gap-5 lg:grid lg:grid-cols-8 lg:grid-rows-2">
           <Link href="/technologies" className="lg:col-span-5">
-            <Card smallText="01" text="Технологии и исследования" />
+            <Card
+              smallText="01"
+              text={
+                <>
+                  Технологиии
+                  <br />
+                  исследования
+                </>
+              }
+            />
           </Link>
           <Link href="#" className="lg:col-span-3">
-            <Card smallText="02" text="Консультации для бизнеса" />
+            <Card
+              smallText="02"
+              text={
+                <>
+                  Консультации
+                  <br />
+                  для бизнеса
+                </>
+              }
+            />
           </Link>
           <Link href="#" className="lg:col-span-3">
-            <Card smallText="03" text="Курсы для биотех-специалистов" />
+            <Card
+              smallText="03"
+              text={
+                <>
+                  Курсы для
+                  <br />
+                  биотех-специалистов
+                </>
+              }
+            />
           </Link>
           <Link href="#" className="lg:col-span-5">
-            <Card smallText="04" text="Организация мероприятий" />
+            <Card
+              smallText="04"
+              text={
+                <>
+                  Организация
+                  <br />
+                  мероприятий
+                </>
+              }
+            />
           </Link>
         </div>
       </section>

@@ -6,7 +6,7 @@ export default function Card({
   styles,
 }: {
   smallText: string;
-  text: string;
+  text: React.ReactNode;
   styles?: {
     body?: string;
     smallText?: string;
