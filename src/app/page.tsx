@@ -2,18 +2,19 @@ import Contacts from "@/components/contacts";
 import Button from "@/components/ui/custom/button";
 import Card from "@/components/ui/custom/card";
 import InformCard from "@/components/ui/custom/inform.card";
-import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 import Noise from "@public/noise.png";
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
-import Tatneft from "@public/tatneft.png";
+import Tatneft from "@public/tatneft.svg";
 import Baltika from "@public/baltika.png";
 import HN from "@public/h&n.png";
 import Viola from "@public/viola.png";
 import Sady from "@public/sady.png";
 import BaltBer from "@public/baltber.png";
 import Inarctica from "@public/inarctica.png";
+import Glow1 from "@public/glow 1.png";
+import Glow2 from "@public/glow 2.png";
 
 const Partner = ({
   src,
@@ -24,7 +25,17 @@ const Partner = ({
   alt: string;
   className?: string;
 }) => (
-  <div className="flex items-center justify-center relative rounded-[20px] w-full bg-secondary md:max-w-[395px] md:min-w-[290px] lg:min-w-[350px] aspect-square md:aspect-auto md:h-[180px] flex-1">
+  <div
+    className={cn(
+      "flex items-center justify-center",
+      "aspect-square md:aspect-auto",
+      "relative rounded-[20px] bg-secondary md:h-[180px]",
+      "w-full md:max-w-[395px]",
+      "md:min-w-[290px] lg:min-w-[350px]",
+      "basis-[calc(50%-10px)] flex-grow-1 flex-shrink-1",
+      "md:flex-1"
+    )}
+  >
     <Image
       className={cn(
         "h-[80%] w-auto object-scale-down aspect-square max-w-[75%]",
@@ -50,37 +61,27 @@ export default function Home() {
           </div>
           <Button className="w-full md:w-fit">Обсудить проект</Button>
         </div>
-        <div
-          className={cn(
-            "absolute -bottom-0 -left-0 md:-bottom-48 md:-left-48",
-            "bg-brand2 rounded-full -z-10",
-            "w-[200px] h-[400px]",
-            "md:w-[350px] md:h-[800px]",
-            "blur-[200px] md:blur-[300px] -rotate-[60deg]"
-          )}
-        ></div>
-        <div
-          className={cn(
-            "absolute -top-0 -right-0 md:-top-48 md:-right-48",
-            "bg-brand rounded-full -z-10",
-            "w-[200px] h-[400px]",
-            "md:w-[350px] md:h-[800px]",
-            "blur-[200px] md:blur-[300px] -rotate-[60deg]"
-          )}
-        ></div>
+        <Image
+          src={Glow1}
+          alt=""
+          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
+        />
+        <Image
+          src={Glow2}
+          alt=""
+          className="absolute bottom-0 left-0 -z-10 -translate-x-1/2 translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
+        />
         <Image
           src={Noise}
           alt=""
           fill
-          objectFit="cover"
-          objectPosition="center"
-          className="absolute top-0 left-0 -z-10 opacity-10"
+          className="absolute top-0 left-0 -z-10 opacity-10 object-cover object-center"
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="238.65997314453125 200 522.6800537109375 600.010009765625"
           fill="currentColor"
-          className="absolute top-20 -left-20 text-white opacity-20 -z-10 w-[300px] md:w-[600px] -rotate-15"
+          className="absolute top-20 -left-20 text-white opacity-20 -z-10 w-[250px] md:w-[500px] -rotate-15"
         >
           <path
             d="M240.56,730.64c-1.5,8.64-1.89,19.14-1.89,35.66c0,18.61,15.07,33.71,33.68,33.71H462.1c14.81,0,28.9-0.01,42.24-0.02
@@ -140,7 +141,7 @@ export default function Home() {
       </section>
       <section className="fcol gap-16">
         <h2 className="text-center">Партнеры</h2>
-        <div className="grid grid-cols-2 gap-5 md:flex md:flex-wrap md:justify-center">
+        <div className="gap-5 flex flex-wrap justify-center">
           <Partner src={Tatneft} alt="Tatneft" className="aspect-auto" />
           <Partner src={Baltika} alt="Baltika" className="aspect-auto" />
           <Partner src={HN} alt="H&N" />
