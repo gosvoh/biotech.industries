@@ -1,5 +1,5 @@
 import BiotechTextLogo from "@public/Biotech-Logotype.svg";
-import { ExternalLinkIcon } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,28 +14,24 @@ export default function Footer() {
         />
         <div className="fcol gap-6 md:gap-12 md:row-span-2">
           <Link href="#" className="footer-link">
-            <ExternalLinkIcon className="text-brand" />
+            <ArrowUpRight className="text-brand" />
             Технологии и исследования
           </Link>
           <Link href="#" className="footer-link">
-            <ExternalLinkIcon className="text-brand" />
+            <ArrowUpRight className="text-brand" />
             Консультации для бизнеса
           </Link>
           <Link href="#" className="footer-link">
-            <ExternalLinkIcon className="text-brand" />
+            <ArrowUpRight className="text-brand" />
             Курсы для биотех-специалистов
           </Link>
           <Link href="#" className="footer-link">
-            <ExternalLinkIcon className="text-brand" />
+            <ArrowUpRight className="text-brand" />
             Организация мероприятий
           </Link>
         </div>
-        <div className="fcol gap-6">
-          <p>
-            Санкт-Петербург
-            <br />
-            Ломоносова ул., 9
-          </p>
+        <div className="fcol gap-6 md:flex-col-reverse">
+          <p>Санкт-Петербург, Ломоносова ул., 9</p>
           <Link className="font-bold" href="mailto:biotech@itmo.ru">
             biotech@itmo.ru
           </Link>

@@ -127,5 +127,10 @@
 
   .footer-link {
     @apply inline-flex items-center gap-8 font-bold;
+    @apply md:opacity-60 md:hover:opacity-100 transition-opacity duration-300;
+
+    svg {
+      @apply w-6 h-6 md:w-8 md:h-8;
+    }
   }
 }
