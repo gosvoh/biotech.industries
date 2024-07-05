@@ -21,7 +21,7 @@ const links: {
 }[] = [
   { href: "/#top", text: "О нас" },
   { href: "/#capabilities", text: "Наши возможности" },
-  { href: "/#contacts", text: "Контакты" },
+  { href: "/contacts", text: "Контакты" },
 ];
 
 const MobileMenu = () => (
