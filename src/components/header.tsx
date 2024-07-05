@@ -35,7 +35,7 @@ const MobileMenu = () => (
       <SheetHeader className="fcol gap-20">
         <SheetTitle className="flex flex-row justify-between items-center">
           <Link href="/">
-            <Image src={BiotechTextLogo} alt="Biotech" className="w-[165px]" />
+            <Image src={BiotechTextLogo} alt="Biotech" className="w-32" />
           </Link>
           <SheetClose>
             <X className="w-10 h-10" />
@@ -71,7 +71,7 @@ export default function Header() {
     <header className="w-full py-10 sticky top-0 bg-default z-10">
       <div className="flex flex-row justify-between items-center gap-4 wrapper">
         <Link href="/">
-          <Image src={BiotechTextLogo} alt="Biotech" className="md:w-32" />
+          <Image src={BiotechTextLogo} alt="Biotech" className="w-32" />
         </Link>
         <MobileMenu />
         <DesktopMenu />

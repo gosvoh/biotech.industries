@@ -51,7 +51,7 @@ const TechList = ({
 export default function Technologies() {
   return (
     <main>
-      <section className="fcol gap-16 pt-[290px] md:pt-[231px] relative overflow-hidden max-w-none">
+      <section className="fcol gap-16 pt-[290px] md:pt-[231px] relative overflow-hidden max-w-none px-0">
         <div className="wrapper">
           <div className="fcol gap-8 md:max-w-[75%]">
             <h2>Разработка технологий и проведение научных исследований</h2>
@@ -69,11 +69,11 @@ export default function Technologies() {
         <Image
           src={Star}
           alt=""
-          className="absolute top-10 md:top-1/2 md:-translate-y-1/2 -rotate-[6.06deg] md:-right-32 -z-10 aspect-square h-1/3 md:h-2/5 xl:h-4/5 w-fit"
+          className="absolute left-10 md:left-auto top-10 md:top-1/2 md:-translate-y-1/2 -rotate-[6.06deg] md:-right-32 -z-10 aspect-square h-1/3 md:h-2/5 xl:h-4/5 w-fit"
         />
       </section>
-      <section className="md:bg-secondary md:relative overflow-hidden max-w-none">
-        <div className="fcol gap-16 md:flex-row">
+      <section className="md:bg-secondary md:relative overflow-hidden max-w-none px-0">
+        <div className="fcol gap-16 md:flex-row wrapper">
           <h3 className="relative z-[1] md:flex-1">
             Схема взаимодействия
             <Image
@@ -118,7 +118,7 @@ export default function Technologies() {
           )}
         />
       </section>
-      <section className="border-y-2 border-white max-w-none">
+      <section className="border-y-2 border-white max-w-none px-0">
         <div className="wrapper fcol gap-16 lg:flex-row">
           <div className="fcol gap-16 flex-1">
             <div className="fcol gap-4">
