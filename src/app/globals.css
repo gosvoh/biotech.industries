@@ -69,7 +69,7 @@
       @apply wrapper py-20;
       @apply scroll-mt-10;
 
-      &:first-child {
+      &:first-of-type:not(.index) {
         @apply pt-10;
       }
     }
