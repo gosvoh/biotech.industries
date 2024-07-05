@@ -143,7 +143,7 @@ export default function Technologies() {
                 вместе с Biotech.Industries
               </p>
             </div>
-            <Button className="w-full md:w-fit">Обсудить проект</Button>
+            <Button />
           </div>
           <div className="fcol gap-16 flex-1">
             <div className="fcol gap-8">
@@ -189,7 +189,7 @@ export default function Technologies() {
               вместе с Biotech.Industries
             </p>
           </div>
-          <Button className="w-full md:w-fit">Обсудить проект</Button>
+          <Button />
         </div>
         <TechList
           className="flex-1"

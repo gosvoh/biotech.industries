@@ -27,9 +27,7 @@ export default function Contacts() {
         >
           biotech@itmo.ru
         </Link>
-        <Button className="w-full md:w-fit mt-8 md:mt-0">
-          Обсудить проект
-        </Button>
+        <Button className="mt-8 md:mt-0" />
       </div>
 
       <YandexMap className="w-full aspect-square max-h-[600px] mt-16" />
