@@ -62,7 +62,7 @@ export default function Home() {
                 Создаем инновации в биотех-индустрии
               </p>
             </div>
-            <Button className="w-full md:w-fit">Обсудить проект</Button>
+            <Button />
           </div>
         </div>
         <Image
@@ -141,7 +141,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="#" className="lg:col-span-3">
+          <Link href="/consultations" className="lg:col-span-3">
             <Card
               smallText="02"
               text={
