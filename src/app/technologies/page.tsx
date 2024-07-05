@@ -20,7 +20,7 @@ const Schema = ({
   className?: string;
 }) => (
   <div className={cn("fcol gap-8", className)}>
-    <h4 className={`border-b-2 border-${color} pb-3`}>{title}</h4>
+    <h3 className={`border-b-2 border-${color} pb-3`}>{title}</h3>
     <div role="list">
       {items.map((item, i) => (
         <p className={color} role="listitem" key={`schema-item-${i}`}>
@@ -41,7 +41,7 @@ const TechList = ({
   className?: string;
 }) => (
   <div className={cn("fcol gap-4", className)}>
-    <h4 className="text-brand2">{title}</h4>
+    <h3 className="text-brand2">{title}</h3>
     <ol className="list-disc list-inside fcol gap-4 ml-4">
       {items.map((item, i) => (
         <li key={`tech-item-${i}`}>{item}</li>
@@ -53,7 +53,7 @@ const TechList = ({
 export default function Technologies() {
   return (
     <main>
-      <section className="fcol gap-16 md:pt-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
+      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
         <Breadcrumbs
           items={[
             { title: "Главная", href: "/" },

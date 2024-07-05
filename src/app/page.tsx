@@ -52,7 +52,7 @@ export default function Home() {
     <main>
       <section
         id="top"
-        className="pt-[290px] md:pt-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0"
+        className="pt-[290px] md:py-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0"
       >
         <div className="wrapper">
           <div className="fcol gap-16 ml-auto w-fit">
