@@ -52,14 +52,18 @@ export default function Home() {
     <main>
       <section
         id="top"
-        className="pt-[290px] md:pt-[231px] relative overflow-hidden"
+        className="pt-[290px] md:pt-[231px] relative overflow-hidden max-w-none"
       >
-        <div className="fcol gap-16 ml-auto w-fit">
-          <div className="fcol gap-8 md:w-fit">
-            <h1>Biotech Industries</h1>
-            <p className="md:text-4xl">Создаем инновации в биотех-индустрии</p>
+        <div className="wrapper">
+          <div className="fcol gap-16 ml-auto w-fit">
+            <div className="fcol gap-8 md:w-fit">
+              <h1>Biotech Industries</h1>
+              <p className="md:text-4xl">
+                Создаем инновации в биотех-индустрии
+              </p>
+            </div>
+            <Button className="w-full md:w-fit">Обсудить проект</Button>
           </div>
-          <Button className="w-full md:w-fit">Обсудить проект</Button>
         </div>
         <Image
           src={Glow1}
