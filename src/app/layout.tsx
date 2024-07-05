@@ -16,10 +16,6 @@ export const metadata: Metadata = {
   icons: "favicon.ico",
   metadataBase: new URL("https://biotech.industries.cedne.ru"),
   creator: "Aleksey Vokhmin",
-  authors: [
-    { name: "Aleksey Vokhmin", url: "https://gosvoh.ru" },
-    { name: "Nikita Kozlov" },
-  ],
   openGraph: {
     type: "website",
     locale: "ru_RU",
