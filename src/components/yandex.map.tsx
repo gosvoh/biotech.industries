@@ -4,7 +4,7 @@ import { ReactifiedModule } from "@yandex/ymaps3-types/reactify";
 import { GraduationCap } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 export type ReactifyApi = ReactifiedModule<
@@ -23,7 +23,11 @@ const Map = ({ api }: { api: ReactifyApi | null }) => {
   } = api;
 
   return (
-    <YMap location={{ center: [30.338403, 59.927259], zoom: 17 }}>
+    <YMap
+      location={{ center: [30.338403, 59.927259], zoom: 17 }}
+      behaviors={["drag"]}
+      className="grayscale"
+    >
       <YMapDefaultSchemeLayer />
       <YMapDefaultFeaturesLayer />
       <YMapControls position="left" />
@@ -44,17 +48,21 @@ export default function YandexMap(props: React.HTMLAttributes<HTMLDivElement>) {
   const [reactifyApi, setReactifyApi] = useState<ReactifyApi | null>(null);
   const apiKey = "22d9a99f-e3d7-484c-ba9e-1a4bd5688b70";
 
+  // useEffect(() => () => setReactifyApi(null), []);
+
   return (
     <>
       <Script
         src={`https://api-maps.yandex.ru/v3/?apikey=${apiKey}&lang=ru_RU`}
-        onLoad={async () => {
-          const [ymaps3React] = await Promise.all([
+        onLoad={async () => {}}
+        onReady={() => {
+          Promise.all([
             ymaps3.import("@yandex/ymaps3-reactify"),
             ymaps3.ready,
-          ]);
-          const reactify = ymaps3React.reactify.bindTo(React, ReactDOM);
-          setReactifyApi(reactify.module(ymaps3));
+          ]).then(([ymaps3React]) => {
+            const reactify = ymaps3React.reactify.bindTo(React, ReactDOM);
+            setReactifyApi(reactify.module(ymaps3));
+          });
         }}
       />
       <div {...props}>

@@ -9,10 +9,9 @@ const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
 export default function Contacts() {
   return (
     <section className="fcol gap-8 px-0 max-w-none" id="contacts">
-      <div className="fcol gap-16 lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col wrapper w-full">
-        <h2 className="text-left md:text-4xl xl:text-5xl">Контакты</h2>
-
-        <div className="fcol gap-6 md:text-3xl 2xl:text-4xl">
+      <div className="fcol gap-8 md:gap-16 lg:grid lg:items-center lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col wrapper w-full">
+        <h2 className="text-4xl 3xl:text-5xl">Контакты</h2>
+        <div className="fcol gap-6 text-2xl 3xl:text-4xl">
           <p>
             Санкт-Петербург
             <br />
@@ -23,12 +22,14 @@ export default function Contacts() {
           </Link>
         </div>
         <Link
-          className="font-bold hidden md:block md:text-4xl xl:text-5xl"
+          className="font-bold hidden md:block md:text-4xl 3xl:text-5xl"
           href="mailto:biotech@itmo.ru"
         >
           biotech@itmo.ru
         </Link>
-        <Button className="w-full md:w-fit">Обсудить проект</Button>
+        <Button className="w-full md:w-fit mt-8 md:mt-0">
+          Обсудить проект
+        </Button>
       </div>
 
       <YandexMap className="w-full aspect-square max-h-[600px] mt-16" />

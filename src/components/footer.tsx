@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-secondary">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 text-2xl md:text-3xl wrapper py-20 bg-secondary">
+      <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-16 text-2xl md:text-3xl wrapper py-20 bg-secondary">
         <Image
           src={BiotechTextLogo}
           alt="Biotech"

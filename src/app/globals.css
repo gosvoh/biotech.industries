@@ -62,34 +62,49 @@
     @apply text-balance;
   }
   main {
-    @apply text-2xl md:text-3xl;
+    @apply text-xl md:text-3xl;
 
     & > section {
       @apply wrapper py-20;
       @apply scroll-mt-10;
+
+      &:first-child {
+        @apply pt-10;
+      }
     }
   }
   h1 {
     @apply text-4xl xs:text-5xl md:text-6xl font-bold;
+
+    & + p {
+      @apply text-xl xs:text-2xl md:text-3xl;
+    }
   }
   h2 {
-    @apply text-3xl xs:text-4xl md:text-5xl font-bold;
+    @apply text-2xl xs:text-3xl md:text-5xl font-bold;
   }
   h3 {
-    @apply text-2xl xs:text-3xl md:text-4xl font-bold;
+    @apply text-xl xs:text-2xl md:text-4xl font-bold;
   }
   h4 {
-    @apply text-xl xs:text-2xl md:text-3xl font-bold;
+    @apply text-xl xs:text-2xl md:text-4xl font-bold;
   }
-  div[role="list"] {
+  div[role="list"],
+  ol,
+  ul {
     @apply fcol gap-6;
 
-    & p[role="listitem"] {
-      @apply inline-flex gap-5 text-lg xs:text-xl;
+    li {
+      @apply list-outside ml-4 md:ml-8;
+    }
+
+    p[role="listitem"] {
+      @apply inline-flex gap-5 md:font-bold;
       counter-increment: list-item;
 
       &::before {
         content: "[" counter(list-item, decimal-leading-zero) "]";
+        @apply font-normal;
       }
       &.brand::before {
         @apply text-brand;

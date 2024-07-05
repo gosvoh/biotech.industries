@@ -5,6 +5,8 @@ import Star from "@public/Soft Star.svg";
 import Worm from "@public/Worm.svg";
 import { cn } from "@/lib/utils";
 import Contacts from "@/components/contacts";
+import Breadcrumbs from "@/components/ui/custom/breadcrumbs";
+import Link from "next/link";
 
 const Schema = ({
   color,
@@ -18,7 +20,7 @@ const Schema = ({
   className?: string;
 }) => (
   <div className={cn("fcol gap-8", className)}>
-    <h4 className={`border-b border-${color} pb-3`}>{title}</h4>
+    <h4 className={`border-b-2 border-${color} pb-3`}>{title}</h4>
     <div role="list">
       {items.map((item, i) => (
         <p className={color} role="listitem" key={`schema-item-${i}`}>
@@ -51,10 +53,24 @@ const TechList = ({
 export default function Technologies() {
   return (
     <main>
-      <section className="fcol gap-16 pt-[290px] md:pt-[231px] relative overflow-hidden max-w-none px-0">
-        <div className="wrapper">
-          <div className="fcol gap-8 md:max-w-[75%]">
-            <h2>Разработка технологий и проведение научных исследований</h2>
+      <section className="fcol gap-16 md:pt-[231px] relative overflow-hidden max-w-none px-0">
+        <Breadcrumbs
+          items={[
+            { title: "Главная", href: "/" },
+            { title: "Наши возможности", href: "/#capabilities" },
+            {
+              title: "Разработка технологий и проведение научных исследований",
+            },
+          ]}
+        />
+        <div className="fcol gap-8 wrapper">
+          <Image
+            src={Star}
+            alt=""
+            className="md:absolute top-1/2 right-[10%] -z-10 md:translate-x-1/2 md:-translate-y-1/2 max-w-none -rotate-[6.06deg] aspect-square w-1/3"
+          />
+          <div className="xl:max-w-[70%] fcol gap-8">
+            <h1>Разработка технологий и проведение научных исследований</h1>
             <p>
               Наша команда биотехнологов разработает законченное решение по
               вашему запросу
@@ -66,22 +82,17 @@ export default function Technologies() {
           alt=""
           className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
         />
-        <Image
-          src={Star}
-          alt=""
-          className="absolute left-10 md:left-auto top-10 md:top-1/2 md:-translate-y-1/2 -rotate-[6.06deg] md:-right-32 -z-10 aspect-square h-1/3 md:h-2/5 xl:h-4/5 w-fit"
-        />
       </section>
       <section className="md:bg-secondary md:relative overflow-hidden max-w-none px-0">
-        <div className="fcol gap-16 md:flex-row wrapper">
-          <h3 className="relative z-[1] md:flex-1">
+        <div className="fcol gap-16 xl:flex-row wrapper">
+          <h2 className="relative z-[1] md:flex-1">
             Схема взаимодействия
             <Image
               src={Worm}
               alt=""
               className="absolute top-0 -right-16 -z-10 h-full w-fit md:hidden"
             />
-          </h3>
+          </h2>
           <div className="fcol gap-16 md:flex-1">
             <Schema
               color="brand2"
@@ -119,15 +130,17 @@ export default function Technologies() {
         />
       </section>
       <section className="border-y-2 border-white max-w-none px-0">
-        <div className="wrapper fcol gap-16 lg:flex-row">
-          <div className="fcol gap-16 flex-1">
+        <div className="wrapper fcol gap-16 xl:flex-row">
+          <div className="fcol gap-8 md:gap-16 flex-1">
             <div className="fcol gap-4">
-              <h3>Разработанные технологии</h3>
+              <h2>Разработанные технологии</h2>
               <p>
                 Если задача заключается в решении какой-либо проблемы,
-                рекомендуем провести{" "}
-                <span className="text-brand2">хакатон</span> вместе с
-                Biotech.Industries
+                рекомендуем провести {/* TODO ссылка на ОРГ МЕР - Хакатон */}
+                <Link href="#" className="text-brand2">
+                  хакатон
+                </Link>{" "}
+                вместе с Biotech.Industries
               </p>
             </div>
             <Button className="w-full md:w-fit">Обсудить проект</Button>
@@ -163,14 +176,17 @@ export default function Technologies() {
           </div>
         </div>
       </section>
-      <section className="fcol gap-16 lg:flex-row">
-        <div className="fcol gap-16 flex-1">
+      <section className="fcol gap-16 xl:flex-row">
+        <div className="fcol gap-8 md:gap-16 flex-1">
           <div className="fcol gap-4">
-            <h3>Проведенные исследования</h3>
+            <h2>Проведенные исследования</h2>
             <p>
               Если задача заключается в решении какой-либо проблемы, рекомендуем
-              провести <span className="text-brand2">хакатон</span> вместе с
-              Biotech.Industries
+              провести{" "}
+              <Link href="#" className="text-brand2">
+                хакатон
+              </Link>{" "}
+              вместе с Biotech.Industries
             </p>
           </div>
           <Button className="w-full md:w-fit">Обсудить проект</Button>

@@ -21,6 +21,7 @@ const config = {
       screens: {
         xs: "430px",
         "2xl": "1400px",
+        "3xl": "1600px",
       },
       backgroundColor: {
         default: "hsl(var(--primary-background))",
