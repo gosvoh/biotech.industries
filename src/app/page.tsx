@@ -153,7 +153,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="#" className="lg:col-span-3">
+          <Link href="/education" className="lg:col-span-3">
             <Card
               smallText="03"
               text={
