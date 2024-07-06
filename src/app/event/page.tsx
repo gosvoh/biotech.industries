@@ -11,21 +11,56 @@ import Link from "next/link";
 import Glow2 from "@public/glow 2.png";
 import { ExternalLink } from "lucide-react";
 import Carousel from "@/components/carousel";
+import { Schema } from "@/components/Schema";
 
-const PlusListItem = ({
-  title,
-  description,
+const PlusList = ({
+  items,
 }: {
-  title: string;
-  description: string;
+  items: {
+    title: string;
+    description: string;
+  }[];
 }) => (
-  <div role="listitem" className="flex flex-row items-start">
-    <PlusSquareFilled className="text-brand text-[42px] md:text-[78px]" />
-    <div className="fcol gap-[10px] bg-secondary md:bg-transparent px-6 py-5 md:pt-0">
-      <h4>{title}</h4>
-      <p className="text-base md:text-2xl">{description}</p>
-    </div>
+  <div role="list" className="fcol gap-5">
+    {items.map((item, i) => (
+      <div
+        role="listitem"
+        className="flex flex-row items-start"
+        key={`plus-list-item-${i}`}
+      >
+        <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" />
+        <div className="fcol gap-[10px] bg-secondary md:bg-transparent px-6 py-5 md:pt-0">
+          <h4>{item.title}</h4>
+          <p className="text-base md:text-2xl">{item.description}</p>
+        </div>
+      </div>
+    ))}
   </div>
+);
+
+const EventList = ({
+  items,
+}: {
+  items: {
+    href: React.ComponentProps<typeof Link>["href"];
+    linkTitle: string;
+    description: string;
+  }[];
+}) => (
+  <ul className="list-disc list-inside fcol gap-4 ml-4">
+    {items.map((item, i) => (
+      <li key={`event-item-${i}`}>
+        <Link
+          target="_blank"
+          href={item.href}
+          className="text-brand2 underline"
+        >
+          {item.linkTitle}
+        </Link>{" "}
+        {item.description}
+      </li>
+    ))}
+  </ul>
 );
 
 export default function Event() {
@@ -76,20 +111,24 @@ export default function Event() {
           </div>
           <div className="fcol gap-6 flex-1">
             <h3>Плюсы</h3>
-            <div role="list" className="fcol gap-5">
-              <PlusListItem
-                title="Нестандартный подход"
-                description="Молодые специалисты помогут найти инновационные идеи для технологий и продуктов"
-              />
-              <PlusListItem
-                title="Динамичный формат"
-                description="Традиционно марафон идей длится до 2-х недель "
-              />
-              <PlusListItem
-                title="Реализация идеи"
-                description="Выбранная вами идея может быть передана в разработку команде Biotech.Industries"
-              />
-            </div>
+            <PlusList
+              items={[
+                {
+                  title: "Нестандартный подход",
+                  description:
+                    "Молодые специалисты помогут найти инновационные идеи для технологий и продуктов",
+                },
+                {
+                  title: "Динамичный формат",
+                  description: "Традиционно марафон идей длится до 2-х недель ",
+                },
+                {
+                  title: "Реализация идеи",
+                  description:
+                    "Выбранная вами идея может быть передана в разработку команде Biotech.Industries",
+                },
+              ]}
+            />
           </div>
         </section>
 
@@ -101,18 +140,15 @@ export default function Event() {
                 Команда Biotech.Industries организует марафон идей под ключ
               </p>
             </div>
-            <div role="list" className="text-lg md:text-3xl z-[1]">
-              <p className="brand2" role="listitem">
-                Обсуждение запроса и формирование кейсов
-              </p>
-              <p className="brand2" role="listitem">
-                Определение формата проведения
-              </p>
-              <p className="brand2" role="listitem">
-                Подготовка и проведение марафона идей командой
-                Biotech.Industries
-              </p>
-            </div>
+            <Schema
+              color="brand2"
+              className="text-lg md:text-3xl z-[1]"
+              items={[
+                "Обсуждение запроса и формирование кейсов",
+                "Определение формата проведения",
+                "Подготовка и проведение марафона идей командой Biotech.Industries",
+              ]}
+            />
           </div>
           <Image
             src={Worm}
@@ -124,29 +160,26 @@ export default function Event() {
           />
         </section>
 
-        <div className="fcol gap-8 md:flex-row md:justify-between wrapper">
+        <div className="fcol gap-8 xl:flex-row md:justify-between wrapper">
           <section className="fcol gap-4 w-fit">
             <h3 className="text-3xl md:text-4xl">Стоимость</h3>
             <p className="text-brand font-bold text-2xl md:text-6xl">
-              от <span className="text-6xl">300</span> тыс. руб.
+              от <span className="text-4xl xs:text-6xl">300</span> тыс. руб.
             </p>
             <p className="self-end">Призовой фонд включен</p>
             <Button className="hidden md:block mt-16" />
           </section>
           <section className="fcol gap-8 flex-1 md:max-w-[40%]">
             <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
-            <ul className="list-disc list-inside fcol gap-4 ml-4">
-              <li>
-                <Link
-                  target="_blank"
-                  href="https://vk.com/wall-203191795_629"
-                  className="text-brand2 underline"
-                >
-                  Марафон идей
-                </Link>{" "}
-                от компании VIOLA
-              </li>
-            </ul>
+            <EventList
+              items={[
+                {
+                  href: "https://vk.com/wall-203191795_629",
+                  linkTitle: "Марафон идей",
+                  description: "от компании VIOLA",
+                },
+              ]}
+            />
             <Button className="mt-8 md:hidden" />
           </section>
         </div>
@@ -171,20 +204,25 @@ export default function Event() {
           </div>
           <div className="fcol gap-6 flex-1">
             <h3>Плюсы</h3>
-            <div role="list" className="fcol gap-5">
-              <PlusListItem
-                title="Решение технической задачи"
-                description="Комплексный подход молодых ученых по решению задачи и разработке MVP продукта"
-              />
-              <PlusListItem
-                title="Привлечение новых сотрудников"
-                description="Самые талантливые ученые могут стать частью вашей компании"
-              />
-              <PlusListItem
-                title="Повышение узнаваемости компании"
-                description="Формирование образа инновационной и динамично развивающейся компании"
-              />
-            </div>
+            <PlusList
+              items={[
+                {
+                  title: "Решение технической задачи",
+                  description:
+                    "Комплексный подход молодых ученых по решению задачи и разработке MVP продукта",
+                },
+                {
+                  title: "Привлечение новых сотрудников",
+                  description:
+                    "Самые талантливые ученые могут стать частью вашей компании",
+                },
+                {
+                  title: "Повышение узнаваемости компании",
+                  description:
+                    "Формирование образа инновационной и динамично развивающейся компании",
+                },
+              ]}
+            />
           </div>
         </section>
 
@@ -196,21 +234,16 @@ export default function Event() {
                 Команда BioTech.Industries организует хакатон под ключ
               </p>
             </div>
-            <div role="list" className="text-lg md:text-3xl z-[1]">
-              <p className="brand2" role="listitem">
-                Обсуждение запроса и формулирование задачи
-              </p>
-              <p className="brand2" role="listitem">
-                Определение формата проведения
-              </p>
-              <p className="brand2" role="listitem">
-                Подготовка и проведение хакатона командой Biotech.Industries
-              </p>
-              <p className="brand2" role="listitem">
-                Презентация новых идей, технологий и продуктов, готовых к
-                внедрению
-              </p>
-            </div>
+            <Schema
+              color="brand2"
+              className="text-lg md:text-3xl z-[1]"
+              items={[
+                "Обсуждение запроса и формулирование задачи",
+                "Определение формата проведения",
+                "Подготовка и проведение хакатона командой Biotech.Industries",
+                "Презентация новых идей, технологий и продуктов, готовых к внедрению",
+              ]}
+            />
           </div>
           <Image
             src={Worm}
@@ -226,55 +259,37 @@ export default function Event() {
           <section className="fcol gap-4 w-fit md:max-w-[50%]">
             <h3 className="text-3xl md:text-4xl">Стоимость</h3>
             <p className="text-brand font-bold text-2xl md:text-6xl">
-              от <span className="text-6xl">500</span> тыс. руб.
+              от <span className="text-4xl xs:text-6xl">500</span> тыс. руб.
             </p>
             <p className="self-end">Призовой фонд включен</p>
             <Button className="hidden md:block mt-16" />
           </section>
           <section className="fcol gap-8 flex-1 md:max-w-[40%]">
             <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
-            <ul className="list-disc list-inside fcol gap-4 ml-4">
-              <li>
-                <Link
-                  target="_blank"
-                  href="https://vk.com/wall-203191795_1315"
-                  className="text-brand2 underline"
-                >
-                  Хакатон
-                </Link>{" "}
-                "Балтийский берег"
-              </li>
-              <li>
-                <Link
-                  target="_blank"
-                  href="https://vk.com/wall-203191795_272"
-                  className="text-brand2 underline"
-                >
-                  БиоХакатон
-                </Link>{" "}
-                by САДЫ ПЛЕСКАВЫ
-              </li>
-              <li>
-                <Link
-                  target="_blank"
-                  href="https://vk.com/wall-203191795_487"
-                  className="text-brand2 underline"
-                >
-                  Хакатон
-                </Link>{" "}
-                "Продажа крафтовых напитков" by САДЫ ПЛЕСКАВЫ
-              </li>
-              <li>
-                <Link
-                  target="_blank"
-                  href="https://vk.com/wall-203191795_899"
-                  className="text-brand2 underline"
-                >
-                  Хакатон
-                </Link>{" "}
-                от компании INARCTICA by BioTech ITMO
-              </li>
-            </ul>
+            <EventList
+              items={[
+                {
+                  href: "https://vk.com/wall-203191795_1315",
+                  linkTitle: "Хакатон",
+                  description: '"Балтийский берег"',
+                },
+                {
+                  href: "https://vk.com/wall-203191795_272",
+                  linkTitle: "БиоХакатон",
+                  description: "by САДЫ ПЛЕСКАВЫ",
+                },
+                {
+                  href: "https://vk.com/wall-203191795_487",
+                  linkTitle: "Хакатон",
+                  description: '"Продажа крафтовых напитков" by САДЫ ПЛЕСКАВЫ',
+                },
+                {
+                  href: "https://vk.com/wall-203191795_899",
+                  linkTitle: "Хакатон",
+                  description: "от компании INARCTICA by BioTech ITMO",
+                },
+              ]}
+            />
             <Button className="mt-8 md:hidden" />
           </section>
         </div>

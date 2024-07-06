@@ -19,8 +19,8 @@ import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
 const CarouselImage = ({ src }: { src: StaticImageData }) => (
-  <CarouselItem className="basis-[80%] xl:basis-1/2 2xl:basis-1/3">
-    <Image src={src} alt="" />
+  <CarouselItem className="basis-[80%] md:basis-3/4 xl:basis-2/3 aspect-square md:aspect-auto max-h-[720px] min-h-350px">
+    <Image src={src} alt="" className="h-full object-cover" />
   </CarouselItem>
 );
 
@@ -50,10 +50,10 @@ export default function Carousel() {
       opts={{
         loop: true,
       }}
-      className="w-full fcol gap-8"
+      className="w-full h-full fcol gap-8"
       setApi={setApi}
     >
-      <CarouselContent>
+      <CarouselContent className="flex-1">
         <CarouselImage src={Biocon1} />
         <CarouselImage src={Biocon2} />
         <CarouselImage src={Biocon3} />
