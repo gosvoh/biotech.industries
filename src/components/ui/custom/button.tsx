@@ -66,6 +66,7 @@ const TextArea = React.forwardRef<
     />
   );
 });
+TextArea.displayName = "TextArea";
 
 const Checkbox = ({
   checked,
