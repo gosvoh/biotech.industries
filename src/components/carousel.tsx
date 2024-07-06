@@ -7,13 +7,20 @@ import {
   Carousel as EmblaCarousel,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
+import Biocon1 from "@public/biocon1.png";
+import Biocon2 from "@public/biocon2.png";
+import Biocon3 from "@public/biocon3.png";
+import Biocon4 from "@public/biocon4.png";
+import Biocon5 from "@public/biocon5.png";
+import Biocon6 from "@public/biocon6.png";
+import Biocon7 from "@public/biocon7.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 
-const CarouselImage = ({ src }: { src: string | StaticImageData }) => (
+const CarouselImage = ({ src }: { src: StaticImageData }) => (
   <CarouselItem className="basis-[80%] xl:basis-1/2 2xl:basis-1/3">
-    <Image src={src} alt="" width={2000} height={1330} />
+    <Image src={src} alt="" />
   </CarouselItem>
 );
 
@@ -47,12 +54,13 @@ export default function Carousel() {
       setApi={setApi}
     >
       <CarouselContent>
-        {Array.from({ length: 7 }).map((_, i) => (
-          <CarouselImage
-            key={`carousel-image-${i}`}
-            src={`/biocon${i + 1}.png`}
-          />
-        ))}
+        <CarouselImage src={Biocon1} />
+        <CarouselImage src={Biocon2} />
+        <CarouselImage src={Biocon3} />
+        <CarouselImage src={Biocon4} />
+        <CarouselImage src={Biocon5} />
+        <CarouselImage src={Biocon6} />
+        <CarouselImage src={Biocon7} />
       </CarouselContent>
       <div className="hidden md:flex flex-row gap-16 items-center justify-center">
         <div
