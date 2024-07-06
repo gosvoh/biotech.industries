@@ -165,7 +165,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="#" className="lg:col-span-5">
+          <Link href="/event" className="lg:col-span-5">
             <Card
               smallText="04"
               text={

@@ -42,11 +42,11 @@ const TechList = ({
 }) => (
   <div className={cn("fcol gap-4", className)}>
     <h3 className="text-brand2">{title}</h3>
-    <ol className="list-disc list-inside fcol gap-4 ml-4">
+    <ul className="list-disc list-inside fcol gap-4 ml-4">
       {items.map((item, i) => (
         <li key={`tech-item-${i}`}>{item}</li>
       ))}
-    </ol>
+    </ul>
   </div>
 );
 
@@ -136,8 +136,8 @@ export default function Technologies() {
               <h2>Разработанные технологии</h2>
               <p>
                 Если задача заключается в решении какой-либо проблемы,
-                рекомендуем провести {/* TODO ссылка на ОРГ МЕР - Хакатон */}
-                <Link href="#" className="text-brand2">
+                рекомендуем провести{" "}
+                <Link href="/event#hack" className="text-brand2">
                   хакатон
                 </Link>{" "}
                 вместе с Biotech.Industries
@@ -183,7 +183,7 @@ export default function Technologies() {
             <p>
               Если задача заключается в решении какой-либо проблемы, рекомендуем
               провести{" "}
-              <Link href="#" className="text-brand2">
+              <Link href="/event#hack" className="text-brand2">
                 хакатон
               </Link>{" "}
               вместе с Biotech.Industries

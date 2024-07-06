@@ -13,19 +13,19 @@ export default function Footer() {
           className="w-[165px] md:w-[400px]"
         />
         <div className="fcol gap-6 md:gap-12 md:row-span-2">
-          <Link href="#" className="footer-link">
+          <Link href="/technologies" className="footer-link">
             <ArrowUpRight className="text-brand" />
             Технологии и исследования
           </Link>
-          <Link href="#" className="footer-link">
+          <Link href="/consultations" className="footer-link">
             <ArrowUpRight className="text-brand" />
             Консультации для бизнеса
           </Link>
-          <Link href="#" className="footer-link">
+          <Link href="/education" className="footer-link">
             <ArrowUpRight className="text-brand" />
             Курсы для биотех-специалистов
           </Link>
-          <Link href="#" className="footer-link">
+          <Link href="/event" className="footer-link">
             <ArrowUpRight className="text-brand" />
             Организация мероприятий
           </Link>

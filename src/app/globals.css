@@ -67,12 +67,14 @@
 
     & > section {
       @apply wrapper py-20;
-      @apply scroll-mt-10;
 
       &:first-of-type:not(.index) {
         @apply pt-10;
       }
     }
+  }
+  section {
+    @apply scroll-mt-10;
   }
   h1 {
     @apply text-3xl xs:text-4xl md:text-5xl xl:text-6xl font-bold;
@@ -87,10 +89,13 @@
   h3 {
     @apply text-xl xs:text-2xl md:text-4xl font-bold;
   }
+  h4 {
+    @apply text-lg xs:text-xl md:text-3xl font-bold;
+  }
   div[role="list"],
   ol,
   ul {
-    @apply fcol gap-6;
+    @apply fcol gap-6 md:gap-10;
 
     li {
       @apply list-outside ml-4 md:ml-8;

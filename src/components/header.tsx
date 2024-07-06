@@ -46,7 +46,9 @@ const MobileMenu = () => (
           <nav className="flex flex-col gap-8 items-start">
             {links.map(({ href, text }, i) => (
               <SheetClose asChild key={`link-${i}`}>
-                <Link href={href}>{text}</Link>
+                <Link className="text-left" href={href}>
+                  {text}
+                </Link>
               </SheetClose>
             ))}
           </nav>
