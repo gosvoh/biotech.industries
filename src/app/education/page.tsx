@@ -9,7 +9,6 @@ import Link from "next/link";
 import Contacts from "@/components/contacts";
 import Bookmark from "@public/Bookmark.svg";
 import BookmarkGlowMobile from "@public/BookmarkGlowMobile.svg";
-import BookmarkGlow from "@public/BookmarkGlow.png";
 
 const CourseCard = ({
   title,
