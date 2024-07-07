@@ -7,13 +7,13 @@ import {
   Carousel as EmblaCarousel,
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import Biocon1 from "@public/biocon1.png";
-import Biocon2 from "@public/biocon2.png";
-import Biocon3 from "@public/biocon3.png";
-import Biocon4 from "@public/biocon4.png";
-import Biocon5 from "@public/biocon5.png";
-import Biocon6 from "@public/biocon6.png";
-import Biocon7 from "@public/biocon7.png";
+import Biocon2 from "@public/biocon/biocon2.png";
+import Biocon1 from "@public/biocon/biocon1.png";
+import Biocon3 from "@public/biocon/biocon3.png";
+import Biocon4 from "@public/biocon/biocon4.png";
+import Biocon5 from "@public/biocon/biocon5.png";
+import Biocon6 from "@public/biocon/biocon6.png";
+import Biocon7 from "@public/biocon/biocon7.png";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";

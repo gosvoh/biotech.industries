@@ -72,8 +72,8 @@ const PriceAndEvents = ({
   <div className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
     <section className="fcol gap-4 w-fit xl:max-w-[50%]">
       <h3 className="text-3xl md:text-4xl">Стоимость</h3>
-      <p className="text-brand font-bold text-2xl md:text-5xl">
-        от <span className="text-4xl xs:text-5xl">{price}</span> тыс. руб.
+      <p className="price">
+        от <span>{price}</span> тыс. руб.
       </p>
       <p className="self-end">Призовой фонд включен</p>
       <Button className="hidden md:block mt-16" />

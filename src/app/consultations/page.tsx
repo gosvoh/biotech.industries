@@ -1,35 +1,13 @@
 import Star from "@public/Star.svg";
-import Image, { StaticImageData } from "next/image";
-import Meledina from "@public/Meledina.png";
-import Eremeeva from "@public/Eremeeva.png";
-import Ivanova from "@public/Ivanova.png";
-import Hanturgaev from "@public/Hanturgaev.png";
-import Fedorov from "@public/Fedorov.png";
-import Ishevsky from "@public/Ishevsky.png";
+import Meledina from "@public/humans/Meledina.png";
+import Eremeeva from "@public/humans/Eremeeva.png";
+import Ivanova from "@public/humans/Ivanova.png";
+import Hanturgaev from "@public/humans/Hanturgaev.png";
+import Fedorov from "@public/humans/Fedorov.png";
+import Ishevsky from "@public/humans/Ishevsky.png";
 import Contacts from "@/components/contacts";
 import FirstSection from "@/components/first.section";
-
-const Expert = ({
-  image,
-  name,
-  desc,
-}: {
-  image: StaticImageData;
-  name: string;
-  desc: React.ReactNode;
-}) => (
-  <div className="fcol xl:flex-row gap-4 md:gap-32 3xl:gap-[230px] xl:items-center">
-    <Image
-      src={image}
-      alt={name}
-      className="w-1/2 h-fit aspect-square max-w-[405px]"
-    />
-    <div className="fcol gap-[inherit] md:gap-8">
-      <h3 className="text-brand2">{name}</h3>
-      <p>{desc}</p>
-    </div>
-  </div>
-);
+import { HumanCard } from "@/components/human.card";
 
 export default function Consultations() {
   return (
@@ -47,12 +25,12 @@ export default function Consultations() {
         ]}
       />
       <section className="fcol gap-20 wrapper">
-        <Expert
+        <HumanCard
           image={Meledina}
           name="Т.В. Меледина"
           desc={<>Эксперт в области биотехнологии дрожжей, солода и пива</>}
         />
-        <Expert
+        <HumanCard
           image={Eremeeva}
           name="Н.Б. Еремеева"
           desc={
@@ -65,7 +43,7 @@ export default function Consultations() {
             </>
           }
         />
-        <Expert
+        <HumanCard
           image={Ivanova}
           name="В.А. Иванова"
           desc={
@@ -76,7 +54,7 @@ export default function Consultations() {
             </>
           }
         />
-        <Expert
+        <HumanCard
           image={Hanturgaev}
           name="А.Г. Хантургаев"
           desc={
@@ -88,7 +66,7 @@ export default function Consultations() {
             </>
           }
         />
-        <Expert
+        <HumanCard
           image={Fedorov}
           name="А.В. Федоров"
           desc={
@@ -99,7 +77,7 @@ export default function Consultations() {
             </>
           }
         />
-        <Expert
+        <HumanCard
           image={Ishevsky}
           name="А.Л. Ишевский"
           desc={

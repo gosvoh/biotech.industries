@@ -13,9 +13,11 @@ import FirstSection from "@/components/first.section";
 const CourseCard = ({
   title,
   date,
+  format,
 }: {
   title: React.ReactNode;
   date: string;
+  format: "Дистанционный" | "Очно-заочный";
 }) => (
   <div
     className={cn(
@@ -35,7 +37,7 @@ const CourseCard = ({
     <div className="fcol md:flex-row gap-3 z-[1] md:gap-8 lg:gap-24 xl:gap-[180px]">
       <div className="fcol gap-1 md:gap-2">
         <p className="text-base md:text-2xl">Формат проведения</p>
-        <p className="font-bold text-xl md:text-3xl">Дистанционный</p>
+        <p className="font-bold text-xl md:text-3xl">{format}</p>
       </div>
       <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
         <ArrowUpRight className="text-brand2 w-8 h-8" />
@@ -51,8 +53,8 @@ const CourseCard = ({
       src={Lines}
       alt=""
       className={cn(
-        "hidden xl:block absolute translate-x-1/3 -translate-y-1/2 right-10 top-1/2 h-[500%] max-h-none max-w-none opacity-50",
-        "group-hover:opacity-100 transition-all duration-300"
+        "hidden xl:block absolute translate-x-1/3 -translate-y-1/2 right-10 top-1/2 h-[250%] max-h-none max-w-none opacity-50",
+        "group-hover:opacity-100 transition-all duration-300 object-cover"
       )}
     />
   </div>
@@ -79,7 +81,7 @@ export default function Education() {
           <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Предстоящие курсы
           </h3>
-          <Link href="#">
+          <Link href="/education/course1">
             <CourseCard
               title={
                 <>
@@ -88,6 +90,7 @@ export default function Education() {
                 </>
               }
               date="16 сентября - 21 октября"
+              format="Дистанционный"
             />
           </Link>
         </div>
@@ -95,7 +98,7 @@ export default function Education() {
           <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Архивные курсы
           </h3>
-          <Link href="#">
+          <Link href="/education/course2">
             <CourseCard
               title={
                 <>
@@ -105,6 +108,7 @@ export default function Education() {
                 </>
               }
               date="Архивный курс"
+              format="Очно-заочный"
             />
           </Link>
         </div>
