@@ -57,7 +57,7 @@ export default function Home() {
           <div className="fcol gap-16 ml-auto w-fit">
             <div className="fcol gap-8 md:w-fit">
               <h1>Biotech Industries</h1>
-              <p className="md:text-4xl">
+              <p className="xl:text-4xl">
                 Создаем инновации в биотех-индустрии
               </p>
             </div>
