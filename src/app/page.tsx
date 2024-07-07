@@ -3,7 +3,6 @@ import Button from "@/components/ui/custom/button";
 import Card from "@/components/ui/custom/card";
 import InformCard from "@/components/ui/custom/inform.card";
 import Link from "next/link";
-import Noise from "@public/noise.png";
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import Tatneft from "@public/tatneft.svg";
@@ -75,17 +74,11 @@ export default function Home() {
           alt=""
           className="absolute bottom-0 -left-1/4 -z-10 -translate-x-1/2 translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full opacity-60 md:opacity-100"
         />
-        <Image
-          src={Noise}
-          alt=""
-          fill
-          className="absolute top-0 left-0 -z-10 opacity-10 object-cover object-center hidden md:block"
-        />
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="238.65997314453125 200 522.6800537109375 600.010009765625"
           fill="currentColor"
-          className="absolute top-20 -left-20 text-white opacity-20 -z-10 w-[250px] md:w-[500px] -rotate-15"
+          className="absolute top-20 -left-10 text-white opacity-20 -z-10 w-[250px] md:w-[500px] -rotate-15"
         >
           <path
             d="M240.56,730.64c-1.5,8.64-1.89,19.14-1.89,35.66c0,18.61,15.07,33.71,33.68,33.71H462.1c14.81,0,28.9-0.01,42.24-0.02
@@ -129,7 +122,7 @@ export default function Home() {
       <section id="capabilities" className="fcol gap-16">
         <h2 className="text-center">Наши возможности</h2>
         <div className="fcol gap-10 md:gap-5 lg:grid lg:grid-cols-8 lg:grid-rows-2">
-          <Link href="/technologies" className="lg:col-span-5">
+          <Link href="/technologies" className="lg:col-span-4 3xl:col-span-5">
             <Card
               smallText="01"
               text={
@@ -141,7 +134,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="/consultations" className="lg:col-span-3">
+          <Link href="/consultations" className="lg:col-span-4 3xl:col-span-3">
             <Card
               smallText="02"
               text={
@@ -153,7 +146,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="/education" className="lg:col-span-3">
+          <Link href="/education" className="lg:col-span-4 3xl:col-span-3">
             <Card
               smallText="03"
               text={
@@ -165,7 +158,7 @@ export default function Home() {
               }
             />
           </Link>
-          <Link href="/event" className="lg:col-span-5">
+          <Link href="/event" className="lg:col-span-4 3xl:col-span-5">
             <Card
               smallText="04"
               text={

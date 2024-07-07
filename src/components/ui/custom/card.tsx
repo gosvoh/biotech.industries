@@ -25,9 +25,7 @@ export default function Card({
       )}
     >
       <p className={cn("text-3xl", styles?.smallText)}>[{smallText}]</p>
-      <p className={cn("text-3xl 2xl:text-4xl font-bold", styles?.text)}>
-        {text}
-      </p>
+      <p className={cn("text-3xl font-bold", styles?.text)}>{text}</p>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import Link from "next/link";
 import Contacts from "@/components/contacts";
 import Bookmark from "@public/Bookmark.svg";
 import BookmarkGlowMobile from "@public/BookmarkGlowMobile.svg";
+import FirstSection from "@/components/first.section";
 
 const CourseCard = ({
   title,
@@ -31,12 +32,12 @@ const CourseCard = ({
       </p>
       <h3>{title}</h3>
     </div>
-    <div className="fcol md:flex-row gap-3 z-[1] md:gap-[180px]">
+    <div className="fcol md:flex-row gap-3 z-[1] md:gap-8 lg:gap-24 xl:gap-[180px]">
       <div className="fcol gap-1 md:gap-2">
         <p className="text-base md:text-2xl">Формат проведения</p>
         <p className="font-bold text-xl md:text-3xl">Дистанционный</p>
       </div>
-      <div className="inline-flex items-center gap-8 font-bold text-lg md:text-2xl">
+      <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
         <ArrowUpRight className="text-brand2 w-8 h-8" />
         {date}
       </div>
@@ -52,52 +53,49 @@ const CourseCard = ({
 export default function Education() {
   return (
     <main>
-      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
-        <Breadcrumbs
-          items={[
-            { title: "Главная", href: "/" },
-            { title: "Наши возможности", href: "/#capabilities" },
-            {
-              title: "Курсы для биотех-специалистов",
-            },
-          ]}
-        />
-        <div className="fcol gap-8 wrapper">
-          <Image
-            src={Lightning}
-            alt=""
-            className="md:absolute top-1/2 right-[10%] -z-10 md:translate-x-1/2 md:-translate-y-1/2 max-w-none md:max-h-[75%] rotate-[12.17deg] aspect-square w-1/3"
-          />
-          <div className="xl:max-w-[70%] fcol gap-8">
-            <h1>Курсы для биотех-специалистов</h1>
-            <p>
-              Наша команда не только разрабатывает технологии и проводит
-              исследования, но и делится знаниями
-            </p>
-          </div>
-        </div>
-        <Image
-          src={Glow1}
-          alt=""
-          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
-        />
-      </section>
+      <FirstSection
+        image={Lightning}
+        title="Курсы для биотех-специалистов"
+        subtitle="Наша команда не только разрабатывает технологии и проводит исследования, но и делится знаниями"
+        breadcrumbs={[
+          { title: "Главная", href: "/" },
+          { title: "Наши возможности", href: "/#capabilities" },
+          {
+            title: "Курсы для биотех-специалистов",
+          },
+        ]}
+      />
       <section className="fcol gap-16">
         <h2>Наши курсы</h2>
         <div className="fcol gap-8">
-          <h3 className="border-b-2 border-brand2 pb-3">Предстоящие курсы</h3>
+          <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
+            Предстоящие курсы
+          </h3>
           <Link href="#">
             <CourseCard
-              title="Светлое лагерное пиво: сырьё, технология, качество"
+              title={
+                <>
+                  Светлое лагерное пиво: <br className="hidden md:inline" />
+                  сырьё, технология, качество
+                </>
+              }
               date="16 сентября - 21 октября"
             />
           </Link>
         </div>
         <div className="fcol gap-8">
-          <h3 className="border-b-2 border-brand2 pb-3">Архивные курсы</h3>
+          <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
+            Архивные курсы
+          </h3>
           <Link href="#">
             <CourseCard
-              title="Технологические аспекты использования дрожжей в пивоварении"
+              title={
+                <>
+                  Технологические аспекты использования{" "}
+                  <br className="hidden md:inline" />
+                  дрожжей в пивоварении
+                </>
+              }
               date="Архивный курс"
             />
           </Link>
@@ -134,7 +132,7 @@ export default function Education() {
               )}
             />
           </div>
-          <div className="fcol gap-8 basis-1/2">
+          <div className="fcol gap-8 basis-1/2 2xl:p-8">
             <h2 className="text-5xl">Не нашли нужный курс?</h2>
             <p className="text-3xl">
               Biotech.Industries создаст и проведет обучающий курс специально

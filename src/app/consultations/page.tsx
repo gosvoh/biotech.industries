@@ -1,5 +1,3 @@
-import Breadcrumbs from "@/components/ui/custom/breadcrumbs";
-import Glow1 from "@public/glow 1.png";
 import Star from "@public/Star.svg";
 import Image, { StaticImageData } from "next/image";
 import Meledina from "@public/Meledina.png";
@@ -9,6 +7,7 @@ import Hanturgaev from "@public/Hanturgaev.png";
 import Fedorov from "@public/Fedorov.png";
 import Ishevsky from "@public/Ishevsky.png";
 import Contacts from "@/components/contacts";
+import FirstSection from "@/components/first.section";
 
 const Expert = ({
   image,
@@ -19,13 +18,13 @@ const Expert = ({
   name: string;
   desc: React.ReactNode;
 }) => (
-  <div className="fcol xl:flex-row gap-6 md:gap-32 3xl:gap-[230px] xl:items-center">
+  <div className="fcol xl:flex-row gap-4 md:gap-32 3xl:gap-[230px] xl:items-center">
     <Image
       src={image}
       alt={name}
       className="w-1/2 h-fit aspect-square max-w-[405px]"
     />
-    <div className="fcol gap-6 md:gap-8">
+    <div className="fcol gap-[inherit] md:gap-8">
       <h3 className="text-brand2">{name}</h3>
       <p>{desc}</p>
     </div>
@@ -35,41 +34,19 @@ const Expert = ({
 export default function Consultations() {
   return (
     <main>
-      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
-        <Breadcrumbs
-          items={[
-            { title: "Главная", href: "/" },
-            { title: "Наши возможности", href: "/#capabilities" },
-            {
-              title: "Консультации для бизнеса",
-            },
-          ]}
-        />
-        <div className="fcol gap-8 wrapper">
-          <Image
-            src={Star}
-            alt=""
-            className="md:absolute top-1/2 right-[10%] -z-10 md:translate-x-1/2 md:-translate-y-1/2 max-w-none rotate-[9.09deg] aspect-square w-1/3"
-          />
-          <div className="xl:max-w-[70%] fcol gap-8">
-            <h1>Консультации для бизнеса</h1>
-            <p>
-              Не можете найти ошибку в рецептуре нового продукта? Нужна помощь в
-              подборе необходимого оборудования?
-            </p>
-            <p>
-              Эксперты Biotech.Industries готовы делиться опытом и помогать в
-              решении ваших задач
-            </p>
-          </div>
-        </div>
-        <Image
-          src={Glow1}
-          alt=""
-          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
-        />
-      </section>
-      <section className="fcol gap-16 wrapper">
+      <FirstSection
+        image={Star}
+        title="Консультации для бизнеса"
+        subtitle="Не можете найти ошибку в рецептуре нового продукта? Нужна помощь в подборе необходимого оборудования? Эксперты Biotech.Industries готовы делиться опытом и помогать в решении ваших задач"
+        breadcrumbs={[
+          { title: "Главная", href: "/" },
+          { title: "Наши возможности", href: "/#capabilities" },
+          {
+            title: "Консультации для бизнеса",
+          },
+        ]}
+      />
+      <section className="fcol gap-20 wrapper">
         <Expert
           image={Meledina}
           name="Т.В. Меледина"

@@ -1,7 +1,5 @@
-import Breadcrumbs from "@/components/ui/custom/breadcrumbs";
-import Glow1 from "@public/glow 1.png";
 import Depth from "@public/Depth.svg";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Contacts from "@/components/contacts";
 import Worm from "@public/Worm.svg";
 import Button from "@/components/ui/custom/button";
@@ -12,6 +10,7 @@ import Glow2 from "@public/glow 2.png";
 import { ExternalLink } from "lucide-react";
 import Carousel from "@/components/carousel";
 import { Schema } from "@/components/Schema";
+import FirstSection from "@/components/first.section";
 
 const PlusList = ({
   items,
@@ -63,41 +62,49 @@ const EventList = ({
   </ul>
 );
 
+const PriceAndEvents = ({
+  price,
+  events,
+}: {
+  price: number;
+  events: React.ComponentProps<typeof EventList>["items"];
+}) => (
+  <div className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
+    <section className="fcol gap-4 w-fit xl:max-w-[50%]">
+      <h3 className="text-3xl md:text-4xl">Стоимость</h3>
+      <p className="text-brand font-bold text-2xl md:text-5xl">
+        от <span className="text-4xl xs:text-5xl">{price}</span> тыс. руб.
+      </p>
+      <p className="self-end">Призовой фонд включен</p>
+      <Button className="hidden md:block mt-16" />
+    </section>
+    <section className="fcol gap-8 flex-1 xl:max-w-[40%]">
+      <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
+      <EventList items={events} />
+      <Button className="mt-8 md:hidden" />
+    </section>
+  </div>
+);
+
 export default function Event() {
   return (
     <main>
-      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
-        <Breadcrumbs
-          items={[
-            { title: "Главная", href: "/" },
-            { title: "Наши возможности", href: "/#capabilities" },
-            {
-              title: "Организация мероприятий",
-            },
-          ]}
-        />
-        <div className="fcol gap-8 wrapper">
-          <Image
-            src={Depth}
-            alt=""
-            className="md:absolute top-1/2 right-[15%] -z-10 md:translate-x-1/2 md:-translate-y-1/2 max-w-none md:max-h-[75%] -rotate-[5.38deg] aspect-square w-1/3"
-          />
-          <div className="xl:max-w-[70%] fcol gap-8">
-            <h1>Организация мероприятий</h1>
-            <p>Наша команда организует мероприятие по вашему запросу</p>
-            <Button className="mt-16" />
-          </div>
-        </div>
-        <Image
-          src={Glow1}
-          alt=""
-          className="absolute top-0 right-0 -z-10 translate-x-1/2 -translate-y-1/2 max-w-none w-[250%] md:w-full min-w-full"
-        />
-      </section>
+      <FirstSection
+        image={Depth}
+        title="Организация мероприятий"
+        subtitle="Наша команда организует мероприятие по вашему запросу"
+        breadcrumbs={[
+          { title: "Главная", href: "/" },
+          { title: "Наши возможности", href: "/#capabilities" },
+          {
+            title: "Организация мероприятий",
+          },
+        ]}
+      />
 
-      <section className="md:bg-secondary max-w-none px-0 fcol gap-32 md:gap-[240px] md:border-y-2 md:border-white overflow-hidden">
-        <section className="fcol gap-8 xl:flex-row wrapper">
-          <div className="fcol gap-3 flex-1 relative">
+      <section className="max-w-none px-0 fcol gap-16 md:gap-[240px] md:border-y-2 md:border-white overflow-hidden md:bg-secondary">
+        <section className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
+          <div className="fcol gap-3 flex-1 relative xl:max-w-3/8">
             <h2 className="z-[1]">Марафон идей</h2>
             <p className="z-[1]">
               Результат мероприятия - ряд инновационных идей, предложенных
@@ -109,7 +116,7 @@ export default function Event() {
               className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
             />
           </div>
-          <div className="fcol gap-6 flex-1">
+          <div className="fcol gap-6 flex-1 xl:max-w-1/2">
             <h3>Плюсы</h3>
             <PlusList
               items={[
@@ -160,37 +167,24 @@ export default function Event() {
           />
         </section>
 
-        <div className="fcol gap-8 xl:flex-row md:justify-between wrapper">
-          <section className="fcol gap-4 w-fit">
-            <h3 className="text-3xl md:text-4xl">Стоимость</h3>
-            <p className="text-brand font-bold text-2xl md:text-6xl">
-              от <span className="text-4xl xs:text-6xl">300</span> тыс. руб.
-            </p>
-            <p className="self-end">Призовой фонд включен</p>
-            <Button className="hidden md:block mt-16" />
-          </section>
-          <section className="fcol gap-8 flex-1 md:max-w-[40%]">
-            <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
-            <EventList
-              items={[
-                {
-                  href: "https://vk.com/wall-203191795_629",
-                  linkTitle: "Марафон идей",
-                  description: "от компании VIOLA",
-                },
-              ]}
-            />
-            <Button className="mt-8 md:hidden" />
-          </section>
-        </div>
+        <PriceAndEvents
+          price={300}
+          events={[
+            {
+              href: "https://vk.com/wall-203191795_629",
+              linkTitle: "Марафон идей",
+              description: "от компании VIOLA",
+            },
+          ]}
+        />
       </section>
 
       <section
         id="hack"
-        className="max-w-none px-0 fcol gap-32 md:gap-[240px] md:border-b-2 md:border-white overflow-hidden"
+        className="max-w-none px-0 fcol gap-16 md:gap-[240px] md:border-b-2 md:border-white overflow-hidden"
       >
-        <section className="fcol gap-8 xl:flex-row wrapper">
-          <div className="fcol gap-3 flex-1 relative">
+        <section className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
+          <div className="fcol gap-3 flex-1 relative xl:max-w-3/8">
             <h2>Хакатон</h2>
             <p>
               Параллельная работа нескольких научных групп, основной задачей
@@ -202,7 +196,7 @@ export default function Event() {
               className="absolute top-1/3 left-0 -z-10 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
             />
           </div>
-          <div className="fcol gap-6 flex-1">
+          <div className="fcol gap-6 flex-1 xl:max-w-1/2">
             <h3>Плюсы</h3>
             <PlusList
               items={[
@@ -255,50 +249,37 @@ export default function Event() {
           />
         </section>
 
-        <div className="fcol gap-8 md:flex-row md:justify-between wrapper">
-          <section className="fcol gap-4 w-fit md:max-w-[50%]">
-            <h3 className="text-3xl md:text-4xl">Стоимость</h3>
-            <p className="text-brand font-bold text-2xl md:text-6xl">
-              от <span className="text-4xl xs:text-6xl">500</span> тыс. руб.
-            </p>
-            <p className="self-end">Призовой фонд включен</p>
-            <Button className="hidden md:block mt-16" />
-          </section>
-          <section className="fcol gap-8 flex-1 md:max-w-[40%]">
-            <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
-            <EventList
-              items={[
-                {
-                  href: "https://vk.com/wall-203191795_1315",
-                  linkTitle: "Хакатон",
-                  description: '"Балтийский берег"',
-                },
-                {
-                  href: "https://vk.com/wall-203191795_272",
-                  linkTitle: "БиоХакатон",
-                  description: "by САДЫ ПЛЕСКАВЫ",
-                },
-                {
-                  href: "https://vk.com/wall-203191795_487",
-                  linkTitle: "Хакатон",
-                  description: '"Продажа крафтовых напитков" by САДЫ ПЛЕСКАВЫ',
-                },
-                {
-                  href: "https://vk.com/wall-203191795_899",
-                  linkTitle: "Хакатон",
-                  description: "от компании INARCTICA by BioTech ITMO",
-                },
-              ]}
-            />
-            <Button className="mt-8 md:hidden" />
-          </section>
-        </div>
+        <PriceAndEvents
+          price={500}
+          events={[
+            {
+              href: "https://vk.com/wall-203191795_1315",
+              linkTitle: "Хакатон",
+              description: '"Балтийский берег"',
+            },
+            {
+              href: "https://vk.com/wall-203191795_272",
+              linkTitle: "БиоХакатон",
+              description: "by САДЫ ПЛЕСКАВЫ",
+            },
+            {
+              href: "https://vk.com/wall-203191795_487",
+              linkTitle: "Хакатон",
+              description: '"Продажа крафтовых напитков" by САДЫ ПЛЕСКАВЫ',
+            },
+            {
+              href: "https://vk.com/wall-203191795_899",
+              linkTitle: "Хакатон",
+              description: "от компании INARCTICA by BioTech ITMO",
+            },
+          ]}
+        />
       </section>
 
       <section className="max-w-none px-0 md:bg-secondary">
-        <div className="wrapper fcol gap-8">
-          <div className="fcol gap-8 md:flex-row md:justify-between">
-            <div className="fcol gap-3 flex-1 relative md:max-w-[50%]">
+        <div className="wrapper fcol gap-8 md:gap-16 xl:gap-32">
+          <div className="fcol gap-8 xl:flex-row xl:justify-between">
+            <div className="fcol gap-3 flex-1 relative xl:max-w-[50%] md:text-2xl">
               <h2 className="z-[1]">Конференция</h2>
               <p className="z-[1]">
                 Команда Biotech.Industries организует для вас мероприятие под
@@ -320,7 +301,7 @@ export default function Event() {
                 className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
               />
             </div>
-            <div className="md:fcol gap-6 font-bold md:max-w-[40%] flex-1 hidden">
+            <div className="md:fcol gap-6 font-bold xl:max-w-3/8 flex-1 hidden">
               <Link
                 href="https://biocon.international"
                 className="text-brand2 underline inline-flex items-center gap-6"
