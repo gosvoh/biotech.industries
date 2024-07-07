@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+
 import Breadcrumbs from "@/components/ui/custom/breadcrumbs";
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
