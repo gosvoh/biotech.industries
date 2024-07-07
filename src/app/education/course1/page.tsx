@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+
 import Course from "../course";
 import Darkov from "@public/humans/Darkov.png";
 import Ivanova from "@public/humans/Ivanova.png";

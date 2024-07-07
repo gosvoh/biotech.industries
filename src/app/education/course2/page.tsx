@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-key */
+
 import Card from "@/components/card";
 import Course from "../course";
 import Ivanova from "@public/humans/Ivanova.png";
