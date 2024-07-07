@@ -30,7 +30,7 @@ const PlusList = ({
         <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" />
         <div className="fcol gap-[10px] bg-secondary md:bg-transparent px-6 py-5 md:pt-0">
           <h4>{item.title}</h4>
-          <p className="text-base md:text-2xl">{item.description}</p>
+          <p>{item.description}</p>
         </div>
       </div>
     ))}
@@ -149,7 +149,7 @@ export default function Event() {
             </div>
             <Schema
               color="brand2"
-              className="text-lg md:text-3xl z-[1]"
+              className="z-[1]"
               items={[
                 "Обсуждение запроса и формирование кейсов",
                 "Определение формата проведения",
@@ -230,7 +230,7 @@ export default function Event() {
             </div>
             <Schema
               color="brand2"
-              className="text-lg md:text-3xl z-[1]"
+              className="z-[1]"
               items={[
                 "Обсуждение запроса и формулирование задачи",
                 "Определение формата проведения",

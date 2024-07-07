@@ -79,14 +79,14 @@
   h1 {
     @apply text-3xl xs:text-4xl xl:text-5xl 3xl:text-6xl font-bold;
 
-    & + p {
+    & + p:only-child {
       @apply text-xl xs:text-2xl md:text-3xl;
     }
   }
   h2 {
     @apply text-2xl xs:text-3xl md:text-4xl 3xl:text-5xl font-bold;
 
-    & + p {
+    & + p:only-child {
       @apply text-xl xs:text-2xl md:text-3xl;
     }
   }
@@ -102,15 +102,15 @@
     @apply fcol gap-6 md:gap-10;
 
     li,
-    & > *[role="listitem"] {
-      @apply text-2xl 3xl:text-3xl;
+    *[role="listitem"] {
+      @apply text-lg 3xl:text-2xl;
     }
 
     li {
       @apply list-outside ml-4 md:ml-8;
     }
 
-    & > *[role="listitem"]:not(.list-none) {
+    *[role="listitem"]:not(.list-none) {
       @apply inline-flex gap-5 md:gap-16;
       counter-increment: list-item;
 
