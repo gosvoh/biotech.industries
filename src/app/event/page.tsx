@@ -9,7 +9,7 @@ import Link from "next/link";
 import Glow2 from "@public/glow 2.png";
 import { ExternalLink } from "lucide-react";
 import Carousel from "@/components/carousel";
-import { Schema } from "@/components/Schema";
+import { Schema } from "@/components/schema";
 import FirstSection from "@/components/first.section";
 
 const PlusList = ({

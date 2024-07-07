@@ -5,7 +5,7 @@ import Worm from "@public/Worm.svg";
 import { cn } from "@/lib/utils";
 import Contacts from "@/components/contacts";
 import Link from "next/link";
-import { Schema } from "@/components/Schema";
+import { Schema } from "@/components/schema";
 import FirstSection from "@/components/first.section";
 
 const TechList = ({
