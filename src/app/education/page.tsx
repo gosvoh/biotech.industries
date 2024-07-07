@@ -1,5 +1,4 @@
-import Breadcrumbs from "@/components/ui/custom/breadcrumbs";
-import Glow1 from "@public/glow 1.png";
+import Lines from "@public/Lines.svg";
 import Lightning from "@public/Lightning.svg";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
@@ -23,7 +22,8 @@ const CourseCard = ({
       "fcol gap-8 p-10 border border-white/60 bg-black relative",
       "rounded-[20px] md:rounded-[30px]",
       "overflow-hidden",
-      "hover:border-brand2 hover:shadow-[0px_4px_100px_-50px_hsl(var(--brand2))] transition-all duration-300"
+      "hover:border-brand2 hover:shadow-[0px_4px_100px_-50px_hsl(var(--brand2))] transition-all duration-300",
+      "group"
     )}
   >
     <div className="fcol gap-3 md:gap-4 z-[1]">
@@ -45,7 +45,15 @@ const CourseCard = ({
     <Image
       src={Smoke}
       alt=""
-      className="absolute opacity-20 md:-translate-y-1/2 left-0 top-0 md:top-1/2 object-cover h-full"
+      className="absolute opacity-20 md:-translate-y-1/2 left-0 top-0 md:top-1/2 object-cover h-full mix-blend-hard-light"
+    />
+    <Image
+      src={Lines}
+      alt=""
+      className={cn(
+        "hidden xl:block absolute translate-x-1/3 -translate-y-1/2 right-10 top-1/2 h-[500%] max-h-none max-w-none opacity-50",
+        "group-hover:opacity-100 transition-all duration-300"
+      )}
     />
   </div>
 );
