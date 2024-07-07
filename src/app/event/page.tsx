@@ -24,7 +24,7 @@ const PlusList = ({
     {items.map((item, i) => (
       <div
         role="listitem"
-        className="flex flex-row items-start"
+        className="flex flex-row items-start list-none"
         key={`plus-list-item-${i}`}
       >
         <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" />
