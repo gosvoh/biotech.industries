@@ -5,10 +5,10 @@ import Course from "../course";
 import Ivanova from "@public/humans/Ivanova.png";
 import Manshin from "@public/humans/Manshin.png";
 import Flask from "@public/glowIcons/flask.svg";
-import Cert from "@public/glowIcons/cert.svg";
-import Bulbs from "@public/glowIcons/bulbs.svg";
-import Build from "@public/glowIcons/build.svg";
-import Handshake from "@public/glowIcons/handshake.svg";
+import Government from "@public/glowIcons/government.svg";
+import Idea from "@public/glowIcons/idea.svg";
+import Ifeatures from "@public/glowIcons/ifeatures.svg";
+import Introduction from "@public/glowIcons/introduction.svg";
 
 export default function Course2() {
   return (
@@ -68,17 +68,17 @@ export default function Course2() {
       ]}
       pros={[
         {
-          icon: Bulbs,
+          icon: Idea,
           description:
             "Возможность общения с коллегами, специалистами индустрии, обучающимися на курсе",
         },
         {
-          icon: Cert,
+          icon: Ifeatures,
           description:
             "Удостоверение о повышении квалификации Университета ИТМО",
         },
         {
-          icon: Build,
+          icon: Government,
           description:
             "При очном участии – возможность посетить один из самых красивых городов России – Санкт-Петербург",
         },
@@ -88,13 +88,17 @@ export default function Course2() {
             "Возможность анализировать стартовые культуры своего предприятия при условии предоставления образцов во время прохождения очного модуля курса",
         },
         {
-          icon: Handshake,
+          icon: Introduction,
           description:
             "Возможность общения с преподавателями курса как во время обучения, так и по его завершении - мы всегда остаемся на связи со своими учениками",
         },
       ]}
       price={{ fixed: false, value: 45 }}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
+      buttonProps={{
+        title: "Оставить заявку на курс",
+        showSelect: false,
+      }}
     />
   );
 }

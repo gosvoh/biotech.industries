@@ -7,12 +7,14 @@ export const Schema = ({
   title,
   className,
   listClassName,
+  listItemClassName,
 }: {
   color: "brand" | "brand2";
   title?: string;
   items: string[] | React.ReactNode[];
   className?: string;
   listClassName?: string;
+  listItemClassName?: string;
 }) => (
   <div className={cn("fcol gap-8", className)}>
     {title && <h3 className={`border-b-2 border-${color} pb-3`}>{title}</h3>}
@@ -23,7 +25,11 @@ export const Schema = ({
             {item}
           </p>
         ) : (
-          <div className={color} role="listitem" key={`schema-item-${i}`}>
+          <div
+            className={cn(color, listItemClassName)}
+            role="listitem"
+            key={`schema-item-${i}`}
+          >
             {item}
           </div>
         )

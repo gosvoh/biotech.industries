@@ -70,7 +70,7 @@ const PriceAndEvents = ({
   events: React.ComponentProps<typeof EventList>["items"];
 }) => (
   <div className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
-    <section className="fcol gap-4 w-fit xl:max-w-[50%]">
+    <section className="fcol gap-3 w-fit xl:max-w-[50%]">
       <h3 className="text-3xl md:text-4xl">Стоимость</h3>
       <p className="price">
         от <span>{price}</span> тыс. руб.

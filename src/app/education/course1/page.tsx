@@ -3,11 +3,11 @@
 import Course from "../course";
 import Darkov from "@public/humans/Darkov.png";
 import Ivanova from "@public/humans/Ivanova.png";
-import Dist from "@public/glowIcons/dist.svg";
-import Cert from "@public/glowIcons/cert.svg";
-import Bulbs from "@public/glowIcons/bulbs.svg";
-import Teach from "@public/glowIcons/teach.svg";
-import Handshake from "@public/glowIcons/handshake.svg";
+import Education from "@public/glowIcons/education.svg";
+import Ifeatures from "@public/glowIcons/ifeatures.svg";
+import Idea from "@public/glowIcons/idea.svg";
+import Ichalkboard from "@public/glowIcons/ichalkboard.svg";
+import Introduction from "@public/glowIcons/introduction.svg";
 import Card from "@/components/card";
 
 export default function Course1() {
@@ -107,32 +107,36 @@ export default function Course1() {
       ]}
       pros={[
         {
-          icon: Dist,
+          icon: Education,
           description: "Дистанционный формат обучения",
         },
         {
-          icon: Cert,
+          icon: Ifeatures,
           description:
             "Удостоверение о повышении квалификации Университета ИТМО",
         },
         {
-          icon: Bulbs,
+          icon: Idea,
           description:
             "Возможность обмена опытом с коллегами, специалистами индустрии, обучающимися на курсе",
         },
         {
-          icon: Teach,
+          icon: Ichalkboard,
           description:
             "Разработчики и преподаватели курса – люди с производственным опытом в сфере пивоварения и производства напитков",
         },
         {
-          icon: Handshake,
+          icon: Introduction,
           description:
             "Возможность общения с преподавателями курса как во время обучения, так и по его завершении - мы всегда остаемся на связи со своими учениками",
         },
       ]}
       price={110}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
+      buttonProps={{
+        title: "Записаться на курс",
+        showSelect: false,
+      }}
     />
   );
 }

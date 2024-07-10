@@ -6,7 +6,14 @@ const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
   ssr: false,
 });
 
-export default function Contacts() {
+export default function Contacts({
+  buttonProps,
+}: {
+  buttonProps?: Omit<
+    React.ComponentPropsWithoutRef<typeof Button>,
+    "className"
+  >;
+}) {
   return (
     <section
       className="fcol gap-8 px-0 max-w-none pb-0 border-t-2 border-white"
@@ -30,7 +37,7 @@ export default function Contacts() {
         >
           biotech@itmo.ru
         </Link>
-        <Button className="mt-8 md:mt-0" />
+        <Button className="mt-8 md:mt-0" {...buttonProps} />
       </div>
 
       <YandexMap className="w-full aspect-square max-h-[600px] mt-16 overflow-hidden" />

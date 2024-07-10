@@ -15,6 +15,8 @@ import GlowRound from "@public/GlowRound.svg";
 import { HumanCard } from "@/components/human.card";
 import { Schema } from "@/components/schema";
 import Contacts from "@/components/contacts";
+import type Button from "@/components/ui/custom/button";
+import Arrow from "@public/Arrow.svg";
 
 export default function Course({
   breadcrumb,
@@ -31,6 +33,7 @@ export default function Course({
   pros,
   price,
   link,
+  buttonProps,
 }: {
   breadcrumb: string;
   title: string;
@@ -57,6 +60,7 @@ export default function Course({
   }[];
   price: number | { fixed: boolean; value: number };
   link: React.ComponentPropsWithoutRef<typeof Link>["href"];
+  buttonProps?: React.ComponentPropsWithoutRef<typeof Button>;
 }) {
   return (
     <main>
@@ -131,22 +135,36 @@ export default function Course({
       </section>
 
       <section className="relative max-w-none px-0 overflow-hidden">
-        <ArrowUpRight className="xl:hidden w-1/2 h-auto text-brand2 wrapper ml-0" />
-        <div className="wrapper space-y-16">
-          <h2>По итогам прохождения курса вы сможете</h2>
-          <div className="fcol gap-5 xl:flex-row xl:max-w-3/4 z-[1] ml-auto">
-            {youWillLearn.map((item, i) => (
-              <React.Fragment key={`youWillLearn-${i}`}>{item}</React.Fragment>
-            ))}
+        <div className="space-y-16">
+          <Image
+            src={Arrow}
+            alt=""
+            className="wrapper xl:hidden w-1/3 h-auto text-brand2 ml-0"
+          />
+          <h2 className="wrapper">По итогам прохождения курса вы сможете</h2>
+          <div className="relative">
+            <div className="wrapper">
+              <div className="fcol gap-5 xl:flex-row xl:max-w-3/4 z-[1] ml-auto">
+                {results.map((item, i) => (
+                  <React.Fragment key={`youWillLearn-${i}`}>
+                    {item}
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+            <Image
+              src={Arrow}
+              alt=""
+              className="hidden xl:block absolute top-0 -z-10 -left-10 h-full aspect-square text-brand2"
+            />
           </div>
         </div>
-        <ArrowUpRight className="hidden xl:block absolute top-20 -z-10 -left-24 w-1/4 h-full aspect-square text-brand2" />
       </section>
 
       <section className="md:bg-secondary max-w-none px-0">
         <div className="wrapper fcol gap-16 xl:flex-row xl:justify-between xl:items-center">
           <div className="fcol gap-8 xl:gap-16 xl:max-w-1/2 flex-1">
-            <h2 className="xl:max-w-3/4">
+            <h2 className="text-balance">
               На <span className="uppercase text-brand2">кого</span> рассчитан
               курс
             </h2>
@@ -204,6 +222,8 @@ export default function Course({
         <h2>{programTitle}</h2>
         <Schema
           color="brand2"
+          className="xl:max-w-3/4"
+          listItemClassName="hover:bg-secondary p-5 transition-colors duration-300"
           items={program.map((item) => (
             <div className="space-y-3 md:space-y-4">
               <p className="font-bold">{item.title}</p>
@@ -224,7 +244,7 @@ export default function Course({
               <Image
                 src={pro.icon}
                 alt=""
-                className="aspect-square w-[148px] h-[148px]"
+                className="aspect-square w-40 h-40"
               />
               <p>{pro.description}</p>
             </div>
@@ -233,7 +253,7 @@ export default function Course({
       </section>
 
       <section className="fcol gap-16 xl:flex-row xl:justify-between xl:items-center">
-        <div className="fcol gap-6 xl:max-w-1/2">
+        <div className="fcol gap-3 xl:max-w-1/2">
           <h2>Стоимость участия</h2>
           <p className="price">
             {typeof price === "object" && !price.fixed ? "от " : ""}
@@ -258,7 +278,7 @@ export default function Course({
         </div>
       </section>
 
-      <Contacts />
+      <Contacts buttonProps={buttonProps} />
     </main>
   );
 }

@@ -24,8 +24,8 @@ const Map = ({ api }: { api: ReactifyApi | null }) => {
 
   return (
     <YMap
-      location={{ center: [30.339, 59.927259], zoom: 17 }}
-      behaviors={["drag"]}
+      location={{ center: [30.339, 59.927259], zoom: 16 }}
+      behaviors={["drag", "dblClick", "pinchZoom"]}
       className="grayscale"
     >
       <YMapDefaultSchemeLayer />

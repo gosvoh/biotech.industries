@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Footer from "@/components/footer";
+import AntdConfigProvider from "./AntdConfigProvider";
 
 const inter = Manrope({
   subsets: ["latin", "cyrillic"],
@@ -42,9 +43,11 @@ export default function RootLayout({
     <html lang="ru">
       <body className={inter.className}>
         <AntdRegistry>
-          <Header />
-          {children}
-          <Footer />
+          <AntdConfigProvider>
+            <Header />
+            {children}
+            <Footer />
+          </AntdConfigProvider>
         </AntdRegistry>
       </body>
     </html>

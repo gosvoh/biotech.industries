@@ -15,9 +15,9 @@ export const HumanCard = ({
     <Image
       src={image}
       alt={name}
-      className="w-1/2 h-fit aspect-square max-w-[405px]"
+      className="w-1/2 h-fit aspect-square max-w-[405px] flex-1"
     />
-    <div className="fcol gap-[inherit] md:gap-8">
+    <div className="fcol gap-[inherit] md:gap-8 flex-1">
       <h3 className="text-brand2">{name}</h3>
       {position && <p className="font-bold">{position}</p>}
       <p>{desc}</p>
