@@ -105,8 +105,17 @@ const Button = React.forwardRef<
                     <Input placeholder="Имя" />
                   </Form.Item>
                   {showSelect && (
-                    <Form.Item name={"type"} initialValue="rest">
+                    <Form.Item
+                      name={"type"}
+                      rules={[
+                        {
+                          required: true,
+                          message: "Выберите услугу",
+                        },
+                      ]}
+                    >
                       <Select
+                        placeholder="Выбрать услугу"
                         options={[
                           { label: "Разработка технологии", value: "tech" },
                           {

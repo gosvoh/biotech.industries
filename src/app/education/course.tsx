@@ -222,7 +222,6 @@ export default function Course({
         <h2>{programTitle}</h2>
         <Schema
           color="brand2"
-          className="xl:max-w-3/4"
           listItemClassName="hover:bg-secondary p-5 transition-colors duration-300"
           items={program.map((item) => (
             <div className="space-y-3 md:space-y-4">
@@ -244,7 +243,7 @@ export default function Course({
               <Image
                 src={pro.icon}
                 alt=""
-                className="aspect-square w-40 h-40"
+                className="aspect-square w-40 h-40 -translate-x-1/4"
               />
               <p>{pro.description}</p>
             </div>

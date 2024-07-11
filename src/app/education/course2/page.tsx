@@ -96,7 +96,7 @@ export default function Course2() {
       price={{ fixed: false, value: 45 }}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
       buttonProps={{
-        title: "Оставить заявку на курс",
+        title: "Оставить заявку",
         showSelect: false,
       }}
     />

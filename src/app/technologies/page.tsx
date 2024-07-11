@@ -67,7 +67,7 @@ export default function Technologies() {
             <Schema
               color="brand"
               title="Нет технического задания"
-              className="z-[1]"
+              className="z-[1] border-brand"
               items={[
                 "Проведение установочной встречи с командой Biotech.Industries",
                 "Подготовка и утверждение ТЗ",

@@ -303,7 +303,7 @@ export default function Event() {
               </p>
               <Link
                 href="https://biocon.international"
-                className="text-brand2 underline inline-flex items-center gap-6"
+                className="text-brand2 underline inline-flex items-center gap-6 mt-4"
                 target="_blank"
               >
                 <ExternalLink />
@@ -315,7 +315,7 @@ export default function Event() {
                 className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
               />
             </div>
-            <div className="fcol gap-8 md:gap-6 font-bold xl:max-w-3/8 flex-1 max-md:py-16">
+            <div className="fcol gap-6 md:gap-3 font-bold xl:max-w-3/8 flex-1 max-md:py-16">
               <p className="text-3xl md:text-4xl">Стоимость</p>
               <p className="text-4xl md:text-5xl text-brand">По запросу</p>
               <Button className="mt-8" />
