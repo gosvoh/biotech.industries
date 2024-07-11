@@ -15,7 +15,7 @@ export const HumanCard = ({
     <Image
       src={image}
       alt={name}
-      className="w-1/2 h-fit aspect-square max-w-[405px] flex-1"
+      className="w-1/2 h-fit aspect-square max-w-64 3xl:max-w-[405px] flex-1"
     />
     <div className="fcol gap-[inherit] md:gap-8 flex-1">
       <h3 className="text-brand2">{name}</h3>

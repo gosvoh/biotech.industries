@@ -19,7 +19,7 @@ const links: {
   href: React.ComponentPropsWithoutRef<typeof Link>["href"];
   text: string;
 }[] = [
-  { href: "/#top", text: "О нас" },
+  { href: "/#about", text: "О нас" },
   { href: "/#capabilities", text: "Наши возможности" },
   { href: "/contacts", text: "Контакты" },
 ];

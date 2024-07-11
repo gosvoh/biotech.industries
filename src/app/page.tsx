@@ -49,10 +49,7 @@ const Partner = ({
 export default function Home() {
   return (
     <main>
-      <section
-        id="top"
-        className="pt-[290px] md:py-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0 index"
-      >
+      <section className="pt-[290px] md:py-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0 index">
         <div className="wrapper">
           <div className="fcol gap-16 ml-auto w-fit">
             <div className="fcol gap-8 md:w-fit">
@@ -110,7 +107,7 @@ export default function Home() {
           />
         </svg>
       </section>
-      <section className="fcol gap-16 md:gap-20">
+      <section className="fcol gap-16 md:gap-20" id="about">
         <h2 className="text-center">О нас</h2>
         <div className="fcol gap-10 md:gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
           <InformCard bigText="30" text="экспертов" />

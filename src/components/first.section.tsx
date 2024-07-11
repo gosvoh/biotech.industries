@@ -13,7 +13,7 @@ export default function FirstSection({
   image: StaticImageData;
   breadcrumbs: React.ComponentProps<typeof Breadcrumbs>["items"];
   title: string;
-  subtitle: string;
+  subtitle: React.ReactNode;
 }) {
   return (
     <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">

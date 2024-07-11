@@ -71,7 +71,7 @@ const PriceAndEvents = ({
 }) => (
   <div className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
     <section className="fcol gap-3 w-fit xl:max-w-[50%]">
-      <h3 className="text-3xl md:text-4xl">Стоимость</h3>
+      <h3>Стоимость</h3>
       <p className="price">
         от <span>{price}</span> тыс. руб.
       </p>
@@ -79,7 +79,7 @@ const PriceAndEvents = ({
       <Button className="hidden md:block mt-16" />
     </section>
     <section className="fcol gap-8 flex-1 xl:max-w-[40%]">
-      <h3 className="text-3xl md:text-4xl">Проведенные мероприятия</h3>
+      <h3>Проведенные мероприятия</h3>
       <EventList items={events} />
       <Button className="mt-8 md:hidden" />
     </section>
@@ -92,7 +92,13 @@ export default function Event() {
       <FirstSection
         image={Depth}
         title="Организация мероприятий"
-        subtitle="Наша команда организует мероприятие по вашему запросу"
+        subtitle={
+          <>
+            Наша команда организует мероприятие{" "}
+            <br className="hidden md:inline" />
+            по Вашему запросу
+          </>
+        }
         breadcrumbs={[
           { title: "Главная", href: "/" },
           { title: "Наши возможности", href: "/#capabilities" },
@@ -102,7 +108,7 @@ export default function Event() {
         ]}
       />
 
-      <section className="max-w-none px-0 fcol gap-16 md:gap-[240px] md:border-y-2 md:border-white overflow-hidden md:bg-secondary">
+      <section className="max-w-none px-0 fcol gap-16 md:gap-24 xl:gap-[240px] md:border-y-2 md:border-white overflow-hidden md:bg-secondary">
         <section className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
           <div className="fcol gap-3 flex-1 relative xl:max-w-3/8">
             <h2 className="z-[1]">Марафон идей</h2>
@@ -295,13 +301,6 @@ export default function Event() {
                 мероприятия для нетворкинга и культурного отдыха. Среди
                 пленарных спикеров – титулованные ученые со всего мира.
               </p>
-              <Image
-                src={Glow2}
-                alt=""
-                className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
-              />
-            </div>
-            <div className="md:fcol gap-6 font-bold xl:max-w-3/8 flex-1 hidden">
               <Link
                 href="https://biocon.international"
                 className="text-brand2 underline inline-flex items-center gap-6"
@@ -310,16 +309,18 @@ export default function Event() {
                 <ExternalLink />
                 Ссылка на конференцию
               </Link>
-              <p className="text-4xl">Стоимость</p>
-              <p className="text-5xl text-brand">По запросу</p>
+              <Image
+                src={Glow2}
+                alt=""
+                className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
+              />
+            </div>
+            <div className="fcol gap-8 md:gap-6 font-bold xl:max-w-3/8 flex-1 max-md:py-16">
+              <p className="text-3xl md:text-4xl">Стоимость</p>
+              <p className="text-4xl md:text-5xl text-brand">По запросу</p>
               <Button className="mt-8" />
             </div>
-            <div className="fcol gap-8 md:hidden font-bold py-16">
-              <p className="text-3xl">Стоимость</p>
-              <p className="text-4xl text-brand">По запросу</p>
-            </div>
           </div>
-
           <Carousel />
         </div>
       </section>
