@@ -38,6 +38,7 @@ export default async function onFormSubmit(data: {
   try {
     const ReactDomServer = await import("react-dom/server");
     await transporter.sendMail({
+      from: process.env.MAIL_USER!,
       to: process.env.MAIL_TO!,
       subject: `[BIOTECH.INDUSTRIES][${data.type}] ${data.name}`,
       text: textMail(data),
