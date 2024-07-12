@@ -5,6 +5,7 @@ import { Checkbox, Form, Input, Modal, Select } from "antd";
 import React from "react";
 import Party from "@public/Party.svg";
 import Image from "next/image";
+import onFormSubmit from "@/lib/form.action";
 
 const Button = React.forwardRef<
   HTMLButtonElement,
@@ -30,6 +31,37 @@ const Button = React.forwardRef<
       "w-full md:w-fit"
     );
 
+    const callErrorBtn = () => {
+      const mod = modal.error({
+        centered: true,
+        icon: null,
+        width: 600,
+        styles: {
+          content: {
+            padding: 80,
+            border: 1,
+            borderColor: "hsl(var(--brand2))",
+            borderStyle: "solid",
+            boxShadow: "0px 5px 100px -50px hsl(var(--brand2))",
+          },
+        },
+        footer: null,
+        content: (
+          <div className="fcol gap-10 text-center items-center justify-center w-full">
+            <p className="form-title">Ошибка</p>
+            <p className="as-text">
+              Произошла ошибка при отправке формы
+              <br />
+              Попробуйте позже
+            </p>
+            <button className={buttonClassName} onClick={() => mod.destroy()}>
+              Закрыть
+            </button>
+          </div>
+        ),
+      });
+    };
+
     return (
       <>
         {context}
@@ -46,7 +78,7 @@ const Button = React.forwardRef<
               width: 600,
               okText: "Отправить",
               okButtonProps: {
-                className: "bg-primary-white",
+                loading: false,
               },
               onOk: (_) => {
                 form.submit();
@@ -57,39 +89,63 @@ const Button = React.forwardRef<
                   className="w-full"
                   form={form}
                   onFinish={(value) => {
-                    console.log(JSON.stringify(value, null, 2));
-                    // form.resetFields();
-                    modalForm.destroy();
-                    const mod = modal.success({
-                      centered: true,
-                      icon: null,
-                      width: 600,
-                      styles: {
-                        content: {
-                          padding: 80,
-                          border: 1,
-                          borderColor: "hsl(var(--brand2))",
-                          borderStyle: "solid",
-                          boxShadow: "0px 5px 100px -50px hsl(var(--brand2))",
-                        },
+                    modalForm.update({
+                      okButtonProps: {
+                        loading: true,
                       },
-                      footer: null,
-                      content: (
-                        <div className="fcol gap-10 text-center items-center justify-center w-full">
-                          <Image src={Party} alt="" className="w-44" />
-                          <p className="form-title">Спасибо!</p>
-                          <p className="as-text">
-                            Мы свяжемся с вами в течение 1 рабочего дня
-                          </p>
-                          <button
-                            className={buttonClassName}
-                            onClick={() => mod.destroy()}
-                          >
-                            Закрыть
-                          </button>
-                        </div>
-                      ),
                     });
+                    form.resetFields();
+                    onFormSubmit(showSelect ? value : { ...value, type: title })
+                      .then((val) => {
+                        modalForm.destroy();
+                        if (val.success) {
+                          const mod = modal.success({
+                            centered: true,
+                            icon: null,
+                            width: 600,
+                            styles: {
+                              content: {
+                                padding: 80,
+                                border: 1,
+                                borderColor: "hsl(var(--brand2))",
+                                borderStyle: "solid",
+                                boxShadow:
+                                  "0px 5px 100px -50px hsl(var(--brand2))",
+                              },
+                            },
+                            footer: null,
+                            content: (
+                              <div className="fcol gap-10 text-center items-center justify-center w-full">
+                                <Image src={Party} alt="" className="w-44" />
+                                <p className="form-title">Спасибо!</p>
+                                <p className="as-text">
+                                  Мы свяжемся с вами в течение 1 рабочего дня
+                                </p>
+                                <button
+                                  className={buttonClassName}
+                                  onClick={() => mod.destroy()}
+                                >
+                                  Закрыть
+                                </button>
+                              </div>
+                            ),
+                          });
+                        } else {
+                          console.error(val.error);
+                          callErrorBtn();
+                        }
+                      })
+                      .catch((error) => {
+                        console.error(error);
+                        callErrorBtn();
+                      })
+                      .finally(() => {
+                        modalForm.update({
+                          okButtonProps: {
+                            loading: false,
+                          },
+                        });
+                      });
                   }}
                 >
                   <Form.Item
@@ -117,17 +173,23 @@ const Button = React.forwardRef<
                       <Select
                         placeholder="Выбрать услугу"
                         options={[
-                          { label: "Разработка технологии", value: "tech" },
+                          {
+                            label: "Разработка технологии",
+                            value: "Разработка технологии",
+                          },
                           {
                             label: "Консультация для бизнеса",
-                            value: "consultation",
+                            value: "Консультация для бизнеса",
                           },
                           {
                             label: "Курсы для биотех-специалистов",
-                            value: "education",
+                            value: "Курсы для биотех-специалистов",
                           },
-                          { label: "Организация мероприятий", value: "events" },
-                          { label: "Прочее", value: "rest" },
+                          {
+                            label: "Организация мероприятий",
+                            value: "Организация мероприятий",
+                          },
+                          { label: "Прочее", value: "Прочее" },
                         ]}
                       />
                     </Form.Item>
