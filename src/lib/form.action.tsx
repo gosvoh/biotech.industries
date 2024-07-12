@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   dkim: {
-    domainName: "biotech.industries",
+    domainName: process.env.DKIM_DOMAIN!,
     keySelector: "mail",
     privateKey: process.env.DKIM_PRIVATE_KEY!,
   },
@@ -38,7 +38,7 @@ export default async function onFormSubmit(data: {
   try {
     const ReactDomServer = await import("react-dom/server");
     await transporter.sendMail({
-      to: "biotech@itmo.ru",
+      to: process.env.MAIL_TO!,
       subject: `[BIOTECH.INDUSTRIES][${data.type}] ${data.name}`,
       text: textMail(data),
       html: ReactDomServer.renderToString(
