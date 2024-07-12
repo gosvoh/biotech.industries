@@ -282,7 +282,7 @@ export default function Event() {
         />
       </section>
 
-      <section className="max-w-none px-0 md:bg-secondary">
+      <section className="max-w-none px-0 md:bg-secondary overflow-hidden">
         <div className="wrapper fcol gap-8 md:gap-16 xl:gap-32">
           <div className="fcol gap-8 xl:flex-row xl:justify-between">
             <div className="fcol gap-3 flex-1 relative xl:max-w-[50%] md:text-2xl">
@@ -303,7 +303,7 @@ export default function Event() {
               </p>
               <Link
                 href="https://biocon.international"
-                className="text-brand2 underline inline-flex items-center gap-6 mt-4"
+                className="text-brand2 underline inline-flex items-center gap-6 mt-4 z-[1] w-fit"
                 target="_blank"
               >
                 <ExternalLink />

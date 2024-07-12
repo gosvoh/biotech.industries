@@ -32,7 +32,7 @@ export default function Contacts({
           </Link>
         </div>
         <Link
-          className="font-bold hidden md:block md:text-4xl 3xl:text-5xl"
+          className="font-bold hidden md:block md:text-4xl 3xl:text-5xl w-fit"
           href="mailto:biotech@itmo.ru"
         >
           biotech@itmo.ru

@@ -27,7 +27,7 @@ export default function Contacts() {
             </Link>
           </div>
           <Link
-            className="hidden md:block md:text-4xl xl:text-5xl 3xl:text-6xl"
+            className="hidden md:block md:text-4xl xl:text-5xl 3xl:text-6xl w-fit"
             href="mailto:biotech@itmo.ru"
           >
             biotech@itmo.ru

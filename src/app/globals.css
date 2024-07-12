@@ -135,6 +135,10 @@
   header > a {
     @apply w-[165px];
   }
+
+  footer a {
+    @apply w-fit;
+  }
 }
 
 @layer utilities {
