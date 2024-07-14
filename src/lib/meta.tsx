@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import type { Metadata } from "next";
 
 export const generateOGImage = async (title: string) => {
   const manrope = fetch(new URL("@public/manrope.ttf", import.meta.url)).then(
@@ -44,3 +45,24 @@ export const generateOGImage = async (title: string) => {
     }
   );
 };
+
+export const generateMeta = (title: string, description: string): Metadata => ({
+  title,
+  description,
+  icons: "favicon.ico",
+  metadataBase: new URL("https://biotech.industries.cedne.ru"),
+  creator: "Aleksey Vokhmin",
+  openGraph: {
+    type: "website",
+    locale: "ru_RU",
+    title,
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    site: "@biotech.industries",
+    creator: "@gosvoh",
+  },
+});

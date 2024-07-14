@@ -10,19 +10,12 @@ import Idea from "@public/glowIcons/idea.svg";
 import Ifeatures from "@public/glowIcons/ifeatures.svg";
 import Introduction from "@public/glowIcons/introduction.svg";
 import type { Metadata } from "next";
+import { generateMeta } from "@/lib/meta";
 
-const newMeta = {
-  title:
-    "Biotech.Industries - Технологические аспекты использования дрожжей в пивоварении",
-  description:
-    "Biotech.Industries - Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae",
-};
-
-export const metadata: Metadata = {
-  ...newMeta,
-  openGraph: { ...newMeta },
-  twitter: { ...newMeta },
-};
+export const metadata: Metadata = generateMeta(
+  "Biotech.Industries - Технологические аспекты использования дрожжей в пивоварении",
+  "Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
+);
 
 export default function Course2() {
   return (

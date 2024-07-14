@@ -5,36 +5,17 @@ import Header from "@/components/header";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import Footer from "@/components/footer";
 import AntdConfigProvider from "./AntdConfigProvider";
+import { generateMeta } from "@/lib/meta";
 
 const inter = Manrope({
   subsets: ["latin", "cyrillic"],
   weight: ["400", "700"],
 });
 
-const newMeta = {
-  title: "Biotech.Industries",
-  description: "Biotech.Industries - Создаем инновации в биотех-индустрии",
-};
-
-export const metadata: Metadata = {
-  ...newMeta,
-  icons: "favicon.ico",
-  metadataBase: new URL("https://biotech.industries.cedne.ru"),
-  creator: "Aleksey Vokhmin",
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-
-    ...newMeta,
-  },
-  twitter: {
-    card: "summary_large_image",
-
-    ...newMeta,
-    site: "@biotech.industries",
-    creator: "@gosvoh",
-  },
-};
+export const metadata: Metadata = generateMeta(
+  "Biotech.Industries",
+  "Создаем инновации в биотех-индустрии"
+);
 
 export default function RootLayout({
   children,

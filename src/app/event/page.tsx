@@ -12,18 +12,12 @@ import Carousel from "@/components/carousel";
 import { Schema } from "@/components/schema";
 import FirstSection from "@/components/first.section";
 import type { Metadata } from "next";
+import { generateMeta } from "@/lib/meta";
 
-const newMeta = {
-  title: "Biotech.Industries - Организация мероприятий",
-  description:
-    "Biotech.Industries - Наша команда организует мероприятие по вашему запросу",
-};
-
-export const metadata: Metadata = {
-  ...newMeta,
-  openGraph: { ...newMeta },
-  twitter: { ...newMeta },
-};
+export const metadata: Metadata = generateMeta(
+  "Biotech.Industries - Организация мероприятий",
+  "Наша команда организует мероприятие по вашему запросу"
+);
 
 const PlusList = ({
   items,
