@@ -8,6 +8,13 @@ import Ishevsky from "@public/humans/Ishevsky.png";
 import Contacts from "@/components/contacts";
 import FirstSection from "@/components/first.section";
 import { HumanCard } from "@/components/human.card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Biotech.Industries - Консультации для бизнеса",
+  description:
+    "Biotech.Industries - Не можете найти ошибку в рецептуре нового продукта? Нужна помощь в подборе необходимого оборудования? Эксперты Biotech.Industries готовы делиться опытом и помогать в решении ваших задач",
+};
 
 export default function Consultations() {
   return (

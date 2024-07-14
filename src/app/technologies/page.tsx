@@ -7,6 +7,14 @@ import Contacts from "@/components/contacts";
 import Link from "next/link";
 import { Schema } from "@/components/schema";
 import FirstSection from "@/components/first.section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Biotech.Industries - Разработка технологий и проведение научных исследований",
+  description:
+    "Biotech.Industries - Наша команда биотехнологов разработает законченное решение по вашему запросу",
+};
 
 const TechList = ({
   title,

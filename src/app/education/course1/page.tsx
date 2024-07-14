@@ -9,6 +9,14 @@ import Idea from "@public/glowIcons/idea.svg";
 import Ichalkboard from "@public/glowIcons/ichalkboard.svg";
 import Introduction from "@public/glowIcons/introduction.svg";
 import Card from "@/components/card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Biotech.Industries - Светлое лагерное пиво: сырьё, технология, качество",
+  description:
+    "Biotech.Industries - Поможем сформировать профессиональные компетенции в области технологи пивоварения (технологии светлого пива низового брожения)",
+};
 
 export default function Course1() {
   return (

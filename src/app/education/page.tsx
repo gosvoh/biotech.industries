@@ -9,6 +9,13 @@ import Contacts from "@/components/contacts";
 import Bookmark from "@public/Bookmark.svg";
 import BookmarkGlowMobile from "@public/BookmarkGlowMobile.svg";
 import FirstSection from "@/components/first.section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Biotech.Industries - Курсы для биотех-специалистов",
+  description:
+    "Biotech.Industries - Наша команда не только разрабатывает технологии и проводит исследования, но и делится знаниями",
+};
 
 const CourseCard = ({
   title,

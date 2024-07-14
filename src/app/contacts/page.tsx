@@ -3,6 +3,13 @@ import Glow1 from "@public/glow 1.png";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Button from "@/components/ui/custom/button";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Biotech.Industries - Контакты",
+  description:
+    "Biotech.Industries - Свяжитесь с нами, если у вас остались вопросы",
+};
 
 const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
   ssr: false,

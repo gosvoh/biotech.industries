@@ -11,6 +11,13 @@ import { ExternalLink } from "lucide-react";
 import Carousel from "@/components/carousel";
 import { Schema } from "@/components/schema";
 import FirstSection from "@/components/first.section";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Biotech.Industries - Организация мероприятий",
+  description:
+    "Biotech.Industries - Наша команда организует мероприятие по вашему запросу",
+};
 
 const PlusList = ({
   items,
