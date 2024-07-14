@@ -113,7 +113,10 @@ const Button = React.forwardRef<
                     onFormSubmit(
                       showSelect
                         ? value
-                        : { ...value, type: `${title} ${course}`.trim() }
+                        : {
+                            ...value,
+                            type: `${title} ${value.type ?? course}`.trim(),
+                          }
                     )
                       .then((val) => {
                         modalForm.destroy();
