@@ -11,11 +11,17 @@ import Introduction from "@public/glowIcons/introduction.svg";
 import Card from "@/components/card";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+const newMeta = {
   title:
     "Biotech.Industries - Светлое лагерное пиво: сырьё, технология, качество",
   description:
     "Biotech.Industries - Поможем сформировать профессиональные компетенции в области технологи пивоварения (технологии светлого пива низового брожения)",
+};
+
+export const metadata: Metadata = {
+  ...newMeta,
+  openGraph: { ...newMeta },
+  twitter: { ...newMeta },
 };
 
 export default function Course1() {

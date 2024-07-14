@@ -11,10 +11,16 @@ import BookmarkGlowMobile from "@public/BookmarkGlowMobile.svg";
 import FirstSection from "@/components/first.section";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+const newMeta = {
   title: "Biotech.Industries - Курсы для биотех-специалистов",
   description:
     "Biotech.Industries - Наша команда не только разрабатывает технологии и проводит исследования, но и делится знаниями",
+};
+
+export const metadata: Metadata = {
+  ...newMeta,
+  openGraph: { ...newMeta },
+  twitter: { ...newMeta },
 };
 
 const CourseCard = ({

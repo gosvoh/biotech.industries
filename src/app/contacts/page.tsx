@@ -5,10 +5,16 @@ import dynamic from "next/dynamic";
 import Button from "@/components/ui/custom/button";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+const newMeta = {
   title: "Biotech.Industries - Контакты",
   description:
     "Biotech.Industries - Свяжитесь с нами, если у вас остались вопросы",
+};
+
+export const metadata: Metadata = {
+  ...newMeta,
+  openGraph: { ...newMeta },
+  twitter: { ...newMeta },
 };
 
 const YandexMap = dynamic(async () => import("@/components/yandex.map"), {

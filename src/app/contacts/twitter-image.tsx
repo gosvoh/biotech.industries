@@ -1,0 +1,15 @@
+import { generateOGImage } from "@/lib/og";
+
+export const runtime = "edge";
+
+export const alt = "Контакты";
+export const size = {
+  width: 1920,
+  height: 960,
+};
+
+export const contentType = "image/png";
+
+export default async function Image() {
+  return generateOGImage(alt);
+}

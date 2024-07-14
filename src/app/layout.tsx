@@ -11,26 +11,28 @@ const inter = Manrope({
   weight: ["400", "700"],
 });
 
-export const metadata: Metadata = {
+const newMeta = {
   title: "Biotech.Industries",
-  description: "Biotech.Industries",
+  description: "Biotech.Industries - Создаем инновации в биотех-индустрии",
+};
+
+export const metadata: Metadata = {
+  ...newMeta,
   icons: "favicon.ico",
   metadataBase: new URL("https://biotech.industries.cedne.ru"),
   creator: "Aleksey Vokhmin",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    title: "Biotech.Industries",
-    description: "Biotech.Industries",
-    images: [
-      {
-        url: "cover.png",
-        width: 1200,
-        height: 630,
-        alt: "Biotech.Industries",
-        type: "image/png",
-      },
-    ],
+
+    ...newMeta,
+  },
+  twitter: {
+    card: "summary_large_image",
+
+    ...newMeta,
+    site: "@biotech.industries",
+    creator: "@gosvoh",
   },
 };
 

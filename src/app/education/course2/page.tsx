@@ -11,11 +11,17 @@ import Ifeatures from "@public/glowIcons/ifeatures.svg";
 import Introduction from "@public/glowIcons/introduction.svg";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+const newMeta = {
   title:
     "Biotech.Industries - Технологические аспекты использования дрожжей в пивоварении",
   description:
     "Biotech.Industries - Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae",
+};
+
+export const metadata: Metadata = {
+  ...newMeta,
+  openGraph: { ...newMeta },
+  twitter: { ...newMeta },
 };
 
 export default function Course2() {

@@ -1,0 +1,15 @@
+import { generateOGImage } from "@/lib/og";
+
+export const runtime = "edge";
+
+export const alt = "Светлое лагерное пиво: сырьё, технология, качество";
+export const size = {
+  width: 1920,
+  height: 960,
+};
+
+export const contentType = "image/png";
+
+export default async function Image() {
+  return generateOGImage(alt);
+}
