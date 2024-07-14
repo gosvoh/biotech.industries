@@ -96,7 +96,7 @@ export default function Event() {
           <>
             Наша команда организует мероприятие{" "}
             <br className="hidden md:inline" />
-            по Вашему запросу
+            по вашему запросу
           </>
         }
         breadcrumbs={[
@@ -231,7 +231,7 @@ export default function Event() {
             <div className="fcol gap-2 z-[1]">
               <h3>Схема взаимодействия</h3>
               <p className="text-lg md:text-3xl">
-                Команда BioTech.Industries организует хакатон под ключ
+                Команда Biotech.Industries организует хакатон под ключ
               </p>
             </div>
             <Schema

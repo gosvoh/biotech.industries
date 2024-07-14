@@ -15,7 +15,7 @@ import GlowRound from "@public/GlowRound.svg";
 import { HumanCard } from "@/components/human.card";
 import { Schema } from "@/components/schema";
 import Contacts from "@/components/contacts";
-import type Button from "@/components/ui/custom/button";
+import Button from "@/components/ui/custom/button";
 import Arrow from "@public/Arrow.svg";
 
 export default function Course({
@@ -265,15 +265,14 @@ export default function Course({
         <div className="p-10 rounded-lg space-y-6 border border-brand2 xl:max-w-3/8">
           <p>
             Для предварительной регистрации и получения подробной информации о
-            курсе заполните пожалуйста форму
+            курсе необходимо заполнить форму
           </p>
-          <Link
-            href={link}
-            className="text-brand2 font-bold text-2xl underline inline-flex items-center gap-6"
-          >
-            <ExternalLinkIcon />
-            Оставить заявку
-          </Link>
+          <Button
+            showSelect={false}
+            variant="link"
+            title="Оставить заявку"
+            {...buttonProps}
+          />
         </div>
       </section>
 

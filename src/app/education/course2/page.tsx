@@ -15,7 +15,7 @@ export default function Course2() {
     <Course
       breadcrumb="Технологические аспекты"
       title="Технологические аспекты использования дрожжей в пивоварении"
-      description="Поможем сформировать профессиональные компетенций для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
+      description="Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
       format="Очно-заочный"
       date="Архивный курс"
       youWillLearn={[
@@ -96,8 +96,7 @@ export default function Course2() {
       price={{ fixed: false, value: 45 }}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
       buttonProps={{
-        title: "Оставить заявку",
-        showSelect: false,
+        course: "Светлое лагерное пиво: сырьё, технология, качество",
       }}
     />
   );

@@ -5,7 +5,7 @@ import InformCard from "@/components/ui/custom/inform.card";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
-import Tatneft from "@public/tatneft.svg";
+import Tatneft from "@public/tatneft.png";
 import Baltika from "@public/baltika.png";
 import HN from "@public/h&n.png";
 import Viola from "@public/viola.png";
@@ -124,7 +124,7 @@ export default function Home() {
               smallText="01"
               text={
                 <>
-                  Технологиии
+                  Технологии и
                   <br />
                   исследования
                 </>

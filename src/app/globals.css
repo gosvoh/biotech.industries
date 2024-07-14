@@ -66,7 +66,7 @@
     @apply text-xl md:text-3xl;
 
     & > section {
-      @apply wrapper py-20;
+      @apply wrapper py-20 overflow-x-clip;
 
       &:first-of-type:not(.index) {
         @apply pt-10;

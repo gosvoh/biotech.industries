@@ -6,16 +6,26 @@ import React from "react";
 import Party from "@public/Party.svg";
 import Image from "next/image";
 import onFormSubmit from "@/lib/form.action";
+import { ExternalLinkIcon } from "lucide-react";
 
 const Button = React.forwardRef<
   HTMLButtonElement,
   React.ButtonHTMLAttributes<HTMLButtonElement> & {
     showSelect?: boolean;
     title?: string;
+    variant?: "default" | "link";
+    course?: string;
   }
 >(
   (
-    { className, showSelect = true, title = "Обсудить проект", ...props },
+    {
+      className,
+      showSelect = true,
+      title = "Обсудить проект",
+      variant = "default",
+      course,
+      ...props
+    },
     ref
   ) => {
     const [form] = Form.useForm();
@@ -66,7 +76,12 @@ const Button = React.forwardRef<
       <>
         {context}
         <button
-          className={cn(buttonClassName, className)}
+          className={cn(
+            variant === "default"
+              ? buttonClassName
+              : "text-brand2 font-bold text-2xl underline inline-flex items-center gap-6",
+            className
+          )}
           ref={ref}
           {...props}
           onClick={() => {
@@ -95,7 +110,11 @@ const Button = React.forwardRef<
                       },
                     });
                     form.resetFields();
-                    onFormSubmit(showSelect ? value : { ...value, type: title })
+                    onFormSubmit(
+                      showSelect
+                        ? value
+                        : { ...value, type: `${title} ${course}`.trim() }
+                    )
                       .then((val) => {
                         modalForm.destroy();
                         if (val.success) {
@@ -237,6 +256,7 @@ const Button = React.forwardRef<
             });
           }}
         >
+          {variant === "link" && <ExternalLinkIcon />}
           {title}
         </button>
       </>
