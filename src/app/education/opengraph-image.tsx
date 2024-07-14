@@ -1,4 +1,4 @@
-import { generateOGImage } from "@/lib/og";
+import { generateOGImage } from "@/lib/meta";
 
 export const runtime = "edge";
 
