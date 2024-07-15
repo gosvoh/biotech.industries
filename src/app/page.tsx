@@ -109,7 +109,7 @@ export default function Home() {
       </section>
       <section className="fcol gap-16 md:gap-20" id="about">
         <h2 className="text-center">О нас</h2>
-        <div className="fcol gap-10 md:gap-5 md:grid md:grid-cols-2 xl:grid-cols-4">
+        <div className="fcol gap-10 md:gap-5 md:grid md:grid-cols-2 3xl:grid-cols-4">
           <InformCard bigText="30" text="экспертов" />
           <InformCard bigText="90" text="лет в биотехнологии" />
           <InformCard bigText="10" text="лабораторий" />

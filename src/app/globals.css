@@ -166,7 +166,7 @@
   }
 
   .price {
-    @apply text-brand font-bold text-2xl md:text-5xl;
+    @apply text-brand font-bold text-2xl md:text-4xl 3xl:text-5xl;
 
     span {
       @apply text-4xl xs:text-5xl;
