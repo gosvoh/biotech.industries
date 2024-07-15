@@ -141,6 +141,7 @@ export default function Course1() {
       price={110}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
       buttonProps={{
+        title: "Записаться на курс",
         course: "Светлое лагерное пиво: сырьё, технология, качество",
       }}
     />

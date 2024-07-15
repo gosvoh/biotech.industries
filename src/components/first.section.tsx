@@ -12,7 +12,7 @@ export default function FirstSection({
 }: {
   image: StaticImageData;
   breadcrumbs: React.ComponentProps<typeof Breadcrumbs>["items"];
-  title: string;
+  title: React.ReactNode;
   subtitle: React.ReactNode;
 }) {
   return (

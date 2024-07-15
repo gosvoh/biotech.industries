@@ -124,9 +124,8 @@ export default function Home() {
               smallText="01"
               text={
                 <>
-                  Технологии и
-                  <br />
-                  исследования
+                  Технологии
+                  <br />и исследования
                 </>
               }
             />

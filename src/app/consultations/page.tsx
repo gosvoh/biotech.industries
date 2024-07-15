@@ -21,7 +21,13 @@ export default function Consultations() {
     <main>
       <FirstSection
         image={Star}
-        title="Консультации для бизнеса"
+        title={
+          <>
+            Консультации
+            <br />
+            для бизнеса
+          </>
+        }
         subtitle="Не можете найти ошибку в рецептуре нового продукта? Нужна помощь в подборе необходимого оборудования? Эксперты Biotech.Industries готовы делиться опытом и помогать в решении ваших задач"
         breadcrumbs={[
           { title: "Главная", href: "/" },

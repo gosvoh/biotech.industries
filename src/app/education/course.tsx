@@ -33,6 +33,7 @@ export default function Course({
   pros,
   price,
   link,
+  formRequirementsText = "Для предварительной регистрации и получения подробной информации о курсе необходимо заполнить форму",
   buttonProps,
 }: {
   breadcrumb: string;
@@ -60,6 +61,7 @@ export default function Course({
   }[];
   price: number | { fixed: boolean; value: number };
   link: React.ComponentPropsWithoutRef<typeof Link>["href"];
+  formRequirementsText?: string;
   buttonProps?: React.ComponentPropsWithoutRef<typeof Button>;
 }) {
   return (
@@ -263,10 +265,7 @@ export default function Course({
           </p>
         </div>
         <div className="p-10 rounded-lg space-y-6 border border-brand2 xl:max-w-3/8">
-          <p>
-            Для предварительной регистрации и получения подробной информации о
-            курсе необходимо заполнить форму
-          </p>
+          <p>{formRequirementsText}</p>
           <Button
             showSelect={false}
             variant="link"
