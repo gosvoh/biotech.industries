@@ -31,11 +31,21 @@ const PlusList = ({
     {items.map((item, i) => (
       <div
         role="listitem"
-        className="flex flex-row items-start list-none"
+        className="flex flex-row list-none"
         key={`plus-list-item-${i}`}
       >
-        <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" />
-        <div className="fcol gap-[10px] bg-secondary md:bg-transparent px-6 py-5 md:pt-0">
+        {/* <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" /> */}
+        <div
+          className={cn(
+            "max-w-[42px] md:max-w-[78px] max-h-[42px] md:max-h-[78px]",
+            "w-full bg-brand",
+            "text-black text-4xl font-bold",
+            "flex items-center justify-center"
+          )}
+        >
+          +
+        </div>
+        <div className="fcol gap-[10px] bg-secondary md:bg-transparent px-6 py-5 md:pt-0 flex-1">
           <h4>{item.title}</h4>
           <p>{item.description}</p>
         </div>
@@ -115,7 +125,7 @@ export default function Event() {
         ]}
       />
 
-      <section className="max-w-none px-0 fcol gap-16 md:gap-24 xl:gap-[240px] md:border-y-2 md:border-white overflow-hidden md:bg-secondary">
+      <section className="max-w-none px-0 fcol gap-16 md:gap-24 xl:gap-[240px] md:border-y-2 md:border-white overflow-clip md:bg-secondary">
         <section className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
           <div className="fcol gap-3 flex-1 relative xl:max-w-3/8">
             <h2 className="z-[1]">Марафон идей</h2>
@@ -129,7 +139,7 @@ export default function Event() {
               className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
             />
           </div>
-          <div className="fcol gap-6 flex-1 xl:max-w-1/2">
+          <div className="fcol gap-6 flex-1 xl:max-w-1/2 z-[1]">
             <h3>Плюсы</h3>
             <PlusList
               items={[
@@ -194,7 +204,8 @@ export default function Event() {
 
       <section
         id="hack"
-        className="max-w-none px-0 fcol gap-16 md:gap-[240px] md:border-b-2 md:border-white overflow-hidden"
+        className="max-w-none px-0 fcol gap-16 md:gap-[240px] md:border-b-2 md:border-white overflow-clip"
+        tabIndex={-1}
       >
         <section className="fcol gap-8 xl:flex-row xl:justify-between wrapper">
           <div className="fcol gap-3 flex-1 relative xl:max-w-3/8">
@@ -233,7 +244,7 @@ export default function Event() {
           </div>
         </section>
 
-        <section className="relative overflow-x-clip">
+        <section className="relative overflow-x-hidden">
           <div className="fcol gap-6 md:gap-16 wrapper">
             <div className="fcol gap-2 z-[1]">
               <h3>Схема взаимодействия</h3>
