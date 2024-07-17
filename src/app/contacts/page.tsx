@@ -24,7 +24,7 @@ const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
 export default function Contacts() {
   return (
     <main>
-      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0 pb-0">
+      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-clip max-w-none px-0 pb-0">
         <div className="fcol gap-8 md:gap-16 lg:grid lg:items-center lg:grid-rows-2 lg:grid-cols-2 lg:grid-flow-col wrapper w-full">
           <h1 className="text-xl xs:text-2xl md:text-4xl">
             Свяжитесь с нами, если у вас остались вопросы

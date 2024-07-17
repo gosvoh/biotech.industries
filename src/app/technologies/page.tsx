@@ -49,7 +49,7 @@ export default function Technologies() {
           },
         ]}
       />
-      <section className="md:bg-secondary md:relative overflow-hidden max-w-none px-0">
+      <section className="md:bg-secondary md:relative overflow-clip max-w-none px-0">
         <div className="fcol gap-16 xl:flex-row wrapper">
           <h2 className="relative z-[1] md:flex-1">
             Схема взаимодействия

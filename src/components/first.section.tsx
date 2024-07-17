@@ -16,7 +16,7 @@ export default function FirstSection({
   subtitle: React.ReactNode;
 }) {
   return (
-    <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
+    <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-clip max-w-none px-0">
       <Breadcrumbs items={breadcrumbs} />
       <div className="fcol gap-8 wrapper">
         <Image

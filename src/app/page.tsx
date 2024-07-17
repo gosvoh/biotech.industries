@@ -49,7 +49,7 @@ const Partner = ({
 export default function Home() {
   return (
     <main>
-      <section className="pt-[290px] md:py-[231px] relative overflow-x-clip md:overflow-y-hidden max-w-none px-0 index">
+      <section className="pt-[290px] md:py-[231px] relative overflow-x-clip md:overflow-y-clip max-w-none px-0 index">
         <div className="wrapper">
           <div className="fcol gap-16 ml-auto w-fit">
             <div className="fcol gap-8 md:w-fit">

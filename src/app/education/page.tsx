@@ -30,7 +30,7 @@ const CourseCard = ({
     className={cn(
       "fcol gap-8 p-10 border border-white/60 bg-black relative",
       "rounded-[20px] md:rounded-[30px]",
-      "overflow-hidden",
+      "overflow-clip",
       "hover:border-brand2 hover:shadow-[0px_4px_100px_-50px_hsl(var(--brand2))] transition-all duration-300",
       "group"
     )}
@@ -138,7 +138,7 @@ export default function Education() {
           вашей команды
         </p>
       </section>
-      <section className="hidden lg:block bg-secondary overflow-hidden px-0 max-w-none">
+      <section className="hidden lg:block bg-secondary overflow-clip px-0 max-w-none">
         <div className="wrapper flex flex-row justify-between items-center">
           <div className="relative row-span-2 col-start-1 w-1/6 mx-auto -translate-x-1/2">
             <Image src={Bookmark} alt="" className="w-full rotate-[10.03deg]" />

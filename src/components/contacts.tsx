@@ -40,7 +40,7 @@ export default function Contacts({
         <Button className="mt-8 md:mt-0" {...buttonProps} />
       </div>
 
-      <YandexMap className="w-full aspect-square max-h-[600px] mt-16 overflow-hidden" />
+      <YandexMap className="w-full aspect-square max-h-[600px] mt-16 overflow-clip" />
     </section>
   );
 }

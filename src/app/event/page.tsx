@@ -34,7 +34,6 @@ const PlusList = ({
         className="flex flex-row list-none"
         key={`plus-list-item-${i}`}
       >
-        {/* <PlusSquareFilled className="!text-brand text-[42px] md:text-[78px]" /> */}
         <div
           className={cn(
             "max-w-[42px] md:max-w-[78px] max-h-[42px] md:max-h-[78px]",
@@ -244,7 +243,7 @@ export default function Event() {
           </div>
         </section>
 
-        <section className="relative overflow-x-hidden">
+        <section className="relative overflow-x-clip">
           <div className="fcol gap-6 md:gap-16 wrapper">
             <div className="fcol gap-2 z-[1]">
               <h3>Схема взаимодействия</h3>
@@ -279,7 +278,7 @@ export default function Event() {
             {
               href: "https://vk.com/wall-203191795_1315",
               linkTitle: "Хакатон",
-              description: '"Балтийский берег"',
+              description: "«Балтийский берег»",
             },
             {
               href: "https://vk.com/wall-203191795_272",
@@ -289,7 +288,7 @@ export default function Event() {
             {
               href: "https://vk.com/wall-203191795_487",
               linkTitle: "Хакатон",
-              description: '"Продажа крафтовых напитков" by САДЫ ПЛЕСКАВЫ',
+              description: "«Продажа крафтовых напитков» by САДЫ ПЛЕСКАВЫ",
             },
             {
               href: "https://vk.com/wall-203191795_899",
@@ -300,7 +299,7 @@ export default function Event() {
         />
       </section>
 
-      <section className="max-w-none px-0 md:bg-secondary overflow-hidden">
+      <section className="max-w-none px-0 md:bg-secondary overflow-clip">
         <div className="wrapper fcol gap-8 md:gap-16 xl:gap-32">
           <div className="fcol gap-8 xl:flex-row xl:justify-between">
             <div className="fcol gap-3 flex-1 relative xl:max-w-[50%] md:text-2xl">

@@ -66,7 +66,7 @@ export default function Course({
 }) {
   return (
     <main>
-      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-hidden max-w-none px-0">
+      <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-clip max-w-none px-0">
         <Breadcrumbs
           items={[
             { title: "Главная", href: "/" },
@@ -117,7 +117,7 @@ export default function Course({
         />
       </section>
 
-      <section className="md:bg-secondary relative max-w-none px-0 overflow-hidden">
+      <section className="md:bg-secondary relative max-w-none px-0 overflow-clip">
         <div className="wrapper space-y-16">
           <h2 className="z-[1]">Вы научитесь</h2>
           <div className="fcol gap-5 xl:flex-row xl:max-w-3/4 z-[1]">
@@ -136,7 +136,7 @@ export default function Course({
         />
       </section>
 
-      <section className="relative max-w-none px-0 overflow-hidden">
+      <section className="relative max-w-none px-0 overflow-clip">
         <div className="space-y-16">
           <Image
             src={Arrow}
