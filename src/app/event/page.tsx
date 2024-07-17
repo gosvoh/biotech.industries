@@ -335,7 +335,7 @@ export default function Event() {
             <div className="fcol gap-6 md:gap-3 font-bold xl:max-w-3/8 flex-1 max-md:py-16">
               <p className="text-3xl md:text-4xl">Стоимость</p>
               <p className="text-4xl md:text-5xl text-brand">По запросу</p>
-              <Button className="mt-8" />
+              <Button className="mt-8 max-xl:hidden" />
             </div>
           </div>
           <Carousel />

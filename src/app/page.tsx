@@ -124,8 +124,7 @@ export default function Home() {
               smallText="01"
               text={
                 <>
-                  Технологии
-                  <br />и исследования
+                  Технологии <br className="max-md:hidden" />и исследования
                 </>
               }
             />

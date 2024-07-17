@@ -7,6 +7,7 @@ import Party from "@public/Party.svg";
 import Image from "next/image";
 import onFormSubmit from "@/lib/form.action";
 import { ExternalLinkIcon } from "lucide-react";
+import Link from "next/link";
 
 const Button = React.forwardRef<
   HTMLButtonElement,
@@ -251,7 +252,14 @@ const Button = React.forwardRef<
                     ]}
                   >
                     <Checkbox>
-                      Я согласен с политикой конфиденциальности
+                      Я согласен с{" "}
+                      <Link
+                        href="/personal_data_policy.pdf"
+                        target="_blank"
+                        className="text-brand2 hover:text-brand2/80 hover:underline"
+                      >
+                        политикой конфиденциальности
+                      </Link>
                     </Checkbox>
                   </Form.Item>
                 </Form>

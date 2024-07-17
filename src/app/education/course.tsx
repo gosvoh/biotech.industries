@@ -141,7 +141,7 @@ export default function Course({
           <Image
             src={Arrow}
             alt=""
-            className="wrapper xl:hidden w-1/3 h-auto text-brand2 ml-0"
+            className="wrapper xl:hidden w-1/2 h-auto text-brand2 ml-0"
           />
           <h2 className="wrapper">По итогам прохождения курса вы сможете</h2>
           <div className="relative">
@@ -275,7 +275,7 @@ export default function Course({
         </div>
       </section>
 
-      <Contacts buttonProps={buttonProps} />
+      <Contacts />
     </main>
   );
 }

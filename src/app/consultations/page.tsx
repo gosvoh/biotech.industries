@@ -49,12 +49,12 @@ export default function Consultations() {
       <section className="fcol gap-20 wrapper">
         <HumanCard
           image={Meledina}
-          name="Т.В. Меледина"
+          name="Татьяна Меледина"
           desc={<>Эксперт в области биотехнологии дрожжей, солода и пива</>}
         />
         <HumanCard
           image={Eremeeva}
-          name="Н.Б. Еремеева"
+          name="Наталья Еремеева"
           desc={
             <>
               Эксперт в области извлечения биоактивных компонентов из
@@ -67,7 +67,7 @@ export default function Consultations() {
         />
         <HumanCard
           image={Ivanova}
-          name="В.А. Иванова"
+          name="Вера Иванова"
           desc={
             <>
               Эксперт в области микробиологии напитков брожения, качества и
@@ -78,7 +78,7 @@ export default function Consultations() {
         />
         <HumanCard
           image={Hanturgaev}
-          name="А.Г. Хантургаев"
+          name="Андрей Хантургаев"
           desc={
             <>
               Эксперт в области разработки инновационных технологий переработки
@@ -90,7 +90,7 @@ export default function Consultations() {
         />
         <HumanCard
           image={Fedorov}
-          name="А.В. Федоров"
+          name="Александр Федоров"
           desc={
             <>
               Эксперт в области пищевых систем, процессах переноса массы и
@@ -101,7 +101,7 @@ export default function Consultations() {
         />
         <HumanCard
           image={Ishevsky}
-          name="А.Л. Ишевский"
+          name="Александр Ишевский"
           desc={
             <>
               Эксперт в области хранения и переработки сырья животного
