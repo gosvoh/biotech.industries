@@ -324,7 +324,7 @@ export default function Event() {
                 target="_blank"
               >
                 <ExternalLink />
-                про BIOCON
+                Про BIOCON
               </Link>
               <Image
                 src={Glow2}
