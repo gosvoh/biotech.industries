@@ -332,13 +332,19 @@ export default function Event() {
                 className="absolute top-1/3 left-0 -translate-x-1/2 -translate-y-1/2 w-[150%] max-w-none opacity-40 hidden md:block"
               />
             </div>
-            <div className="fcol gap-6 md:gap-3 font-bold xl:max-w-3/8 flex-1 max-md:py-16">
+            <div className="max-w-3/8 flex-1 fcol gap-6 font-bold z-[1] max-xl:hidden">
               <p className="text-3xl md:text-4xl">Стоимость</p>
               <p className="text-4xl md:text-5xl text-brand">По запросу</p>
               <Button className="mt-8 max-xl:hidden" />
             </div>
           </div>
-          <Carousel />
+          <div className="space-y-[80px]">
+            <Carousel />
+            <div className="fcol gap-6 md:gap-3 font-bold flex-1 xl:hidden">
+              <p className="text-3xl md:text-4xl">Стоимость</p>
+              <p className="text-4xl md:text-5xl text-brand">По запросу</p>
+            </div>
+          </div>
         </div>
       </section>
       <Contacts />
