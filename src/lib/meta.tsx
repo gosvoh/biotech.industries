@@ -11,7 +11,7 @@ export const generateOGImage = async (title: string) => {
       <div
         style={{
           fontSize: 64,
-          background: "url(https://biotech.industries.cedne.ru/cover.png)",
+          background: "url(https://biotech.industries/cover.png)",
           width: "100%",
           height: "100%",
           display: "flex",
@@ -50,7 +50,7 @@ export const generateMeta = (title: string, description: string): Metadata => ({
   title,
   description,
   icons: "favicon.ico",
-  metadataBase: new URL("https://biotech.industries.cedne.ru"),
+  metadataBase: new URL("https://biotech.industries"),
   creator: "Aleksey Vokhmin",
   openGraph: {
     type: "website",
