@@ -103,9 +103,6 @@ export default function Course2() {
       price={45}
       link="https://forms.gle/U6rMrCbmhtNaciwA9"
       formRequirementsText="Для предварительной регистрации и получения подробной информации о курсе необходимо необходимо оставить заявку"
-      buttonProps={{
-        course: "Светлое лагерное пиво: сырьё, технология, качество",
-      }}
     />
   );
 }

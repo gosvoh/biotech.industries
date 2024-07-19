@@ -270,6 +270,7 @@ export default function Course({
             showSelect={false}
             variant="link"
             title="Оставить заявку"
+            course={title}
             {...buttonProps}
           />
         </div>
