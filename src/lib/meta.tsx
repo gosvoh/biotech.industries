@@ -11,7 +11,7 @@ export const generateOGImage = async (title: string) => {
       <div
         style={{
           fontSize: 64,
-          background: "url(https://biotech.industries/cover.png)",
+          background: "url(http://localhost:3000/cover.png)",
           width: "100%",
           height: "100%",
           display: "flex",
