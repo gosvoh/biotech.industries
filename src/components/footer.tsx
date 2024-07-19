@@ -30,10 +30,17 @@ export default function Footer() {
             Организация мероприятий
           </Link>
         </div>
-        <div className="fcol gap-6 md:flex-col-reverse">
+        <div className="fcol gap-6">
           <p>Санкт-Петербург, Ломоносова ул., 9</p>
           <Link className="font-bold" href="mailto:biotech@itmo.ru">
             biotech@itmo.ru
+          </Link>
+          <Link
+            className="hover:text-brand2/80 hover:underline"
+            target="_blank"
+            href="/personal_data_policy.pdf"
+          >
+            Политика конфиденциальности
           </Link>
         </div>
       </div>
