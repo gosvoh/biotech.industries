@@ -18,15 +18,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/courses`,
+      url: `${baseUrl}/education`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/courses/course1`,
+      url: `${baseUrl}/education/course1`,
       lastModified: new Date(),
     },
     {
-      url: `${baseUrl}/courses/course2`,
+      url: `${baseUrl}/education/course2`,
       lastModified: new Date(),
     },
     {
