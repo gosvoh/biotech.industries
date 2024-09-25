@@ -146,7 +146,7 @@ export default function Course({
           <h2 className="wrapper">По итогам прохождения курса вы сможете</h2>
           <div className="relative">
             <div className="wrapper">
-              <div className="fcol gap-5 xl:flex-row xl:max-w-3/4 z-[1] ml-auto">
+              <div className="fcol gap-5 flex-wrap xl:flex-row xl:max-w-3/4 z-[1] ml-auto">
                 {results.map((item, i) => (
                   <React.Fragment key={`youWillLearn-${i}`}>
                     {item}

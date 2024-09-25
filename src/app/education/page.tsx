@@ -118,6 +118,13 @@ export default function Education() {
               format="Очно-заочный"
             />
           </Link>
+          <Link href="/education/course3">
+            <CourseCard
+              title={"Микробиология пивоварения"}
+              date="Архивный курс"
+              format="Очно-заочный"
+            />
+          </Link>
         </div>
       </section>
       <section className="fcol gap-16 max-w-none px-0 lg:hidden overflow-x-clip">
