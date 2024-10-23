@@ -12,8 +12,8 @@ import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Технологические аспекты использования дрожжей в пивоварении",
-  "Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
+  "Biotech.Industries - Микробиология пивоварения",
+  "Поможем сформировать профессиональные компетенций в области микробиологических аспектов пивоварения"
 );
 
 export default function Course3() {
