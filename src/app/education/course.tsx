@@ -18,29 +18,12 @@ import Contacts from "@/components/contacts";
 import Button from "@/components/ui/custom/button";
 import Arrow from "@public/Arrow.svg";
 
-export default function Course({
-  breadcrumb,
-  title,
-  description,
-  format,
-  date,
-  youWillLearn,
-  results,
-  forWhom,
-  teachers,
-  programTitle,
-  program,
-  pros,
-  price,
-  link,
-  formRequirementsText = "Для предварительной регистрации и получения подробной информации о курсе необходимо заполнить форму",
-  buttonProps,
-}: {
+type CourseProps = {
   breadcrumb: string;
   title: string;
   description: string;
   format: "Дистанционный" | "Очно-заочный";
-  date: string;
+  date: string | { start: string; end?: string };
   youWillLearn: React.ReactNode[];
   results: React.ReactNode[];
   forWhom: string;
@@ -59,11 +42,28 @@ export default function Course({
     icon: StaticImageData;
     description: string;
   }[];
-  price: number | { fixed: boolean; value: number };
-  link: React.ComponentPropsWithoutRef<typeof Link>["href"];
+  price: number | { fixed: boolean; value: number } | string;
   formRequirementsText?: string;
   buttonProps?: React.ComponentPropsWithoutRef<typeof Button>;
-}) {
+};
+
+export default function Course({
+  breadcrumb,
+  title,
+  description,
+  format,
+  date,
+  youWillLearn,
+  results,
+  forWhom,
+  teachers,
+  programTitle,
+  program,
+  pros,
+  price,
+  formRequirementsText = "Для предварительной регистрации и получения подробной информации о курсе необходимо заполнить форму",
+  buttonProps,
+}: CourseProps) {
   return (
     <main>
       <section className="fcol gap-16 relative overflow-x-clip md:overflow-y-clip max-w-none px-0">
@@ -94,10 +94,18 @@ export default function Course({
             <p className="font-bold text-xl md:text-3xl">Дистанционный</p>
           </div>
           <div className="fcol gap-1 md:gap-2">
-            <p className="text-base md:text-2xl">Даты проведения</p>
+            {/* <p className="text-base md:text-2xl">Даты проведения</p> */}
+            <p className="text-base md:text-2xl">
+              {typeof date === "string" ||
+              (typeof date === "object" && date.end)
+                ? "Даты проведения"
+                : "Дата начала"}
+            </p>
             <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
               <ArrowUpRight className="text-brand2 w-8 h-8" />
-              {date}
+              {typeof date === "string"
+                ? date
+                : `${date.start}${date.end ? ` - ${date.end}` : ""}`}
             </div>
           </div>
         </div>
@@ -261,7 +269,7 @@ export default function Course({
             <span className="">
               {typeof price === "object" ? price.value : price}
             </span>{" "}
-            тыс. руб.
+            {typeof price === "string" ? " " : "тыс. "}руб.
           </p>
         </div>
         <div className="p-10 rounded-lg space-y-6 border border-brand2 xl:max-w-3/8">

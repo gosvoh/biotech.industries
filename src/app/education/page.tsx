@@ -84,11 +84,31 @@ export default function Education() {
       />
       <section className="fcol gap-16">
         <h2>Наши курсы</h2>
-        {/* <div className="fcol gap-8">
+        <div className="fcol gap-8">
           <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Предстоящие курсы
           </h3>
-        </div> */}
+          <Link href="/education/course2">
+            <CourseCard
+              title={
+                <>
+                  Технологические аспекты использования{" "}
+                  <br className="hidden md:inline" />
+                  дрожжей в пивоварении
+                </>
+              }
+              date="17 декабря"
+              format="Очно-заочный"
+            />
+          </Link>
+          <Link href="/education/course3">
+            <CourseCard
+              title={"Микробиология пивоварения"}
+              date="17 декабря"
+              format="Очно-заочный"
+            />
+          </Link>
+        </div>
         <div className="fcol gap-8">
           <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Архивные курсы
@@ -103,26 +123,6 @@ export default function Education() {
               }
               date="Архивный курс"
               format="Дистанционный"
-            />
-          </Link>
-          <Link href="/education/course2">
-            <CourseCard
-              title={
-                <>
-                  Технологические аспекты использования{" "}
-                  <br className="hidden md:inline" />
-                  дрожжей в пивоварении
-                </>
-              }
-              date="Архивный курс"
-              format="Очно-заочный"
-            />
-          </Link>
-          <Link href="/education/course3">
-            <CourseCard
-              title={"Микробиология пивоварения"}
-              date="Архивный курс"
-              format="Очно-заочный"
             />
           </Link>
         </div>

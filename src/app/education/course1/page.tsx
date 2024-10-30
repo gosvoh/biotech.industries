@@ -139,11 +139,7 @@ export default function Course1() {
         },
       ]}
       price={110}
-      link="https://forms.gle/U6rMrCbmhtNaciwA9"
-      buttonProps={{
-        title:
-          "Для предварительной регистрации и получения подробной информации о курсе необходимо необходимо оставить заявку",
-      }}
+      buttonProps={{ title: "Оставить заявку на курс" }}
     />
   );
 }
