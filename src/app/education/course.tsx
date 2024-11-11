@@ -91,7 +91,7 @@ export default function Course({
         <div className="fcol md:flex-row gap-6 z-[1] md:gap-8 lg:gap-24 xl:gap-[180px] wrapper md:items-center">
           <div className="fcol gap-1 md:gap-2">
             <p className="text-base md:text-2xl">Формат проведения</p>
-            <p className="font-bold text-xl md:text-3xl">Дистанционный</p>
+            <p className="font-bold text-xl md:text-3xl">{format}</p>
           </div>
           <div className="fcol gap-1 md:gap-2">
             {/* <p className="text-base md:text-2xl">Даты проведения</p> */}
