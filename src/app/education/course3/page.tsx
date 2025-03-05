@@ -23,7 +23,6 @@ export default function Course3() {
       title="Микробиология пивоварения"
       description="Поможем сформировать профессиональные компетенций в области микробиологических аспектов пивоварения"
       format="Очно-заочный"
-      date={{ start: "17 декабря" }}
       youWillLearn={[
         <Card
           title="01."

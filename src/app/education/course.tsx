@@ -23,7 +23,7 @@ type CourseProps = {
   title: string;
   description: string;
   format: "Дистанционный" | "Очно-заочный";
-  date: string | { start: string; end?: string };
+  date?: string | { start: string; end?: string };
   youWillLearn: React.ReactNode[];
   results: React.ReactNode[];
   forWhom: string;
@@ -93,21 +93,22 @@ export default function Course({
             <p className="text-base md:text-2xl">Формат проведения</p>
             <p className="font-bold text-xl md:text-3xl">{format}</p>
           </div>
-          <div className="fcol gap-1 md:gap-2">
-            {/* <p className="text-base md:text-2xl">Даты проведения</p> */}
-            <p className="text-base md:text-2xl">
-              {typeof date === "string" ||
-              (typeof date === "object" && date.end)
-                ? "Даты проведения"
-                : "Дата начала"}
-            </p>
-            <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
-              <ArrowUpRight className="text-brand2 w-8 h-8" />
-              {typeof date === "string"
-                ? date
-                : `${date.start}${date.end ? ` - ${date.end}` : ""}`}
+          {date && (
+            <div className="fcol gap-1 md:gap-2">
+              <p className="text-base md:text-2xl">
+                {typeof date === "string" ||
+                (typeof date === "object" && date.end)
+                  ? "Даты проведения"
+                  : "Дата начала"}
+              </p>
+              <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
+                <ArrowUpRight className="text-brand2 w-8 h-8" />
+                {typeof date === "string"
+                  ? date
+                  : `${date.start}${date.end ? ` - ${date.end}` : ""}`}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <Image

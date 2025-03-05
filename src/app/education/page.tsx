@@ -85,9 +85,9 @@ export default function Education() {
       <section className="fcol gap-16">
         <h2>Наши курсы</h2>
         <div className="fcol gap-8">
-          <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
-            Предстоящие курсы
-          </h3>
+          {/* <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
+            Наши курсы
+          </h3> */}
           <Link href="/education/course2">
             <CourseCard
               title={
@@ -97,19 +97,31 @@ export default function Education() {
                   дрожжей в пивоварении
                 </>
               }
-              date="17 декабря"
+              date="Подробнее"
               format="Очно-заочный"
             />
           </Link>
           <Link href="/education/course3">
             <CourseCard
               title={"Микробиология пивоварения"}
-              date="17 декабря"
+              date="Подробнее"
               format="Очно-заочный"
             />
           </Link>
+          <Link href="/education/course1">
+            <CourseCard
+              title={
+                <>
+                  Светлое лагерное пиво: <br className="hidden md:inline" />
+                  сырьё, технология, качество
+                </>
+              }
+              date="Подробнее"
+              format="Дистанционный"
+            />
+          </Link>
         </div>
-        <div className="fcol gap-8">
+        {/* <div className="fcol gap-8">
           <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Архивные курсы
           </h3>
@@ -125,7 +137,7 @@ export default function Education() {
               format="Дистанционный"
             />
           </Link>
-        </div>
+        </div> */}
       </section>
       <section className="fcol gap-16 max-w-none px-0 lg:hidden overflow-x-clip">
         <h2 className="text-4xl wrapper z-[1]">Не нашли нужный курс?</h2>
