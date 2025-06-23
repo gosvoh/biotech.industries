@@ -20,8 +20,9 @@ import Arrow from "@public/Arrow.svg";
 
 type CourseProps = {
   breadcrumb: string;
+  type?: string;
   title: string;
-  description: string;
+  description?: string;
   format: "Дистанционный" | "Очно-заочный";
   date?: string | { start: string; end?: string };
   youWillLearn: React.ReactNode[];
@@ -31,7 +32,7 @@ type CourseProps = {
     image: StaticImageData;
     name: string;
     position: string;
-    description: string;
+    description: string | React.ReactNode;
   }[];
   programTitle: string;
   program: {
@@ -49,6 +50,7 @@ type CourseProps = {
 
 export default function Course({
   breadcrumb,
+  type = "Курс повышения квалификации",
   title,
   description,
   format,
@@ -80,9 +82,7 @@ export default function Course({
         />
         <div className="fcol gap-8 wrapper">
           <div className="xl:max-w-[70%] fcol gap-4">
-            <p className="text-brand text-lg md:text-2xl">
-              Курс повышения квалификации
-            </p>
+            <p className="text-brand text-lg md:text-2xl">{type}</p>
             <h2>{title}</h2>
             <p>{description}</p>
           </div>
@@ -129,7 +129,7 @@ export default function Course({
       <section className="md:bg-secondary relative max-w-none px-0 overflow-clip">
         <div className="wrapper space-y-16">
           <h2 className="z-[1]">Вы научитесь</h2>
-          <div className="fcol gap-5 xl:flex-row xl:max-w-3/4 z-[1]">
+          <div className="fcol flex-wrap gap-5 xl:flex-row xl:max-w-3/4 z-[1]">
             {youWillLearn.map((item, i) => (
               <React.Fragment key={`youWillLearn-${i}`}>{item}</React.Fragment>
             ))}

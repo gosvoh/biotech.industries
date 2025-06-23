@@ -20,7 +20,7 @@ export const HumanCard = ({
     <div className="fcol gap-[inherit] md:gap-8 flex-1">
       <h3 className="text-brand2">{name}</h3>
       {position && <p className="font-bold">{position}</p>}
-      <p>{desc}</p>
+      {typeof desc === "string" ? <p>{desc}</p> : desc}
     </div>
   </div>
 );
