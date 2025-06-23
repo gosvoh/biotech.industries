@@ -21,10 +21,12 @@ const CourseCard = ({
   title,
   date,
   format,
+  type = "Курс повышения квалификации",
 }: {
   title: React.ReactNode;
   date: string;
   format: "Дистанционный" | "Очно-заочный";
+  type?: string;
 }) => (
   <div
     className={cn(
@@ -36,9 +38,7 @@ const CourseCard = ({
     )}
   >
     <div className="fcol gap-3 md:gap-4 z-[1]">
-      <p className="text-brand text-base md:text-2xl">
-        Курс повышения квалификации
-      </p>
+      <p className="text-brand text-base md:text-2xl">{type}</p>
       <h3>{title}</h3>
     </div>
     <div className="fcol md:flex-row gap-3 z-[1] md:gap-8 lg:gap-24 xl:gap-[180px]">
@@ -88,6 +88,14 @@ export default function Education() {
           {/* <h3 className="border-b-2 border-brand2 pb-3 md:text-3xl">
             Наши курсы
           </h3> */}
+          <Link href="/education/foodtech">
+            <CourseCard
+              type="Курс профессиональной переподготовки"
+              title="ФУДТЕХ"
+              date="Подробнее"
+              format="Дистанционный"
+            />
+          </Link>
           <Link href="/education/course2">
             <CourseCard
               title={
