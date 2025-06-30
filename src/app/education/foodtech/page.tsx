@@ -194,8 +194,7 @@ export default function Foodtech() {
         },
         {
           icon: Ifeatures,
-          description:
-            "Удостоверение о повышении квалификации Университета ИТМО",
+          description: "Диплом о профессиональной переподготовке",
         },
         {
           icon: Idea,
