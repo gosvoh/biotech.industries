@@ -21,6 +21,7 @@ export const metadata: Metadata = generateMeta(
 export default function Foodtech() {
   return (
     <Course
+      date="Октябрь 2025 года (при условии набора группы)"
       breadcrumb="ФУДТЕХ"
       title="ФУДТЕХ"
       type="Курс профессиональной переподготовки"

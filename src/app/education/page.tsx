@@ -92,7 +92,7 @@ export default function Education() {
             <CourseCard
               type="Курс профессиональной переподготовки"
               title="ФУДТЕХ"
-              date="Подробнее"
+              date="Октябрь 2025 года (при условии набора группы)"
               format="Дистанционный"
             />
           </Link>
@@ -105,14 +105,14 @@ export default function Education() {
                   дрожжей в пивоварении
                 </>
               }
-              date="Подробнее"
+              date="26 ноября 2025 года (при условии набора группы)"
               format="Очно-заочный"
             />
           </Link>
           <Link href="/education/course3">
             <CourseCard
               title={"Микробиология пивоварения"}
-              date="Подробнее"
+              date="26 ноября 2025 года (при условии набора группы)"
               format="Очно-заочный"
             />
           </Link>
@@ -124,7 +124,7 @@ export default function Education() {
                   сырьё, технология, качество
                 </>
               }
-              date="Подробнее"
+              date="26 ноября 2025 года (при условии набора группы)"
               format="Дистанционный"
             />
           </Link>

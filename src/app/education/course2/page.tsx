@@ -20,6 +20,7 @@ export const metadata: Metadata = generateMeta(
 export default function Course2() {
   return (
     <Course
+      date="26 ноября 2025 года (при условии набора группы)"
       breadcrumb="Технологические аспекты"
       title="Технологические аспекты использования дрожжей в пивоварении"
       description="Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
