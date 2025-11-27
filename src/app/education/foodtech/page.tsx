@@ -12,6 +12,7 @@ import Link from "next/link";
 import Bychkova from "@public/humans/Bychkova.png";
 import Eremeeva from "@public/humans/Eremeeva.png";
 import Nikiforova from "@public/humans/Nikiforova.png";
+import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - ФУДТЕХ",
@@ -21,11 +22,11 @@ export const metadata: Metadata = generateMeta(
 export default function Foodtech() {
   return (
     <Course
-      date="Октябрь 2025 года (при условии набора группы)"
+      date={coursesInfo.foodtech.date}
+      title={coursesInfo.foodtech.title}
+      format={coursesInfo.foodtech.format}
       breadcrumb="ФУДТЕХ"
-      title="ФУДТЕХ"
       type="Курс профессиональной переподготовки"
-      format="Очно-заочный"
       youWillLearn={[
         <Card
           title="01."

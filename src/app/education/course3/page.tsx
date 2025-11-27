@@ -10,6 +10,7 @@ import Ifeatures from "@public/glowIcons/ifeatures.svg";
 import Introduction from "@public/glowIcons/introduction.svg";
 import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
+import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - Микробиология пивоварения",
@@ -19,11 +20,11 @@ export const metadata: Metadata = generateMeta(
 export default function Course3() {
   return (
     <Course
-      date="26 ноября 2025 года (при условии набора группы)"
+      date={coursesInfo.course3.date}
+      title={coursesInfo.course3.title}
+      format={coursesInfo.course3.format}
       breadcrumb="Микробиология пивоварения"
-      title="Микробиология пивоварения"
       description="Поможем сформировать профессиональные компетенции в области микробиологических аспектов пивоварения"
-      format="Очно-заочный"
       youWillLearn={[
         <Card
           title="01."

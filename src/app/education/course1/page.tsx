@@ -11,6 +11,7 @@ import Introduction from "@public/glowIcons/introduction.svg";
 import Card from "@/components/card";
 import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
+import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - Светлое лагерное пиво: сырьё, технология, качество",
@@ -20,11 +21,11 @@ export const metadata: Metadata = generateMeta(
 export default function Course1() {
   return (
     <Course
-      date="26 ноября 2025 года (при условии набора группы)"
+      date={coursesInfo.course1.date}
+      title={coursesInfo.course1.title}
+      format={coursesInfo.course1.format}
       breadcrumb="Светлое лагерное пиво"
-      title="Светлое лагерное пиво: сырьё, технология, качество"
       description="Поможем сформировать профессиональные компетенции в области технологи пивоварения (технологии светлого пива низового брожения)"
-      format="Дистанционный"
       youWillLearn={[
         <Card
           title="01."

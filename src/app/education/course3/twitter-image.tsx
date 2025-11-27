@@ -1,8 +1,9 @@
 import { generateOGImage } from "@/lib/meta";
+import coursesInfo from "../coursesInfo";
 
 export const runtime = "edge";
 
-export const alt = "Микробиология пивоварения";
+export const alt = coursesInfo.course3.title;
 export const size = {
   width: 1920,
   height: 960,

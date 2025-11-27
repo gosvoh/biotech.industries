@@ -11,6 +11,7 @@ import Ifeatures from "@public/glowIcons/ifeatures.svg";
 import Introduction from "@public/glowIcons/introduction.svg";
 import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
+import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - Технологические аспекты использования дрожжей в пивоварении",
@@ -20,11 +21,11 @@ export const metadata: Metadata = generateMeta(
 export default function Course2() {
   return (
     <Course
-      date="26 ноября 2025 года (при условии набора группы)"
+      date={coursesInfo.course2.date}
+      title={coursesInfo.course2.title}
+      format={coursesInfo.course2.format}
       breadcrumb="Технологические аспекты"
-      title="Технологические аспекты использования дрожжей в пивоварении"
       description="Поможем сформировать профессиональные компетенции для работы с основным микроорганизмом-продуцентом пивоварения – дрожжами Saccharomyces cerevisiae"
-      format="Очно-заочный"
       youWillLearn={[
         <p>
           Определять и анализировать свойства и физиологическое состояние

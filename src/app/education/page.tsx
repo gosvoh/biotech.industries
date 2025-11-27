@@ -11,6 +11,7 @@ import BookmarkGlowMobile from "@public/BookmarkGlowMobile.svg";
 import FirstSection from "@/components/first.section";
 import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
+import coursesInfo from "./coursesInfo";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - Курсы для биотех-специалистов",
@@ -24,7 +25,7 @@ const CourseCard = ({
   type = "Курс повышения квалификации",
 }: {
   title: React.ReactNode;
-  date: string;
+  date?: string;
   format: "Дистанционный" | "Очно-заочный";
   type?: string;
 }) => (
@@ -37,7 +38,7 @@ const CourseCard = ({
       "group"
     )}
   >
-    <div className="fcol gap-3 md:gap-4 z-[1]">
+    <div className="fcol gap-3 md:gap-4 z-[1] max-w-3/4">
       <p className="text-brand text-base md:text-2xl">{type}</p>
       <h3>{title}</h3>
     </div>
@@ -46,10 +47,12 @@ const CourseCard = ({
         <p className="text-base md:text-2xl">Формат проведения</p>
         <p className="font-bold text-xl md:text-3xl">{format}</p>
       </div>
-      <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
-        <ArrowUpRight className="text-brand2 w-8 h-8" />
-        {date}
-      </div>
+      {date && (
+        <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
+          <ArrowUpRight className="text-brand2 w-8 h-8" />
+          {date}
+        </div>
+      )}
     </div>
     <Image
       src={Smoke}
@@ -91,29 +94,30 @@ export default function Education() {
           <Link href="/education/foodtech">
             <CourseCard
               type="Курс профессиональной переподготовки"
-              title="ФУДТЕХ"
-              date="Октябрь 2025 года (при условии набора группы)"
-              format="Дистанционный"
+              title={coursesInfo.foodtech.title}
+              date={coursesInfo.foodtech.date}
+              format={coursesInfo.foodtech.format}
             />
           </Link>
           <Link href="/education/course2">
             <CourseCard
-              title={
-                <>
-                  Технологические аспекты использования{" "}
-                  <br className="hidden md:inline" />
-                  дрожжей в пивоварении
-                </>
-              }
-              date="26 ноября 2025 года (при условии набора группы)"
-              format="Очно-заочный"
+              // title={
+              //   <>
+              //     Технологические аспекты использования{" "}
+              //     <br className="hidden md:inline" />
+              //     дрожжей в пивоварении
+              //   </>
+              // }
+              title={coursesInfo.course2.title}
+              date={coursesInfo.course2.date}
+              format={coursesInfo.course2.format}
             />
           </Link>
           <Link href="/education/course3">
             <CourseCard
-              title={"Микробиология пивоварения"}
-              date="26 ноября 2025 года (при условии набора группы)"
-              format="Очно-заочный"
+              title={coursesInfo.course3.title}
+              date={coursesInfo.course3.date}
+              format={coursesInfo.course3.format}
             />
           </Link>
           <Link href="/education/course1">
@@ -124,8 +128,11 @@ export default function Education() {
                   сырьё, технология, качество
                 </>
               }
-              date="26 ноября 2025 года (при условии набора группы)"
-              format="Дистанционный"
+              // date="26 ноября 2025 года (при условии набора группы)"
+              // format="Дистанционный"
+              // title={coursesInfo.course1.title}
+              date={coursesInfo.course1.date}
+              format={coursesInfo.course1.format}
             />
           </Link>
         </div>

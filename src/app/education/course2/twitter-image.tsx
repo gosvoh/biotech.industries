@@ -1,9 +1,9 @@
 import { generateOGImage } from "@/lib/meta";
+import coursesInfo from "../coursesInfo";
 
 export const runtime = "edge";
 
-export const alt =
-  "Технологические аспекты использования дрожжей в пивоварении";
+export const alt = coursesInfo.course2.title;
 export const size = {
   width: 1920,
   height: 960,
