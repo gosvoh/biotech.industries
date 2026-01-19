@@ -12,6 +12,7 @@ import FirstSection from "@/components/first.section";
 import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
 import coursesInfo from "./coursesInfo";
+import { CourseProps } from "./course";
 
 export const metadata: Metadata = generateMeta(
   "Biotech.Industries - Курсы для биотех-специалистов",
@@ -25,7 +26,7 @@ const CourseCard = ({
   type = "Курс повышения квалификации",
 }: {
   title: React.ReactNode;
-  date?: string;
+  date?: CourseProps["date"];
   format: "Дистанционный" | "Очно-заочный";
   type?: string;
 }) => (
@@ -50,7 +51,9 @@ const CourseCard = ({
       {date && (
         <div className="inline-flex items-center gap-4 md:gap-5 lg:gap-6 xl:gap-7 2xl:gap-8 font-bold text-lg md:text-2xl">
           <ArrowUpRight className="text-brand2 w-8 h-8" />
-          {date}
+          {typeof date === "string"
+            ? date
+            : `${date.start}${date.end ? ` - ${date.end}` : ""}`}
         </div>
       )}
     </div>

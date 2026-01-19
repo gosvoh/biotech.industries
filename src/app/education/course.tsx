@@ -18,7 +18,7 @@ import Contacts from "@/components/contacts";
 import Button from "@/components/ui/custom/button";
 import Arrow from "@public/Arrow.svg";
 
-type CourseProps = {
+export type CourseProps = {
   breadcrumb: string;
   type?: string;
   title: string;
