@@ -1,4 +1,4 @@
-import BiotechTextLogo from "@public/Biotech-Logotype.svg";
+import BiotechTextLogo from "@public/BiotechLogoType.svg";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

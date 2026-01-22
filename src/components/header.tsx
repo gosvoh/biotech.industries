@@ -1,6 +1,5 @@
 import Image from "next/image";
-import BiotechTextLogo from "@public/Biotech-Logotype.svg";
-import { cn } from "@/lib/utils";
+import BiotechTextLogo from "@public/BiotechLogoType.svg";
 import {
   Sheet,
   SheetContent,
