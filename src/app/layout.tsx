@@ -13,8 +13,8 @@ const inter = Manrope({
 });
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries",
-  "Создаем инновации в биотех-индустрии"
+  "ИТМО Биотех",
+  "Создаем инновации в биотех-индустрии",
 );
 
 export default function RootLayout({

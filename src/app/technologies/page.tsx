@@ -11,8 +11,8 @@ import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Разработка технологий и проведение научных исследований",
-  "Наша команда биотехнологов разработает законченное решение по вашему запросу"
+  "ИТМО Биотех - Разработка технологий и проведение научных исследований",
+  "Наша команда биотехнологов разработает законченное решение по вашему запросу",
 );
 
 const TechList = ({
@@ -66,7 +66,7 @@ export default function Technologies() {
               className="z-[1]"
               items={[
                 "Обсуждение технического задания",
-                "Формирование проектной группы с участием экспертов Biotech.Industries",
+                "Формирование проектной группы с участием экспертов ИТМО Биотех",
                 "Согласование коммерческого предложения",
                 "Разработка технологии / проведение исследования",
               ]}
@@ -76,7 +76,7 @@ export default function Technologies() {
               title="Нет технического задания"
               className="z-[1] border-brand"
               items={[
-                "Проведение установочной встречи с командой Biotech.Industries",
+                "Проведение установочной встречи с командой ИТМО Биотех",
                 "Подготовка и утверждение ТЗ",
                 "Согласование коммерческого предложения",
                 "Разработка технологии / проведение исследования",
@@ -91,7 +91,7 @@ export default function Technologies() {
           className={cn(
             "absolute left-[5%] md:bottom-[10%] xl:bottom-[15%] z-0 w-fit hidden md:block rotate-[50.67deg]",
             "w-4/5 xl:w-[70%] max-h-none max-w-none",
-            "-translate-x-1/2 translate-y-1/2"
+            "-translate-x-1/2 translate-y-1/2",
           )}
         />
       </section>
@@ -106,7 +106,7 @@ export default function Technologies() {
                 <Link href="/event#hack" className="text-brand2 underline">
                   хакатон
                 </Link>{" "}
-                вместе с Biotech.Industries
+                вместе с ИТМО Биотех
               </p>
             </div>
             <Button />
@@ -152,7 +152,7 @@ export default function Technologies() {
               <Link href="/event#hack" className="text-brand2 underline">
                 хакатон
               </Link>{" "}
-              вместе с Biotech.Industries
+              вместе с ИТМО Биотех
             </p>
           </div>
           <Button />

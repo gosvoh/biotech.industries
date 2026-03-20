@@ -7,14 +7,13 @@ import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
 
 const newMeta = {
-  title: "Biotech.Industries - Контакты",
-  description:
-    "Biotech.Industries - Свяжитесь с нами, если у вас остались вопросы",
+  title: "ИТМО Биотех - Контакты",
+  description: "ИТМО Биотех - Свяжитесь с нами, если у вас остались вопросы",
 };
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Контакты",
-  "Свяжитесь с нами, если у вас остались вопросы"
+  "ИТМО Биотех - Контакты",
+  "Свяжитесь с нами, если у вас остались вопросы",
 );
 
 const YandexMap = dynamic(async () => import("@/components/yandex.map"), {

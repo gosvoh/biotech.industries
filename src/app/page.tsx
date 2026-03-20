@@ -32,13 +32,13 @@ const Partner = ({
       "w-full md:max-w-[395px]",
       "md:min-w-[290px] lg:min-w-[350px]",
       "basis-[calc(50%-10px)] flex-grow-1 flex-shrink-1",
-      "md:flex-1"
+      "md:flex-1",
     )}
   >
     <Image
       className={cn(
         "h-[80%] w-auto object-scale-down aspect-square max-w-[75%]",
-        className
+        className,
       )}
       src={src}
       alt={alt}
@@ -53,7 +53,7 @@ export default function Home() {
         <div className="wrapper">
           <div className="fcol gap-16 ml-auto w-fit">
             <div className="fcol gap-8 md:w-fit">
-              <h1>Biotech Industries</h1>
+              <h1>ИТМО Биотех</h1>
               <p className="xl:text-4xl">
                 Создаем инновации в биотех-индустрии
               </p>

@@ -15,8 +15,8 @@ import Nikiforova from "@public/humans/Nikiforova.png";
 import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - ФУДТЕХ",
-  "Курс профессиональной переподготовки"
+  "ИТМО Биотех - ФУДТЕХ",
+  "Курс профессиональной переподготовки",
 );
 
 export default function Foodtech() {

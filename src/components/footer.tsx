@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-16 text-2xl md:text-3xl wrapper py-20 bg-secondary">
         <Image
           src={BiotechTextLogo}
-          alt="Biotech"
+          alt="ИТМО Биотех"
           className="w-[165px] md:w-[400px]"
         />
         <div className="fcol gap-6 md:gap-12 md:row-span-2">

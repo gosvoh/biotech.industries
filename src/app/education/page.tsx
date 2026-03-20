@@ -15,8 +15,8 @@ import coursesInfo from "./coursesInfo";
 import { CourseProps } from "./course";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Курсы для биотех-специалистов",
-  "Наша команда не только разрабатывает технологии и проводит исследования, но и делится знаниями"
+  "ИТМО Биотех - Курсы для биотех-специалистов",
+  "Наша команда не только разрабатывает технологии и проводит исследования, но и делится знаниями",
 );
 
 const CourseCard = ({
@@ -36,7 +36,7 @@ const CourseCard = ({
       "rounded-[20px] md:rounded-[30px]",
       "overflow-clip",
       "hover:border-brand2 hover:shadow-[0px_4px_100px_-50px_hsl(var(--brand2))] transition-all duration-300",
-      "group"
+      "group",
     )}
   >
     <div className="fcol gap-3 md:gap-4 z-[1] max-w-3/4">
@@ -67,7 +67,7 @@ const CourseCard = ({
       alt=""
       className={cn(
         "hidden xl:block absolute translate-x-1/3 -translate-y-1/2 right-10 top-1/2 h-[250%] max-h-none max-w-none opacity-50",
-        "group-hover:opacity-100 transition-all duration-300 object-cover"
+        "group-hover:opacity-100 transition-all duration-300 object-cover",
       )}
     />
   </div>
@@ -166,13 +166,13 @@ export default function Education() {
             alt=""
             className={cn(
               "w-[500%] max-w-none h-auto absolute top-1/2 left-1/2",
-              "-translate-x-1/2 -translate-y-1/2"
+              "-translate-x-1/2 -translate-y-1/2",
             )}
           />
         </div>
         <p className="wrapper text-2xl z-[1]">
-          Biotech.Industries создаст и проведет обучающий курс специально для
-          вашей команды
+          ИТМО Биотех создаст и проведет обучающий курс специально для вашей
+          команды
         </p>
       </section>
       <section className="hidden lg:block bg-secondary overflow-clip px-0 max-w-none">
@@ -184,15 +184,15 @@ export default function Education() {
               alt=""
               className={cn(
                 "w-[500%] max-w-none h-auto absolute top-1/2 left-1/2",
-                "-translate-x-1/2 -translate-y-1/2"
+                "-translate-x-1/2 -translate-y-1/2",
               )}
             />
           </div>
           <div className="fcol gap-8 basis-1/2 2xl:p-8">
             <h2 className="text-5xl">Не нашли нужный курс?</h2>
             <p className="text-3xl">
-              Biotech.Industries создаст и проведет обучающий курс специально
-              для вашей команды
+              ИТМО Биотех создаст и проведет обучающий курс специально для вашей
+              команды
             </p>
           </div>
         </div>

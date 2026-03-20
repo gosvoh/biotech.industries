@@ -15,8 +15,8 @@ import type { Metadata } from "next";
 import { generateMeta } from "@/lib/meta";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Организация мероприятий",
-  "Наша команда организует мероприятие по вашему запросу"
+  "ИТМО Биотех - Организация мероприятий",
+  "Наша команда организует мероприятие по вашему запросу",
 );
 
 const PlusList = ({
@@ -39,7 +39,7 @@ const PlusList = ({
             "max-w-[42px] md:max-w-[78px] max-h-[42px] md:max-h-[78px]",
             "w-full bg-brand",
             "text-black text-4xl font-bold",
-            "flex items-center justify-center"
+            "flex items-center justify-center",
           )}
         >
           +
@@ -154,7 +154,7 @@ export default function Event() {
                 {
                   title: "Реализация идеи",
                   description:
-                    "Выбранная вами идея может быть передана в разработку команде Biotech.Industries",
+                    "Выбранная вами идея может быть передана в разработку команде ИТМО Биотех",
                 },
               ]}
             />
@@ -166,7 +166,7 @@ export default function Event() {
             <div className="fcol gap-2 z-[1]">
               <h3>Схема взаимодействия</h3>
               <p className="text-lg md:text-3xl">
-                Команда Biotech.Industries организует марафон идей под ключ
+                Команда ИТМО Биотех организует марафон идей под ключ
               </p>
             </div>
             <Schema
@@ -175,7 +175,7 @@ export default function Event() {
               items={[
                 "Обсуждение запроса и формирование кейсов",
                 "Определение формата проведения",
-                "Подготовка и проведение марафона идей командой Biotech.Industries",
+                "Подготовка и проведение марафона идей командой ИТМО Биотех",
               ]}
             />
           </div>
@@ -184,7 +184,7 @@ export default function Event() {
             alt=""
             className={cn(
               "absolute top-1/2 -right-16 w-1/2 h-fit rotate-[28.54deg] -translate-y-1/2",
-              "md:rotate-180 md:w-1/5"
+              "md:rotate-180 md:w-1/5",
             )}
           />
         </section>
@@ -248,7 +248,7 @@ export default function Event() {
             <div className="fcol gap-2 z-[1]">
               <h3>Схема взаимодействия</h3>
               <p className="text-lg md:text-3xl">
-                Команда Biotech.Industries организует хакатон под ключ
+                Команда ИТМО Биотех организует хакатон под ключ
               </p>
             </div>
             <Schema
@@ -257,7 +257,7 @@ export default function Event() {
               items={[
                 "Обсуждение запроса и формулирование задачи",
                 "Определение формата проведения",
-                "Подготовка и проведение хакатона командой Biotech.Industries",
+                "Подготовка и проведение хакатона командой ИТМО Биотех",
                 "Презентация новых идей, технологий и продуктов, готовых к внедрению",
               ]}
             />
@@ -267,7 +267,7 @@ export default function Event() {
             alt=""
             className={cn(
               "absolute top-1/2 -right-16 w-1/2 h-fit rotate-[28.54deg] -translate-y-1/2",
-              "md:rotate-180 md:w-1/5"
+              "md:rotate-180 md:w-1/5",
             )}
           />
         </section>
@@ -305,8 +305,7 @@ export default function Event() {
             <div className="fcol gap-3 flex-1 relative xl:max-w-[50%] md:text-2xl">
               <h2 className="z-[1]">Конференция</h2>
               <p className="z-[1]">
-                Команда Biotech.Industries организует для вас мероприятие под
-                ключ.
+                Команда ИТМО Биотех организует для вас мероприятие под ключ.
               </p>
               <p className="z-[1]">
                 В декабре 2023 года мы провели международную биотехнологическую

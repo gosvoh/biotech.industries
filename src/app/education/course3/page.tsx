@@ -13,8 +13,8 @@ import { generateMeta } from "@/lib/meta";
 import coursesInfo from "../coursesInfo";
 
 export const metadata: Metadata = generateMeta(
-  "Biotech.Industries - Микробиология пивоварения",
-  "Поможем сформировать профессиональные компетенции в области микробиологических аспектов пивоварения"
+  "ИТМО Биотех - Микробиология пивоварения",
+  "Поможем сформировать профессиональные компетенции в области микробиологических аспектов пивоварения",
 );
 
 export default function Course3() {

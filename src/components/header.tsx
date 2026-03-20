@@ -34,7 +34,7 @@ const MobileMenu = () => (
       <SheetHeader className="fcol gap-20">
         <SheetTitle className="flex flex-row justify-between items-center">
           <Link href="/">
-            <Image src={BiotechTextLogo} alt="Biotech" className="w-32" />
+            <Image src={BiotechTextLogo} alt="ИТМО Биотех" className="w-32" />
           </Link>
           <SheetClose>
             <X className="w-10 h-10" />
