@@ -27,7 +27,7 @@ const Button = React.forwardRef<
       course,
       ...props
     },
-    ref
+    ref,
   ) => {
     const [form] = Form.useForm();
     const [modal, context] = Modal.useModal();
@@ -39,7 +39,7 @@ const Button = React.forwardRef<
       "bg-primary-white text-primary-black",
       "transition-all duration-300",
       "hover:bg-brand2 hover:shadow-[2px_10px_20px_-5px_hsl(var(--brand2))]",
-      "w-full md:w-fit"
+      "w-full md:w-fit",
     );
 
     const callErrorBtn = () => {
@@ -81,7 +81,7 @@ const Button = React.forwardRef<
             variant === "default"
               ? buttonClassName
               : "text-brand2 font-bold text-2xl underline inline-flex items-center gap-6",
-            className
+            className,
           )}
           ref={ref}
           {...props}
@@ -117,7 +117,7 @@ const Button = React.forwardRef<
                         : {
                             ...value,
                             type: `${title} ${value.type ?? course}`.trim(),
-                          }
+                          },
                     )
                       .then((val) => {
                         modalForm.destroy();
@@ -233,6 +233,22 @@ const Button = React.forwardRef<
                   >
                     <Input type="tel" placeholder="Телефон" />
                   </Form.Item>
+                  <Form.Item
+                    name={"email"}
+                    rules={[
+                      {
+                        required: true,
+                        message: "Введите адрес электронной почты",
+                      },
+                      {
+                        type: "email",
+                        message:
+                          "Адрес электронной почты должен быть корректным",
+                      },
+                    ]}
+                  >
+                    <Input type="email" placeholder="Электронная почта" />
+                  </Form.Item>
                   <Form.Item name={"comment"}>
                     <Input.TextArea
                       placeholder="Комментарий"
@@ -272,7 +288,7 @@ const Button = React.forwardRef<
         </button>
       </>
     );
-  }
+  },
 );
 Button.displayName = "Button";
 

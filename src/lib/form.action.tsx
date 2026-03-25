@@ -21,11 +21,13 @@ const textMail = (data: {
   name: string;
   type: string;
   phone: string;
+  email: string;
   comment?: string;
 }) => `
 Тип запроса:  ${data.type}
 Имя:          ${data.name}
 Телефон:      ${data.phone}
+Почта:        ${data.email}
 Комментарий:  ${data.comment || "нет"}
 `;
 
@@ -33,6 +35,7 @@ export default async function onFormSubmit(data: {
   name: string;
   type: string;
   phone: string;
+  email: string;
   comment?: string;
 }) {
   try {
@@ -73,12 +76,18 @@ export default async function onFormSubmit(data: {
                 </td>
               </tr>
               <tr>
+                <td>Почта</td>
+                <td>
+                  <a href={`mailto:${data.email}`}>{data.email}</a>
+                </td>
+              </tr>
+              <tr>
                 <td>Комментарий</td>
                 <td>{data.comment || "нет"}</td>
               </tr>
             </table>
           </body>
-        </html>
+        </html>,
       ),
     });
     return { success: true, error: null };
