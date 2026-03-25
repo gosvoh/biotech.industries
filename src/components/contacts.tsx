@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Button from "./ui/custom/button";
 import dynamic from "next/dynamic";

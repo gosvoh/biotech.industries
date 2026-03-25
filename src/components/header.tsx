@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import BiotechTextLogo from "@public/BiotechLogoType.svg";
 import {
@@ -41,17 +43,18 @@ const MobileMenu = () => (
             <span className="sr-only">Close</span>
           </SheetClose>
         </SheetTitle>
-        <SheetDescription>
-          <nav className="flex flex-col gap-8 items-start">
-            {links.map(({ href, text }, i) => (
-              <SheetClose asChild key={`link-${i}`}>
-                <Link className="text-left" href={href}>
-                  {text}
-                </Link>
-              </SheetClose>
-            ))}
-          </nav>
+        <SheetDescription className="sr-only">
+          Разделы сайта
         </SheetDescription>
+        <nav className="flex flex-col gap-8 items-start">
+          {links.map(({ href, text }, i) => (
+            <SheetClose asChild key={`link-${i}`}>
+              <Link className="text-left" href={href}>
+                {text}
+              </Link>
+            </SheetClose>
+          ))}
+        </nav>
       </SheetHeader>
     </SheetContent>
   </Sheet>

@@ -32,7 +32,6 @@ export default function Carousel() {
     if (!api) return;
 
     api.scrollTo(3);
-    setCurrentSlide(3);
 
     const sub = () => {
       setCurrentSlide(api.selectedScrollSnap());

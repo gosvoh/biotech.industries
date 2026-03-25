@@ -16,9 +16,7 @@ export const metadata: Metadata = generateMeta(
   "Свяжитесь с нами, если у вас остались вопросы",
 );
 
-const YandexMap = dynamic(async () => import("@/components/yandex.map"), {
-  ssr: false,
-});
+const YandexMap = dynamic(async () => import("@/components/yandex.map"));
 
 export default function Contacts() {
   return (
