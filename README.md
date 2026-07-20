@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# biotech.industries
 
-## Getting Started
+Landing site for **ИТМО Биотех** — "Создаем инновации в биотех-индустрии".
+A static-first Next.js App Router site presenting the programme's education
+tracks, technologies, events and contacts.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) and **React 19**
+- **Ant Design 5** plus **shadcn/ui** and **Radix** primitives for the UI
+- **Tailwind CSS 3** for styling
+- **Nodemailer** (with DKIM signing) for the contact form
+- **Yandex Maps** for the contacts page
+- **npm** as the package manager
+
+## Prerequisites
+
+- Node.js 20+ (the Docker image builds on `node:25-alpine`)
+
+## Setup
+
+Install dependencies:
+
+```bash
+npm ci
+```
+
+Create a `.env.local` file with the mail settings used by the contact form:
+
+```dotenv
+MAIL_USER="no-reply@example.com"   # SMTP account used to send
+MAIL_PASS="your-smtp-password"     # SMTP password
+MAIL_TO="inbox@example.com"        # where submissions are delivered
+DKIM_DOMAIN="example.com"          # domain used to sign outgoing mail
+DKIM_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----"
+```
+
+Without these the site renders fine, but contact-form submissions will fail.
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site is served at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Common commands
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+| Command         | Description                  |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run build` | Create a production build    |
+| `npm start`     | Serve the production build   |
+| `npm run lint`  | Run ESLint                   |
 
-## Learn More
+## Pages
 
-To learn more about Next.js, take a look at the following resources:
+| Route                 | Contents                             |
+| --------------------- | ------------------------------------ |
+| `/`                   | Landing page                         |
+| `/education`          | Education overview                   |
+| `/education/course1`  | Individual course pages              |
+| `/education/course2`  |                                      |
+| `/education/course3`  |                                      |
+| `/education/foodtech` | FoodTech track                       |
+| `/technologies`       | Technologies                         |
+| `/consultations`      | Consultations                        |
+| `/event`              | Event page                           |
+| `/contacts`           | Contacts, incl. map and contact form |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment / Docker
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The `Dockerfile` produces a standalone Next.js image on the `node:25-alpine`
+base, running as a non-root `nextjs` user and listening on port 3000.
 
-## Deploy on Vercel
+CI (`.github/workflows/push.yml`) builds the image and pushes it to Docker Hub
+on every push to `master`, tagged with the `package.json` version and `latest`.
+Docker Hub credentials come from the `DOCKER_USERNAME` and `DOCKER_TOKEN`
+repository secrets.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Mail environment variables are **not** baked into the image — supply them to the
+running container.
