@@ -17,6 +17,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+const mailCellStyle = { border: "1px solid black", padding: "8px" };
+
 const textMail = (data: {
   name: string;
   type: string;
@@ -47,43 +49,31 @@ export default async function onFormSubmit(data: {
       text: textMail(data),
       html: ReactDomServer.renderToString(
         <html>
-          <head>
-            <style>{`
-              table {
-                border-collapse: collapse;
-                width: 100%;
-              }
-              td {
-                border: 1px solid black;
-                padding: 8px;
-              }
-            `}</style>
-          </head>
           <body>
-            <table>
+            <table style={{ borderCollapse: "collapse", width: "100%" }}>
               <tr>
-                <td>Тип запроса</td>
-                <td>{data.type}</td>
+                <td style={mailCellStyle}>Тип запроса</td>
+                <td style={mailCellStyle}>{data.type}</td>
               </tr>
               <tr>
-                <td>Имя</td>
-                <td>{data.name}</td>
+                <td style={mailCellStyle}>Имя</td>
+                <td style={mailCellStyle}>{data.name}</td>
               </tr>
               <tr>
-                <td>Телефон</td>
-                <td>
+                <td style={mailCellStyle}>Телефон</td>
+                <td style={mailCellStyle}>
                   <a href={`tel:${data.phone}`}>{data.phone}</a>
                 </td>
               </tr>
               <tr>
-                <td>Почта</td>
-                <td>
+                <td style={mailCellStyle}>Почта</td>
+                <td style={mailCellStyle}>
                   <a href={`mailto:${data.email}`}>{data.email}</a>
                 </td>
               </tr>
               <tr>
-                <td>Комментарий</td>
-                <td>{data.comment || "нет"}</td>
+                <td style={mailCellStyle}>Комментарий</td>
+                <td style={mailCellStyle}>{data.comment || "нет"}</td>
               </tr>
             </table>
           </body>

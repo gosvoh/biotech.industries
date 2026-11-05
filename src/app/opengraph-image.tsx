@@ -1,6 +1,6 @@
 import { generateOGImage } from "@/lib/meta";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export const alt = "О нас";
 export const size = {

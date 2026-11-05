@@ -1,7 +1,7 @@
 import { generateOGImage } from "@/lib/meta";
 import coursesInfo from "../coursesInfo";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export const alt = coursesInfo.foodtech.title;
 export const size = {

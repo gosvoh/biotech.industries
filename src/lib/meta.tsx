@@ -1,17 +1,20 @@
 import { ImageResponse } from "next/og";
 import type { Metadata } from "next";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const generateOGImage = async (title: string) => {
-  const manrope = fetch(new URL("@public/manrope.ttf", import.meta.url)).then(
-    (res) => res.arrayBuffer()
-  );
+  const [manrope, cover] = await Promise.all([
+    readFile(join(process.cwd(), "public/manrope.ttf")),
+    readFile(join(process.cwd(), "public/cover.png")),
+  ]);
 
   return new ImageResponse(
     (
       <div
         style={{
           fontSize: 64,
-          background: "url(http://localhost:3000/cover.png)",
+          background: `url(data:image/png;base64,${cover.toString("base64")})`,
           width: "100%",
           height: "100%",
           display: "flex",
@@ -37,7 +40,7 @@ export const generateOGImage = async (title: string) => {
       fonts: [
         {
           name: "Manrope",
-          data: await manrope,
+          data: Uint8Array.from(manrope).buffer,
           style: "normal",
           weight: 400,
         },
